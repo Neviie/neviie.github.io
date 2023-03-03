@@ -52,7 +52,7 @@
 		  .catch(error => console.error(error));
 		  
 		
-			fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
+		fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
 		  .then(response => response.json())
 		  .then(data => {
 			// Получаем текущую дату
@@ -136,7 +136,7 @@
 		<div class="null_pos"></div>
 		<timere><div id="timer" style="color: white">00:00</div><timere>
 	<script>
-			var timerElement = document.getElementById("timer");
+				var timerElement = document.getElementById("timer");
 var startDate;
 
 // Получаем дату из API при загрузке страницы
@@ -181,7 +181,6 @@ function updateTimer() {
 }
 
 fetchStartDate();
-
    </script> 
   
 	</div>
