@@ -30,7 +30,7 @@
       })
       .catch(error => console.error(error));
 	  
-	  fetch(`${proxyUrl}${fullUstUrl}&fake_param=${fakeParam}`)
+	  fetch(`${proxyUrl}${encodeURIComponent(fullUstUrl)}&fake_param=${fakeParam}`)
       .then(response => response.json())
       .then(data => {
         // Обновляем содержимое элемента с идентификатором "result"
