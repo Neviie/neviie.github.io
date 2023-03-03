@@ -1,0 +1,354 @@
+		::-webkit-input-placeholder {color:#000000; opacity:1;}/* webkit */
+		::-moz-placeholder          {color:#000000; opacity:1;}/* Firefox 19+ */
+		:-moz-placeholder           {color:#000000; opacity:1;}/* Firefox 18- */
+		:-ms-input-placeholder      {color:#000000; opacity:1;}/* IE */
+		
+			body {
+	background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);	
+	background-attachment: fixed;
+	font-family: roboto;
+	}
+	
+	
+	.shap {
+	;
+		Width: 100vw;
+		height: 7.8125vh;
+		
+		margin: 0.8854vh 0px 0.8854vh 0px;	
+		
+	}
+	.shap_x {
+		Width: 100vw;
+		background-color: white;
+		height: 7.8125vh;
+		
+		margin: 0px 0px 0.8854vh 0px;
+		position: absolute;
+		top: 0%;
+		position: fixed;
+		z-index: 999999;
+		box-shadow: 0 0 0.6vh rgba(0,0,0,0.2);
+		left: 0%;
+		
+		
+	}
+			.mini_line {
+			width: 7.1296vw;
+			background-color: rgb(152,152,152);
+			height: 0.3125vh;
+			border-radius: 0.9259vw;
+			margin: 2.3958vh 0 0 1.666vh;
+			z-index: 999999;
+			}
+			.mini_line2 {
+			width: 7.1296vw;
+			background-color: rgb(152,152,152);
+			height: 0.3125vh;
+			border-radius: 0.9259vw;
+			margin: 0.8854vh 0 0 1.666vh;
+			z-index: 999999;
+			}
+			.shap_cen {
+			position: absolute;
+			top: 50%;	
+			transform: translate(-50%, -50%);
+			margin-left: calc(12vw + 10vh)
+			
+			}
+				.null_shap
+				{
+				height: 0.9375vh
+				}
+				zo {
+				font-family: roboto;
+				font-size: calc(1.5vw + 1.2vh);
+				
+				}
+				op {
+				font-family: roboto;
+				font-size: calc(1.5vw + 1.5vh);
+				font-weight: 600;
+				
+				}
+	.marshrut {
+		text-align: center;
+		background-color: white;
+		Width: 87vw;
+		height: calc(18vh + 23vw);
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;	
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+	}
+			.null_marsh {
+			height: 0.520833vh;
+			}
+			mar {
+			font-family: roboto;	
+			font-size: calc(3.5vw + 2vh);
+			}
+			kal {
+			font-family: roboto;
+			font-weight: 600;	
+			font-size: calc(3.5vw + 2vh);
+			}
+			ust {
+				font-size: calc(2vw + 1.5vh);
+				font-family: roboto;
+			}
+			pixel {
+				font-size: calc(2vw + 1.5vh);
+				font-family: roboto;
+				font-weight: 600;
+			}
+			.inp_avt {
+			font-family: roboto; 
+			font-size: calc(3.5vw + 2vh); 
+			font-weight: 600; height: 3.6458vh; 
+			max-width: 45vw; 
+			text-transform: uppercase; 
+			border: solid 1px white
+			}
+			.inp_ust {
+			border: solid 1px white; 
+			text-align: center; 
+			width: 46.3vw; 
+			font-family: roboto; 
+			font-size: calc(1vw + 2vh); 
+			font-weight: 600;
+			}
+	.time_pos {
+		text-align: center;
+		font-family: roboto;
+		font-weight: 600;
+		background-color: white;
+		Width: 87vw;
+		height: 14.84vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		}
+			.null_pos
+			{
+			height: 0.5vh; 
+			width: 2vw
+			}
+			t {
+				font-size: calc(1.5vw + 1.5vh);
+				}
+			x {
+				font-size: calc(2vw + 3vh);
+				
+				}
+			y {
+				font-size: calc(1vw + 1.5vh);
+				}
+		.text_t_p {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		}
+		
+		
+	.timer {
+		text-align: center;
+		font-family: roboto;
+		font-weight: 600;
+		background-color: white;
+		Width: 87vw;
+		height: 11.45vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+	}
+		timere {
+			font-size: calc(2vw + 3vh);
+	}
+			.inp_timer
+			{
+				font-family: roboto; 
+				font-weight: 600;
+				font-size: calc(3vw + 2.5vh); 
+				border: solid 1px white; 
+				position: relative; 
+				width: 30vw; 
+				text-align: center
+			}
+	
+	.qr {
+		background-color: white;
+		Width: 87vw;
+		height: 18.75vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+			
+		
+	}
+		.imqr {
+			height: 23.148vw; 
+			width: 23.148vw
+		}
+	.ost {
+		text-align: center;
+		font-family: roboto;
+		background-color: white;
+		Width: 87vw;
+		height: 5.2vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		}
+	
+	.control {
+		text-align: center;
+		font-family: roboto;
+		background-color: white;
+		Width: 87vw;
+		height: calc(11vh + 48vw);
+		position: relative;
+		margin: 1vh auto 1vh auto;
+		outline: dotted 0.7vw rgb(105,105,105);
+		padding: 0.5vh 0 0.5vh 0;
+		}
+			n {
+				font-size: calc(2vw + 1vh);
+				
+			}
+			kim {
+				font-size: calc(2vw + 1vh);
+				font-family: roboto;
+				font-weight: 600;
+				
+			}
+		.line {
+		border-bottom: solid 0.3703vw rgb(198,198,198);
+		width: 75.46vw;
+		position: center;
+		}
+		.null_cont {
+		height: 0.8vh; 
+		width: 2vw
+		}
+		.null_cont2 {
+		height: 1vh; 
+		width: 2vw
+		}
+		.null_cont3 {
+		height: 0.4vh; 
+		width: 2vw
+		}
+		.inp_avt2 {
+		font-family: roboto; 
+		font-size: calc(2vw + 1vh); 
+		border: solid 0.09259vw white; 
+		width: 27.7vw; 
+		text-transform: uppercase
+		}
+		.marshrut_dviz {
+		margin-left: 1vw; 
+		text-align: left; 
+		width: 75vw;
+		}
+			marshrutfont {
+			font-size: calc(2vw + 1vh); 
+			width: 69.44vw;
+			}
+			marshrutfont2 {
+			font-size: calc(2vw + 1vh); 
+			width: 69.44vw;
+			color: white;
+			}
+	.bottom {
+	background-color: white;
+		Width: 100vw;
+		height: 6vh;
+		position: relative;
+		bottom: 0%;
+		margin: 0px 0px 0vh 0px;
+		padding-bottom: 1vh;
+		opacity: 0%;
+	}
+	.bottom_x{
+	background-color:white;
+		Width: 100vw;
+		height: 6.78vh;
+		margin: 0px 0px 0px 0px;
+		position: absolute;
+		bottom: 0%;	
+		left: 0%;
+		z-index: 999998;
+		position: fixed;
+		box-shadow: 0 0 0.6vw rgba(0,0,0,0.2);
+		padding-bottom: 1vh
+	}
+		.fig_1 {
+		float: left; 
+		margin: 0.26vh 0 0 8vw; 
+		width: 11.11vw; 
+		text-align: center; 
+		img-align: center
+		}
+			.img_fig_1 {
+			width:7.407vw; 
+			height:4.166vh
+			}
+			.font_fig_1 {
+			font-size: calc(1.5vw + 1vh); 
+			color: rgb(17,121,145)
+			}
+		.fig_2 {
+		float: left; 
+		margin: 0.26vh 0 0 9vw; 
+		width: 15.7407vw; 
+		text-align: center; 
+		img-align: center
+		}
+			.img_fig_2 {
+			width:7.407vw; 
+			height:4.166vh; 
+			opacity: 50%;
+			}
+			.font_fig_2 {
+			font-size: calc(1.5vw + 1vh);  
+			color: rgb(110, 110, 110)
+			}
+		.fig_3 {
+		float: right; 
+		margin: 0.26vh 8vw 0 0; 
+		width: 11.11vw; 
+		text-align: center; 
+		img-align: ceneter
+		}
+			.img_fig_3 {
+			width:7.407vw; 
+			height:4.166vh; 
+			opacity: 50%
+			}
+			.font_fig_3 {
+			font-size: calc(1.5vw + 1vh);
+			color: rgb(110, 110, 110)
+			}
+		.fig_4 {
+		float: right; 
+		margin: 0.26vh 9vw 0 0; 
+		width: 16.666vw; 
+		text-align: center; 
+		img-align: ceneter
+		}
+			.img_fig_4 {
+			 width:7.407vw; 
+			 height:4.166vh; 
+			 opacity: 50%;
+			}
+			.font_fig_4 {
+			font-size: calc(1.5vw + 1vh); 
+			color: rgb(110, 110, 110)
+			}
