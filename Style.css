@@ -179,6 +179,10 @@
 				width: 30vw; 
 				text-align: center
 			}
+		.clock
+		{
+			color: black;
+}
 	
 	.qr {
 		background-color: white;
