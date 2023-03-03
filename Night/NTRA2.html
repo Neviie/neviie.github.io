@@ -16,12 +16,12 @@
 	let tg = window.Telegram.WebApp; 
 	const userId = tg.initDataUnsafe.user.id;
     const url = 'https://cp.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_JHCW5J5N0KX6CBUG&user_id=';
-    const proxyUrl = 'https://api.allorigins.win/raw?url=';
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 	const fullUrl = (url + userId);
     const UstUrl = 'https://cp.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_IY2WMO6EZ6G64HDH&user_id=';
 	const fullUstUrl = (UstUrl + userId);
 	
-	fetch(`${proxyUrl}${encodeURIComponent(fullUrl)}&fake_param=${fakeParam}`)
+	fetch(`${proxyUrl}${fullUrl}&fake_param=${fakeParam}`)
       .then(response => response.json())
       .then(data => {
         // Обновляем содержимое элемента с идентификатором "result"
@@ -30,7 +30,7 @@
       })
       .catch(error => console.error(error));
 	  
-	  fetch(`${proxyUrl}${encodeURIComponent(fullUstUrl)}&fake_param=${fakeParam}`)
+	  fetch(`${proxyUrl}${fullUstUrl}&fake_param=${fakeParam}`)
       .then(response => response.json())
       .then(data => {
         // Обновляем содержимое элемента с идентификатором "result"
@@ -42,7 +42,7 @@
 		const timeurl = 'https://cp.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_EQUMN64C802ABNQD&user_id=';
 		const timefullUrl = (timeurl + userId);
 		
-		fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
+		fetch(`${proxyUrl}${timefullUrl}&fake_param=${fakeParam}`)
 		  .then(response => response.json())
 		  .then(data => {
 			// Обновляем содержимое элемента с идентификатором "result"
@@ -51,7 +51,7 @@
 		  .catch(error => console.error(error));
 		  
 		
-			fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
+			fetch(`${proxyUrl}${timefullUrl}&fake_param=${fakeParam}`)
 		  .then(response => response.json())
 		  .then(data => {
 			// Получаем текущую дату
@@ -144,11 +144,11 @@
 			let tg = window.Telegram.WebApp; 
 			const userId = tg.initDataUnsafe.user.id;
 			const url = 'https://cp.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_4BR7NHAOB92588S5&user_id=';
-			const proxyUrl = 'https://api.allorigins.win/raw?url=';
+			const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 			const fullUrl = (url + userId);
 			const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
 			
-			fetch(`${proxyUrl}${encodeURIComponent(fullUrl)}&fake_param=${fakeParam}`)
+			fetch(`${proxyUrl}${fullUrl}&fake_param=${fakeParam}`)
 				.then(response => response.json())
 				.then(data => {
 					// Создаем объект Date из полученного значения
