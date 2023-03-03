@@ -52,7 +52,7 @@
 		  .catch(error => console.error(error));
 		  
 		
-		fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
+			fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
 		  .then(response => response.json())
 		  .then(data => {
 			// Получаем текущую дату
@@ -79,7 +79,7 @@
 	<div class="text_t_p">
 		<mar>Маршрут №<kal>2</kal></mar>
 		<div class="null_marsh"></div>
-		<mar>Трамвай <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
+<mar>Трамвай <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
 		<div class="null_marsh"></div>
 		<mar>Оплачено <kal>33 руб</kal></mar>
 		<div class="null_marsh"></div>
@@ -87,11 +87,11 @@
 		<div class="null_marsh"></div>
 		<ust>Устройство</ust> 			<!--нужно подсосать устройство если возможно-->
 		<div class="null_marsh"></div>
-		<pixel> <div class="inp_ust" id="ustr"style = "display:inline-block;"></div></pixel>
+<pixel> <div class="inp_ust" id="ustr"style = "display:inline-block;"></div></pixel>
 	</div>
 </div>
 <div class="time_pos">
-	<div class="text_t_p">
+<div class="text_t_p">
 		<t>Время посадки</t>
 		<div class="null_pos"></div>
 		<x><div id="current_date_time_block"></div></x>
@@ -181,6 +181,7 @@ function updateTimer() {
 }
 
 fetchStartDate();
+
    </script> 
   
 	</div>
@@ -208,7 +209,7 @@ function getRandomInt(min, max) {
 document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 </script></n>							<!--генератор случайных 10 значных чисел-->
 	<div class="null_cont2"></div>
-	<n><div id="x"></div></n>							<!--нужно подсосать время-->
+<n><div id="x"></div></n>
 	<div class="null_cont2"></div>
 		<div class="line">
 		</div>
@@ -227,7 +228,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	<div class="marshrut_dviz"><marshrutfont>кольцо</marshrutfont></div>
 	
 	<div class="null_cont3"></div>
-	<n>Трамвай</n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
+	<n>Трамвай </n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
 		<div class="null_cont"></div>
 		<div class="line"></div>
 	<div class="null_cont3"></div>
