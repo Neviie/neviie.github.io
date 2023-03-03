@@ -21,7 +21,7 @@
     const UstUrl = 'https://cp.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_IY2WMO6EZ6G64HDH&user_id=';
 	const fullUstUrl = (UstUrl + userId);
 	const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
-										 
+	
 	fetch(`${proxyUrl}${encodeURIComponent(fullUrl)}&fake_param=${fakeParam}`)
       .then(response => response.json())
       .then(data => {
