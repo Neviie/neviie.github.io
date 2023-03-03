@@ -192,6 +192,10 @@
 				color: white;
 				background-color: rgb(34,34,34);
 			}
+			.clock
+					{
+						color: black;
+			}
 	
 	.qr {
 		background-color: rgb(34,34,34);
