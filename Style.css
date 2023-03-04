@@ -252,8 +252,6 @@
 		.inp_avt2 {
 		font-family: roboto; 
 		font-size: calc(2vw + 1vh); 
-		border: solid 0.09259vw white; 
-		width: 27.7vw; 
 		text-transform: uppercase
 		}
 		.marshrut_dviz {
