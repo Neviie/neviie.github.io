@@ -232,6 +232,11 @@
 				font-weight: 600;
 				
 			}
+			bilet {
+				font-size: calc(2vw + 1.5vh);
+				font-family: roboto;
+					
+			}
 		.line {
 		border-bottom: solid 0.3703vw rgb(198,198,198);
 		width: 75.46vw;
