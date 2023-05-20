@@ -308,9 +308,6 @@
 	}
 	
 	
-  .bottom_x figure {
-    
-  }
   .bottom_m {
 	  display: flex;
     justify-content: space-between;
@@ -330,7 +327,7 @@
 	}
 		.fig_1 {
 		float: left; 
-		 
+		 margin: 0 0 0 3vw;
 		width: 11.11vw; 
 		text-align: center; 
 		img-align: center
@@ -345,7 +342,7 @@
 			}
 		.fig_2 {
 		float: left; 
-		 
+		 margin: 0 0 0 0;
 		width: 15.7407vw; 
 		text-align: center; 
 		img-align: center
@@ -361,7 +358,7 @@
 			}
 		.fig_3 {
 		float: right; 
-		 
+		 margin: 0 4vw 0 0;
 		width: 11.11vw; 
 		text-align: center; 
 		img-align: ceneter
@@ -379,6 +376,7 @@
 		.fig_4 {
 		float: right; 
 		width: 16.666vw; 
+		margin: 0 0 0 0;
 		text-align: center; 
 		img-align: ceneter
 		}
