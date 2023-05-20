@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<script src="https://puzzlebot.top/webapp.js"></script>
-		<link rel="stylesheet" href="https://neviie.github.io/StyleN.css">
+		<link rel="stylesheet" href="https://neviie.github.io/StyleNT.css">
 	</head>
 <body>
 <script>
@@ -75,6 +75,42 @@
 	<div class="mini_line2"></div>
 	<div class="shap_cen"><op>Оплата проезда</op> <div class="null_shap"></div> <zo>Заказ оплачен</zo></div>
 </div>
+
+<div class="profile_new">
+<div class="prof_cen">
+<img src="profileN.png" class="profile_new_img">
+<email>@mail.ru</email> 
+</div>
+</div>
+
+<div class="profile_new2">
+<div class="profile_menu"><profile_menu>Пункты выдачи и пополнения</profile_menu></div>
+<div class="profile_menu"><profile_menu>Тарифное меню</profile_menu></div>
+<div class="profile_menu"><profile_menu>Правила пересадки</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оформления ЛПД</profile_menu></div>
+<div class="profile_menu"><profile_menu>Новостная лента</profile_menu></div>
+<div class="profile_menu"><profile_menu>Профиль</profile_menu></div>
+<div class="profile_menu"><profile_menu>Уведомления</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оплаты по цифровой карте</profile_menu></div>
+<div class="profile_menu"><profile_menu>Написать в службу поддержки</profile_menu></div>
+<div class="profile_menu"><profile_menu>О приложении</profile_menu></div>
+</div>
+
+<div class="schedule_new">
+<div class="schedule_block">
+	<div class="schedule_block_outline"><div class="time_schedule"id="schedule_block_outline"></div></div>
+		
+	<img class="img_schedule_menu" src="Schedule_6_N.png">
+</div>
+<div class="schedule_block"><profile_menu>Тип транспорта</profile_menu><img class="img_schedule_menu" src="Schedule_1_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Маршрут</profile_menu><img class="img_schedule_menu" src="Schedule_2_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Направление</profile_menu><img class="img_schedule_menu" src="Schedule_3_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Остановка</profile_menu><img class="img_schedule_menu" src="Schedule_4_N.png"></div>
+<img class="schedule_star" src="Schedule_5_N.png" >
+</div>
+
+<div class="proezdnoy_new"></div>
+
 <div class="marshrut">
 	<div class="text_t_p">
 		<mar>Маршрут №<kal>2</kal></mar>
@@ -127,6 +163,9 @@
 
 		/* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
 		document.getElementById('current_date_time_blockk').innerHTML = date_time();
+		
+		document.getElementById('schedule_block_outline').innerHTML = date_time();
+		
 		</script></y>
 	</div>
 </div>
@@ -239,22 +278,209 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 
 </div>
 <div class="bottom_x">
-	<figure class="fig_1">
+<div class="bottom_m">
+	<figure class="fig_1" onclick="handleClick4()">
 	<img src="ticketN.png" img class="img_fig_1">
 	<figcaption class="font_fig_1">Билеты</figcaption>
 	</figure>
-	<figure class="fig_2">
+	<figure class="fig_2" onclick="handleClick3()">
 	<img src="tabletN.png" class="img_fig_2">
 	<figcaption class="font_fig_2">Проездной</figcaption>
 	</figure>
-	<figure class="fig_3">
-	<img src="profileN.png" class="img_fig_3">
-	<figcaption class="font_fig_3">Кабинет</figcaption>
-	</figure>
-	<figure class="fig_4">
+	<figure class="fig_4" onclick="handleClick2()">
 	<img src="busN.png" img class="img_fig_4">
 	<figcaption class="font_fig_4">Расписание</figcaption>
 	</figure>
+	<figure class="fig_3" onclick="handleClick()">
+	<img src="profileN.png" class="img_fig_3">
+	<figcaption class="font_fig_3">Кабинет</figcaption>
+	</figure>
+</div class="bottom_m">
 </div>
+
+  <script> <!--Кабинет-->
+    function handleClick() {
+      var profileNewElement = document.querySelector('.profile_new');
+      profileNewElement.style.display = 'block';
+	  
+	  var profileNewElement = document.querySelector('.profile_new2');
+      profileNewElement.style.display = 'block';
+      
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .schedule_new, .proezdnoy_new');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'none';
+		
+	var imgElement = document.querySelector('.img_fig_3');
+      imgElement.src = 'profile.jpg';
+      
+      var fontElement = document.querySelector('.font_fig_3');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = '12vw';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Кабинет';
+	  
+	  var backbusimgElement = document.querySelector('.img_fig_4');
+     backbusimgElement.src = 'busN.png';
+	  
+      
+      var backbusfontElement = document.querySelector('.font_fig_4');
+      backbusfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
+     backproezdnoyimgElement.src = 'tabletN.png';
+	  
+      
+      var backproezdnoyfontElement = document.querySelector('.font_fig_2');
+      backproezdnoyfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketfontElement = document.querySelector('.font_fig_1');
+      backticketfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketimgElement = document.querySelector('.img_fig_1');
+     backticketimgElement.src = 'ticket.png';
+      });
+    }
+	<!--Расписание-->
+	function handleClick2() {
+      var profileNewElement = document.querySelector('.schedule_new');
+      profileNewElement.style.display = 'block';
+      
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .proezdnoy_new, .profile_new2');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'none';
+		
+	var imgElement = document.querySelector('.img_fig_4');
+      imgElement.src = 'bus.jpg';
+	  
+	  var backprofileimgElement = document.querySelector('.img_fig_3');
+      backprofileimgElement.src = 'profileN.png';
+      
+      var fontElement = document.querySelector('.font_fig_4');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	  var backprofilefontElement = document.querySelector('.font_fig_3');
+      backprofilefontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = '15vw';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Расписание';
+	  
+	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
+     backproezdnoyimgElement.src = 'tabletN.png';
+	  
+      
+      var backproezdnoyfontElement = document.querySelector('.font_fig_2');
+      backproezdnoyfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketfontElement = document.querySelector('.font_fig_1');
+      backticketfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketimgElement = document.querySelector('.img_fig_1');
+     backticketimgElement.src = 'ticket.png';
+      });
+    }
+	<!--Проездной-->
+	function handleClick3() {
+      var profileNewElement = document.querySelector('.proezdnoy_new');
+      profileNewElement.style.display = 'block';
+      
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .schedule_new, .profile_new2');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'none';
+		
+	var imgElement = document.querySelector('.img_fig_2');
+      imgElement.src = 'tablet.jpg';
+	  
+	  var backprofileimgElement = document.querySelector('.img_fig_3');
+      backprofileimgElement.src = 'profileN.png';
+      
+      var fontElement = document.querySelector('.font_fig_2');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	  var backprofilefontElement = document.querySelector('.font_fig_3');
+      backprofilefontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = '15vw';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Добавить карту';
+	  
+	  var backbusimgElement = document.querySelector('.img_fig_4');
+     backbusimgElement.src = 'busN.png';
+      
+      var backbusfontElement = document.querySelector('.font_fig_4');
+      backbusfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketfontElement = document.querySelector('.font_fig_1');
+      backticketfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketimgElement = document.querySelector('.img_fig_1');
+     backticketimgElement.src = 'ticket.png';
+      });
+    }
+	<!--Билеты-->
+	function handleClick4() {
+
+      var profileNewElement = document.querySelector('.profile_new');
+      profileNewElement.style.display = 'none';
+	  
+	  var profileNewElement = document.querySelector('.profile_new2');
+      profileNewElement.style.display = 'none';
+	  
+	  var profileNewElement = document.querySelector('.proezdnoy_new');
+      profileNewElement.style.display = 'none';
+	  
+	  var profileNewElement = document.querySelector('.schedule_new');
+      profileNewElement.style.display = 'none';
+	  
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'block';
+		
+	var imgElement = document.querySelector('.img_fig_2');
+      imgElement.src = 'tablet.jpg';
+	  
+	  var backprofileimgElement = document.querySelector('.img_fig_3');
+      backprofileimgElement.src = 'profileN.png';
+      
+	  	var imgElement = document.querySelector('.img_fig_1');
+      imgElement.src = 'ticketN.png';
+	  
+      var fontElement = document.querySelector('.font_fig_1');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	  var backprofilefontElement = document.querySelector('.font_fig_3');
+      backprofilefontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = 'calc(12vw + 10vh)';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Оплата проезда';
+	  
+	  var backbusimgElement = document.querySelector('.img_fig_4');
+     backbusimgElement.src = 'busN.png';
+	  
+      
+      var backbusfontElement = document.querySelector('.font_fig_4');
+      backbusfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
+     backproezdnoyimgElement.src = 'tabletN.png';
+	  
+      
+      var backproezdnoyfontElement = document.querySelector('.font_fig_2');
+      backproezdnoyfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+      });
+    }
+  </script>
+
 </body>
 </html>
