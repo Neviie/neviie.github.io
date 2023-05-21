@@ -390,22 +390,6 @@
 			font-size: calc(1.5vw + 1vh); 
 			color: rgb(110, 110, 110)
 			}
-			
-			
-	
-	
-
-	
-	.proezdnoy_new {
-      display: none;
-      width: 80vw;
-      height: 20vw;
-      background-color: red;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
 	
 	.profile_new {
       display: none;
@@ -528,3 +512,150 @@
 	width: calc(6vw + 3vh);
     height: calc(6vw + 3vh);
 	}
+	
+	.proezdnoy_new {
+      display: none;
+      width: 100vw;
+      height: 80vw;
+    }
+	
+	.proezdnoy_greycard {
+
+		width: 80vw;
+		position: relative;
+		left: 10%;
+	}
+	
+	.proezdnoy_redplus {
+
+		width: calc(2vw + 1vh);
+		position: relative;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		margin-top: 2vh;
+	}
+	.proezdnoy_cardnumber {
+		text-align: center;
+		font-family: roboto;
+		background-color: rgb(34,34,34);
+		Width: 80vw;
+		height: 15vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		background-color: rgb(34,34,34);
+		display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+	
+
+		}
+		numcard {
+		    font-size: calc(1vw + 1.5vh);
+			font-family: roboto;
+			color: white;
+			font-weight: 500;
+
+		}
+		
+		proezdnoy_num {
+		color: rgb(119, 119, 119);
+		font-size: calc(2vw + 1.5vh);
+		
+		}
+		numunder {
+		color: white;
+		font-size: calc(1vw + 1vh);
+		}
+		
+	.proezdnoy_block_outline {
+	width: 35vw;
+    outline: solid 0.5vw rgb(119, 119, 119);
+    margin: 0vw 0 0 2vw;
+    height: 6vh;
+    display: inline-block;
+	border-radius: 0.5vw;
+	}
+	
+	.proezdnoy_flex {
+	display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+	}
+	
+	.add_card {
+	text-align: center;
+		font-family: roboto;
+		background-color: rgb(117,117,117);
+		Width: 80vw;
+		height: 6vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		background-color: rgb(117,117,117);
+		display: flex;
+    align-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+		
+	}
+	.add_card_img {
+		width: 5vw;
+		height: 5vw;
+		margin: 0 1.5vw 0 0;
+	}
+	add_text {
+	color: white
+	}
+	.new_control {
+		text-align: center;
+		font-family: roboto;
+		background-color: rgb(34,34,34);
+		Width: 87vw;
+		height: 15vh;
+		border-radius: 2vw;
+		position: relative;
+		margin: 0.8854vh auto 0.8854vh auto;
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		display: none;
+		}
+	.control_img_left {
+	width: 18vw;
+	margin-right: 1vw
+	}
+	
+	.control_img_right {
+	width: 18vw;
+	margin-left: 1vw
+	}
+	
+	.button {
+      font-family: roboto;
+      background-color: rgb(0,84,190);
+      width: 87vw;
+      height: 5vh;
+      border-radius: 2vw;
+      margin: 0.8854vh auto;
+      box-shadow: 0 0 0.8854vh rgba(0, 0, 0, 0.2);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      background-color: rgb(7, 61, 103);
+    }
+
+    .button:active {
+      transform: scale(0.95);
+    }
