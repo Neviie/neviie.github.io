@@ -21,7 +21,17 @@
     const UstUrl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_IY2WMO6EZ6G64HDH&user_id=';
 	const fullUstUrl = (UstUrl + userId);
 	const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
+	const emailurl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=FIRST_NAME_TEXT&user_id=';
+	const fullemailUrl = (emailurl + userId);
 	
+	fetch(`${proxyUrl}${encodeURIComponent(fullemailUrl)}&fake_param=${fakeParam}`)
+      .then(response => response.json())
+      .then(data => {
+        // Обновляем содержимое элемента с идентификатором "result"
+        document.getElementById('emailid').innerHTML = data.data;
+      })
+      .catch(error => console.error(error));
+	  
 	fetch(`${proxyUrl}${encodeURIComponent(fullUrl)}&fake_param=${fakeParam}`)
       .then(response => response.json())
       .then(data => {
@@ -30,6 +40,7 @@
 		document.getElementById('result2').innerHTML = data.data;
       })
       .catch(error => console.error(error));
+
 	  
 	  fetch(`${proxyUrl}${encodeURIComponent(fullUstUrl)}&fake_param=${fakeParam}`)
       .then(response => response.json())
@@ -74,6 +85,59 @@
 	<div class="mini_line2"></div>
 	<div class="mini_line2"></div>
 	<div class="shap_cen"><op>Оплата проезда</op> <div class="null_shap"></div> <zo>Заказ оплачен</zo></div>
+</div>
+
+<div class="profile_new">
+<div class="prof_cen">
+<img src="profileN.png" class="profile_new_img">
+<email><span id="emailid"></span>@mail.ru</email> 
+</div>
+</div>
+
+<div class="profile_new2">
+<div class="profile_menu"><profile_menu>Пункты выдачи и пополнения</profile_menu></div>
+<div class="profile_menu"><profile_menu>Тарифное меню</profile_menu></div>
+<div class="profile_menu"><profile_menu>Правила пересадки</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оформления ЛПД</profile_menu></div>
+<div class="profile_menu"><profile_menu>Новостная лента</profile_menu></div>
+<div class="profile_menu"><profile_menu>Профиль</profile_menu></div>
+<div class="profile_menu"><profile_menu>Уведомления</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оплаты по цифровой карте</profile_menu></div>
+<div class="profile_menu"><profile_menu>Написать в службу поддержки</profile_menu></div>
+<div class="profile_menu"><profile_menu>О приложении</profile_menu></div>
+</div>
+
+<div class="schedule_new">
+<div class="schedule_block">
+	<div class="schedule_block_outline"><div class="time_schedule"id="schedule_block_outline"></div></div>
+		
+	<img class="img_schedule_menu" src="Schedule_6_N.png">
+</div>
+<div class="schedule_block"><profile_menu>Тип транспорта</profile_menu><img class="img_schedule_menu" src="Schedule_1_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Маршрут</profile_menu><img class="img_schedule_menu" src="Schedule_2_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Направление</profile_menu><img class="img_schedule_menu" src="Schedule_3_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Остановка</profile_menu><img class="img_schedule_menu" src="Schedule_4_N.png"></div>
+<img class="schedule_star" src="Schedule_5_N.png" >
+</div>
+
+<div class="proezdnoy_new">
+<img class="proezdnoy_greycard" src="proezdnoy_greycard.png">
+<div class="null_marsh"></div>
+<img class="proezdnoy_redplus" src="proezdnoy_redplus.png">
+<div class="proezdnoy_cardnumber">
+<numcard>Номер карты</numcard> 
+<div class="proezdnoy_flex">
+<proezdnoy_num>96431059033</proezdnoy_num>
+<div class="proezdnoy_block_outline">
+</div>
+</div>
+<numunder>Введите последние 8 цифр номера карты.</numunder>
+</div>
+<div class="add_card">
+<img class="add_card_img" src="proezdnoy_whiteplus.png">
+<add_text>Добавить</add_text>
+</div>
+<img class="schedule_star" src="proezdnoy_3_N.png" >
 </div>
 <div class="marshrut">
 	<div class="text_t_p">
@@ -219,9 +283,21 @@ fetchStartDate();
 	<img class="imqr" src="https://proezdnoy59.files.wordpress.com/2022/05/qr.jpg">
 	</div>
 </div>
+<div class="button" id="button" onclick="showNewControl()">
+    <t>Контроль</t>
+  </div>
+<div class="new_control">
+<div class="text_t_p">
+		<t>Контроль</t>
+		<div class="null_cont"></div>
+		<img class="control_img_left" id="left-image" src="" onclick="updateLeftImage()">
+		<img class="control_img_right" id="right-image" src="" onclick="updateRightImage()">
+</div>
+</div>
+
 <div class="ost">
-	<div class="text_t_p">
-	<ust>Остаток баланса 35 руб</ust>
+	<div onclick="update2Number()" class="text_t_p">
+	<ust>Остаток баланса  <span id="number">0</span> руб</ust>
 	</div>
 </div>
 <div class="control">
@@ -267,22 +343,320 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 
 </div>
 <div class="bottom_x">
-	<figure class="fig_1">
-	<img src="ticketN.png" img class="img_fig_1">
+<div class="bottom_m">
+	<figure class="fig_1" onclick="handleClick4()">
+	<img src="bilet_acrive_N.png" img class="img_fig_1">
 	<figcaption class="font_fig_1">Билеты</figcaption>
 	</figure>
-	<figure class="fig_2">
-	<img src="tabletN.png" class="img_fig_2">
+	<figure class="fig_2" onclick="handleClick3()">
+	<img src="proezdnoy_noactive_N.png" class="img_fig_2">
 	<figcaption class="font_fig_2">Проездной</figcaption>
 	</figure>
-	<figure class="fig_3">
-	<img src="profileN.png" class="img_fig_3">
-	<figcaption class="font_fig_3">Кабинет</figcaption>
-	</figure>
-	<figure class="fig_4">
-	<img src="busN.png" img class="img_fig_4">
+	<figure class="fig_4" onclick="handleClick2()">
+	<img src="schedule_noactive_N.png" img class="img_fig_4">
 	<figcaption class="font_fig_4">Расписание</figcaption>
 	</figure>
+	<figure class="fig_3" onclick="handleClick()">
+	<img src="cabinet_noactive_N.png" class="img_fig_3">
+	<figcaption class="font_fig_3">Кабинет</figcaption>
+	</figure>
+</div class="bottom_m">
 </div>
+
+  <script> <!--Кабинет-->
+    function handleClick() {
+      var profileNewElement = document.querySelector('.profile_new');
+      profileNewElement.style.display = 'block';
+	  
+	  var profileNewElement = document.querySelector('.profile_new2');
+      profileNewElement.style.display = 'block';
+      
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .schedule_new, .proezdnoy_new, .button, .new_control');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'none';
+		
+	var imgElement = document.querySelector('.img_fig_3');
+      imgElement.src = 'cabinet_active_N.png';
+      
+      var fontElement = document.querySelector('.font_fig_3');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = '12vw';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Кабинет';
+	  
+	  var backbusimgElement = document.querySelector('.img_fig_4');
+     backbusimgElement.src = 'schedule_noactive_N.png';
+	  
+      
+      var backbusfontElement = document.querySelector('.font_fig_4');
+      backbusfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
+     backproezdnoyimgElement.src = 'proezdnoy_noactive_N.png';
+	  
+      
+      var backproezdnoyfontElement = document.querySelector('.font_fig_2');
+      backproezdnoyfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketfontElement = document.querySelector('.font_fig_1');
+      backticketfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketimgElement = document.querySelector('.img_fig_1');
+     backticketimgElement.src = 'bilet_noacrive_N.png';
+      });
+    }
+	<!--Расписание-->
+	function handleClick2() {
+      var profileNewElement = document.querySelector('.schedule_new');
+      profileNewElement.style.display = 'block';
+      
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .proezdnoy_new, .profile_new2, .button, .new_control');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'none';
+		
+	var imgElement = document.querySelector('.img_fig_4');
+      imgElement.src = 'schedule_active_N.png';
+	  
+	  var backprofileimgElement = document.querySelector('.img_fig_3');
+      backprofileimgElement.src = 'cabinet_noactive_N.png';
+      
+      var fontElement = document.querySelector('.font_fig_4');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	  var backprofilefontElement = document.querySelector('.font_fig_3');
+      backprofilefontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = '15vw';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Расписание';
+	  
+	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
+     backproezdnoyimgElement.src = 'proezdnoy_noactive_N.png';
+	  
+      
+      var backproezdnoyfontElement = document.querySelector('.font_fig_2');
+      backproezdnoyfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketfontElement = document.querySelector('.font_fig_1');
+      backticketfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketimgElement = document.querySelector('.img_fig_1');
+     backticketimgElement.src = 'bilet_noacrive_N.png';
+      });
+    }
+	<!--Проездной-->
+	function handleClick3() {
+      var profileNewElement = document.querySelector('.proezdnoy_new');
+      profileNewElement.style.display = 'block';
+      
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .schedule_new, .profile_new2, .button, .new_control');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'none';
+		
+	var imgElement = document.querySelector('.img_fig_2');
+      imgElement.src = 'proezdnoy_active_N.png';
+	  
+	  var backprofileimgElement = document.querySelector('.img_fig_3');
+      backprofileimgElement.src = 'cabinet_noactive_N.png';
+      
+      var fontElement = document.querySelector('.font_fig_2');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	  var backprofilefontElement = document.querySelector('.font_fig_3');
+      backprofilefontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = '20vw';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Добавить карту';
+	  
+	  var backbusimgElement = document.querySelector('.img_fig_4');
+     backbusimgElement.src = 'schedule_noactive_N.png';
+      
+      var backbusfontElement = document.querySelector('.font_fig_4');
+      backbusfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketfontElement = document.querySelector('.font_fig_1');
+      backticketfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backticketimgElement = document.querySelector('.img_fig_1');
+     backticketimgElement.src = 'bilet_noacrive_N.png';
+      });
+    }
+	<!--Билеты-->
+	function handleClick4() {
+		
+		var profileNewElement = document.querySelector('.new_control');
+      profileNewElement.style.display = 'block';
+	  
+      var profileNewElement = document.querySelector('.profile_new');
+      profileNewElement.style.display = 'none';
+	  
+	  var profileNewElement = document.querySelector('.profile_new2');
+      profileNewElement.style.display = 'none';
+	  
+	  var profileNewElement = document.querySelector('.proezdnoy_new');
+      profileNewElement.style.display = 'none';
+	  
+	  var profileNewElement = document.querySelector('.schedule_new');
+      profileNewElement.style.display = 'none';
+	  
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo');
+      elementsToHide.forEach(function(element) {
+        element.style.display = 'block';
+		
+	var imgElement = document.querySelector('.img_fig_2');
+      imgElement.src = 'proezdnoy_noactive_N.jpg';
+	  
+	  var backprofileimgElement = document.querySelector('.img_fig_3');
+      backprofileimgElement.src = 'cabinet_noactive_N.png';
+      
+	  	var imgElement = document.querySelector('.img_fig_1');
+      imgElement.src = 'bilet_acrive_N.png';
+	  
+      var fontElement = document.querySelector('.font_fig_1');
+      fontElement.style.color = 'rgb(38,99,175)';
+	  
+	  var backprofilefontElement = document.querySelector('.font_fig_3');
+      backprofilefontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	 var zoElement = document.querySelector('.shap_cen');
+      zoElement.style.marginLeft = 'calc(12vw + 10vh)';
+	  
+	  var opElement = document.querySelector('op');
+	  opElement.textContent = 'Оплата проезда';
+	  
+	  var backbusimgElement = document.querySelector('.img_fig_4');
+     backbusimgElement.src = 'schedule_noactive_N.png';
+	  
+      
+      var backbusfontElement = document.querySelector('.font_fig_4');
+      backbusfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
+     backproezdnoyimgElement.src = 'proezdnoy_noactive_N.png';
+	  
+      
+      var backproezdnoyfontElement = document.querySelector('.font_fig_2');
+      backproezdnoyfontElement.style.color = 'rgb(110, 110, 110)';
+	  
+	  
+	  
+      });
+    }
+	
+	   function getRandomNumber() {
+      var numbers = [0, 35, 70];
+      var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+      return randomNumber;
+    }
+    
+    // Функция для обновления числа
+    function update1Number() {
+      var numberElement = document.getElementById('number');
+      numberElement.textContent = getRandomNumber();
+    }
+    
+    // Обновляем число при загрузке страницы
+    window.onload = function() {
+      update1Number();
+    };
+    
+    // Функция для обновления числа при нажатии
+    function update2Number() {
+      var numberElement = document.getElementById('number');
+      var currentNumber = parseInt(numberElement.textContent);
+      var numbers = [0, 35, 70];
+      
+      // Находим следующее число в порядке возрастания
+      var nextNumberIndex = numbers.indexOf(currentNumber) + 1;
+      if (nextNumberIndex >= numbers.length) {
+        nextNumberIndex = 0;
+      }
+      
+      // Обновляем текст на странице
+      numberElement.textContent = numbers[nextNumberIndex];
+    }
+	
+	// Массив с путями к картинкам
+    var images = [
+		"control_banana_1.png",
+		"contol_cat_2.png",
+		"control_cherry_3.png",
+		"control_duck_4.png",
+		"control_flower_5.png",
+		"control_house_6.png",
+		"control_plane_7.png",
+		"control_rocket_8.png",
+		"control_tea_9.png",
+		"conrol_tram_10.png",
+      // Добавьте пути к другим картинкам
+    ];
+    
+    // Переменные для хранения текущих индексов картинок
+    var leftImageIndex;
+    var rightImageIndex;
+    
+    // Функция для обновления левой картинки при нажатии
+    function updateLeftImage() {
+      var leftImageElement = document.getElementById('left-image');
+      
+      // Обновляем индекс левой картинки
+      leftImageIndex++;
+      if (leftImageIndex >= images.length) {
+        leftImageIndex = 0;
+      }
+      
+      // Обновляем отображаемую картинку
+      leftImageElement.src = images[leftImageIndex];
+    }
+    
+    // Функция для обновления правой картинки при нажатии
+    function updateRightImage() {
+      var rightImageElement = document.getElementById('right-image');
+      
+      // Обновляем индекс правой картинки
+      rightImageIndex++;
+      if (rightImageIndex >= images.length) {
+        rightImageIndex = 0;
+      }
+      
+      // Обновляем отображаемую картинку
+      rightImageElement.src = images[rightImageIndex];
+    }
+	
+	// Обновляем картинки при загрузке страницы
+    window.onload = function() {
+      var leftImageElement = document.getElementById('left-image');
+      var rightImageElement = document.getElementById('right-image');
+      
+      // Генерируем случайные начальные значения для индексов
+      leftImageIndex = Math.floor(Math.random() * images.length);
+      rightImageIndex = leftImageIndex;
+      while (rightImageIndex === leftImageIndex) {
+        rightImageIndex = Math.floor(Math.random() * images.length);
+      }
+      
+      // Устанавливаем начальные значения индексов и отображаем картинки
+      leftImageElement.src = images[leftImageIndex];
+      rightImageElement.src = images[rightImageIndex];
+    };
+	
+	 function showNewControl() {
+      var buttonElement = document.getElementById('button');
+      var newControlElement = document.querySelector('.new_control');
+
+      buttonElement.style.display = 'none';
+      newControlElement.style.display = 'block';
+    }
+	
+  </script>
+
 </body>
 </html>
