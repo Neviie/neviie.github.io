@@ -10,22 +10,10 @@
 		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<script src="https://puzzlebot.top/webapp.js"></script>
 		<link rel="stylesheet" href="Style.css">
-		<script>
-   var userId;
-
-    function displayValue() {
-      var value = localStorage.getItem("myValue");
-      userId = value; // Присваиваем значение переменной userId
-      console.log(userId); // Выводим значение в консоль (для демонстрации)
-      // Дальше можно использовать значение переменной userId по вашему усмотрению
-      }
-  </script>
 	</head>
-<body onload="displayValue()">
+<body onload= "displayValue()">
 <script>
-
-
-	    // Глобальная переменная для хранения значения userId
+// Глобальная переменная для хранения значения userId
     var userId;
 
     function getCookie(name) {
@@ -43,6 +31,7 @@
       userId = getCookie("myValue"); // Записываем значение в глобальную переменную
       console.log("userId:", userId); // Выводим значение в консоль
     }
+	
 	
     const url = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_JHCW5J5N0KX6CBUG&user_id=';
     const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
