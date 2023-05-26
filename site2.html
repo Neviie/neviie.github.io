@@ -225,8 +225,23 @@ var startDate;
 
 // Получаем дату из API при загрузке страницы
 function fetchStartDate() {
-  let tg = window.Telegram.WebApp;
-  const userId = tg.initDataUnsafe.user.id;
+   var userId;
+
+    function getCookie(name) {
+      var cookies = document.cookie.split("; ");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split("=");
+        if (cookie[0] === name) {
+          return cookie[1];
+        }
+      }
+      return "";
+    }
+
+    function displayValue() {
+      userId = getCookie("myValue"); // Записываем значение в глобальную переменную
+      console.log("userId:", userId); // Выводим значение в консоль
+    }
   const url = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_4BR7NHAOB92588S5&user_id=';
   const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
   const fullUrl = (url + userId);
