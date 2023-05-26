@@ -3,7 +3,7 @@
 <head>
   <title>Сайт B (Другая страница)</title>
   <script>
-    function getCookie(name) {
+   function getCookie(name) {
       var cookies = document.cookie.split("; ");
       for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i].split("=");
@@ -14,10 +14,13 @@
       return "";
     }
 
-    function displayValue() {
-      var value = getCookie("myValue");
-      document.getElementById("targetDiv").innerText = value;
+    function setUserId() {
+      const userId = getCookie("myValue");
+      console.log(userId); // Выводим значение в консоль (для демонстрации)
+      // Дальше можно использовать значение переменной userId по вашему усмотрению
     }
+
+    window.onload = setUserId;
   </script>
 </head>
 <body onload="displayValue()">
