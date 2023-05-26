@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Сайт B (Другая страница)</title>
+  <script>
+    function getCookie(name) {
+      var cookies = document.cookie.split("; ");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i].split("=");
+        if (cookie[0] === name) {
+          return cookie[1];
+        }
+      }
+      return "";
+    }
+
+    function displayValue() {
+      var value = getCookie("myValue");
+      document.getElementById("targetDiv").innerText = value;
+    }
+  </script>
+</head>
+<body onload="displayValue()">
+  <div id="targetDiv"></div>
+</body>
+</html>
