@@ -3,6 +3,9 @@
 <head>
   <title>Сайт B (Другая страница)</title>
   <script>
+    // Глобальная переменная для хранения значения userId
+    var userId;
+
     function getCookie(name) {
       var cookies = document.cookie.split("; ");
       for (var i = 0; i < cookies.length; i++) {
@@ -14,15 +17,14 @@
       return "";
     }
 
-    function setUserId() {
-      const userId = getCookie("myValue");
-      console.log(userId); // Выводим значение в консоль (для демонстрации)
-      // Дальше можно использовать значение переменной userId по вашему усмотрению
+    function displayValue() {
+      userId = getCookie("myValue"); // Записываем значение в глобальную переменную
+      document.getElementById("targetDiv").innerText = userId;
+      console.log("userId:", userId); // Выводим значение в консоль
     }
-
-    window.onload = setUserId;
   </script>
 </head>
-<body>
+<body onload="displayValue()">
+  <div id="targetDiv"></div>
 </body>
 </html>
