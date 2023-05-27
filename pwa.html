@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Сайт A</title>
+  <link rel="manifest" href="/manifest.json"> <!-- Добавляем ссылку на файл манифеста -->
+  <script>
+    if ('serviceWorker' in navigator) { // Проверяем поддержку Service Worker в браузере
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js') // Регистрируем Service Worker
+          .then(function(registration) {
+            console.log('Service Worker зарегистрирован:', registration);
+          })
+          .catch(function(error) {
+            console.log('Ошибка при регистрации Service Worker:', error);
+          });
+      });
+    }
+    
+    function saveData() {
+      var value = document.getElementById("inputValue").value;
+      localStorage.setItem("myValue", value);
+    }
+  </script>
+</head>
+<body>
+  <input type="text" id="inputValue" placeholder="Введите значение">
+  <button onclick="saveData()">Сохранить значение</button>
+  
+  <a href="site2.html">sdfsdfsdfsdfsdfsdfsdfs</a>
+  
+</body>
+</html>
