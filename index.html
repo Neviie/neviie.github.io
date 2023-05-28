@@ -163,7 +163,11 @@
     body.classList.toggle('dark');
 
     for (var i = 0; i < links.length; i++) {
-      links[i].classList.toggle('dark');
+      if (body.classList.contains('dark')) {
+        links[i].href = links[i].href.replace('/WEB/Light/', '/WEB/Night/N');
+      } else {
+        links[i].href = links[i].href.replace('/WEB/Night/N', '/WEB/Light/');
+      }
     }
 
     avt.classList.toggle('dark');
