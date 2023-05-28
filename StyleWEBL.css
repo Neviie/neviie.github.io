@@ -576,7 +576,8 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 		margin: 0 1.5vw 0 0;
 	}
 	add_text {
-	color: white
+	color: white;
+	font-size: 4vw;
 	}
 	.new_control {
 		text-align: center;
