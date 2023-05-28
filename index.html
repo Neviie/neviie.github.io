@@ -22,13 +22,7 @@
 			  });
 		      });
 		    }
-
-		    function saveData() {
-		      var value = document.getElementById("inputValue").value;
-		      localStorage.setItem("myValue", value);
-		    }
-		  </script>
-	<script src="/offline.js"></script> <!-- Подключаем скрипт для обработки офлайн-режима -->			    
+		  </script>		    
 	</head>
 <body>
 <div class="fon"></div>
@@ -124,7 +118,7 @@
     <button class="btn_id" onclick="saveData(); hideContainer()">Сохранить</button>
   </div>
 </div>
-  
+  <script src="/offline.js"></script> <!-- Подключаем скрипт для обработки офлайн-режима -->	
 </body>
 
 <script>
