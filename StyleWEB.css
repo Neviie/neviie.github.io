@@ -1,0 +1,147 @@
+		::-webkit-input-placeholder {
+text-align:center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align:center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align:center;  
+}
+
+:-ms-input-placeholder {  
+   text-align:center; 
+}
+
+		body {
+		font-family: roboto
+		}
+		.theme {
+		width: 	75vw;
+		box-shadow: 1vh 1vh 2vh rgba(0,0,0,0.3);
+		font-size: 8vw;
+		margin: 1vh auto 1vh auto;
+		align-items: center;
+		border-radius: 7vw;
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: center;
+		height: 6vh;
+		}
+		
+		.avt {
+		box-shadow: 1vh 1vh 2vh rgba(0,0,0,0.3);
+		width: 35vw;
+		height: 6vh;
+		border-radius: 8vw;
+		font-size: 7vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+		
+		.tra {
+		box-shadow: 1vh 1vh 2vh rgba(0,0,0,0.3);
+		width: 35vw;
+		height: 6vh;
+		border-radius: 8vw;
+		font-size: 7vw;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+		
+		.main_grid {
+		width: 	80vw;
+		display: flex;
+		justify-content: space-evenly;
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin: 0 auto 0 auto
+		}
+		.grid_container {
+
+		}
+		.box {
+		background-color: white;
+		box-shadow: 1vh 1vh 2vh rgba(0,0,0,0.3);
+		width: 20vw;
+		height: 20vw;
+		border-radius: 8vw;
+		margin: 1vh 1vw 0 0;
+		font-size: 12vw;
+		color: rgba(0,0,0,0.8);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		display: none;
+		}
+		
+		a:active, /* активная/посещенная ссылка */
+		a:hover,  /* при наведении */
+		a {
+		  text-decoration: none;
+		  color: black;
+		}
+.container {
+position: fixed;
+top: 40%;
+right: 25%;
+opacity: 1;
+  transition: opacity 0.5s;
+}
+.input-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.inp_id {
+width: 50vw;
+height: 8vh;
+border-radius: 4vw;
+	font-size: 6vw;
+	font-weight: 600;
+	border: 0px;
+	text-align: center;
+}
+
+.btn_id {
+margin-top: 1vh;
+width: 30vw;
+height: 8vh;
+border-radius: 4vw;
+	font-size: 4vw;
+	font-weight: 600;
+	border: 0px;
+	transition: background-color 0.3s;
+} 
+
+button:hover {
+  background-color: green;
+}
+
+.fon {
+background-color: black;
+opacity: 30%;
+position: fixed;
+top:0%;
+left:0%;
+width: 100vw;
+height: 100vh;	
+transition: opacity 0.5s;
+
+}
+
+.container.hidden,
+.fon.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.disable-elements {
+  pointer-events: none;
+}
