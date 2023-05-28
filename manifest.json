@@ -1,12 +1,17 @@
 {
   "name": "Проездной 59",
   "short_name": "Проездной 59",
-  "platforms": {
-    "ios": {
-      "name": "Транспортная карта Пермь",
-      "short_name": "Транспортная карта Пермь",
+  "description": "Мобильное приложение для использования транспортной карты в Перми",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/ru/app/транспортная-карта-пермь/id1532390290",
+      "id": "1532390290",
+      "name": "Транспортная карта Пермь"
     }
-  }
+  ],
+
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
