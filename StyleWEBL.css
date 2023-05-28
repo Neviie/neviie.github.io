@@ -260,11 +260,11 @@
 		width: 75vw;
 		}
 			marshrutfont {
-			font-size: calc(2vw + 1vh); 
+			font-size: calc(2vw + 0.7vh); 
 			width: 69.44vw;
 			}
 			marshrutfont2 {
-			font-size: calc(2vw + 1vh); 
+			font-size: calc(2vw + 0.7vh); 
 			width: 69.44vw;
 			color: white;
 			}
@@ -623,3 +623,8 @@
     .button:active {
       transform: scale(0.95);
     }
+	
+	bilet {
+				font-size: calc(2vw + 1.5vh);
+				font-family: roboto;					
+			}
