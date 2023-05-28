@@ -1,6 +1,12 @@
 {
-  "name": "Общее название приложения",
-  "short_name": "Краткое название",
+  "name": "Проездной 59",
+  "short_name": "Проездной 59",
+  "platforms": {
+    "ios": {
+      "name": "Транспортная карта Пермь",
+      "short_name": "Транспортная карта Пермь",
+    }
+  },
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
