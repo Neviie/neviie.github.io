@@ -6,7 +6,6 @@
       "name": "Транспортная карта Пермь",
       "short_name": "Транспортная карта Пермь",
     }
-  },
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
