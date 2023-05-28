@@ -287,12 +287,12 @@
 		width: 75vw;
 		}
 			marshrutfont {
-			font-size: calc(2vw + 1vh); 
+			font-size: calc(2vw + 0.85vh); 
 			width: 69.44vw;
 			color: white;
 			}
 			marshrutfont2 {
-			font-size: calc(2vw + 1vh); 
+			font-size: calc(2vw + 0.85vh); 
 			width: 69.44vw;
 			color: white;
 			}
