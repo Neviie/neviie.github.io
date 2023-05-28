@@ -7,6 +7,7 @@ self.addEventListener('install', function(event) {
         '/offline.js',
         '/icon.png',
         '/icon-512.png'
+        // Добавьте здесь другие статические файлы, которые нужно кэшировать
       ]);
     })
   );
