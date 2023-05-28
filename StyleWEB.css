@@ -15,7 +15,8 @@ text-align:center;
 }
 
 		body {
-		font-family: roboto
+		font-family: roboto;
+		transition: background-color 0.5s, color 0.5s;
 		}
 		.theme {
 		width: 	75vw;
@@ -29,6 +30,7 @@ text-align:center;
 		align-content: center;
 		justify-content: center;
 		height: 6vh;
+		transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 		}
 		
 		.avt {
@@ -40,6 +42,7 @@ text-align:center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 		}
 		
 		.tra {
@@ -51,6 +54,7 @@ text-align:center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 		}
 		
 		.main_grid {
@@ -77,6 +81,7 @@ text-align:center;
 		align-items: center;
 		justify-content: center;
 		display: none;
+		transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 		}
 		
 		a:active, /* активная/посещенная ссылка */
@@ -84,6 +89,7 @@ text-align:center;
 		a {
 		  text-decoration: none;
 		  color: black;
+		  transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
 		}
 .container {
 position: fixed;
@@ -91,6 +97,7 @@ top: 40%;
 right: 25%;
 opacity: 1;
   transition: opacity 0.5s;
+  
 }
 .input-container {
 	display: flex;
@@ -145,3 +152,25 @@ transition: opacity 0.5s;
 .disable-elements {
   pointer-events: none;
 }
+
+  .dark {
+    background-color: black;
+    color: white;
+	
+  }
+
+  .dark .avt, .dark .tra, .dark .theme {
+    background-color: black;
+    color: white;
+    box-shadow: 1vh 1vh 2vh white;
+  }
+
+  .dark .box {
+    background-color: black;
+    color: white;
+    box-shadow: 1vh 1vh 2vh white;
+  }
+   .dark a {
+	   color: white;
+	   
+   }
