@@ -1,14 +1,6 @@
 {
   "name": "Общее название приложения",
   "short_name": "Краткое название",
-  
-  "related_applications": [
-  {
-    "platform": "play",
-    "id": "com.example.android",
-    "name": "Название для Android"
-  }
-],
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
