@@ -9,6 +9,26 @@
 		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<script src="https://puzzlebot.top/webapp.js"></script>
 		<link rel="stylesheet" href="StyleWEB.css">
+		<link rel="manifest" href="/manifest.json"> <!-- Добавляем ссылку на файл манифеста -->
+		<script>
+		    if ('serviceWorker' in navigator) { // Проверяем поддержку Service Worker в браузере
+		      window.addEventListener('load', function() {
+			navigator.serviceWorker.register('/service-worker.js') // Регистрируем Service Worker
+			  .then(function(registration) {
+			    console.log('Service Worker зарегистрирован:', registration);
+			  })
+			  .catch(function(error) {
+			    console.log('Ошибка при регистрации Service Worker:', error);
+			  });
+		      });
+		    }
+
+		    function saveData() {
+		      var value = document.getElementById("inputValue").value;
+		      localStorage.setItem("myValue", value);
+		    }
+		  </script>
+	<script src="/offline.js"></script> <!-- Подключаем скрипт для обработки офлайн-режима -->			    
 	</head>
 <body>
 <div class="fon"></div>
