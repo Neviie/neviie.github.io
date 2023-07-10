@@ -1036,7 +1036,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2023/02/fonn.png);
 	
 	.right_up_img {
 		display: none;
-	position: absolute;
+	position: fixed;
     right: 3%;
     top: 2%;
     z-index: 999996;
@@ -1046,7 +1046,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2023/02/fonn.png);
 	
 	.copy_img {
 		display: none;
-	position: absolute;
+	position: fixed;
     right: 37.5%;
     top: 1%;
     z-index: 999996;
