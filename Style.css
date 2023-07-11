@@ -623,7 +623,7 @@
     .button:active {
       transform: scale(0.95);
     }
-	left_menu {
+	.left_menu {
 	position: fixed;
 	Width: 65vw;
 	top: -100%;
