@@ -623,14 +623,13 @@
     .button:active {
       transform: scale(0.95);
     }
-	
-		.left_menu {
+	left_menu {
 	position: fixed;
 	Width: 65vw;
 	top: -100%;
 	left: 0%;
 	height: 100vh;
-	background-color: rgb(18,18,18);
+	background-color: white;
 	z-index: 999997;
 	display:flex;
 	justify-content: center;
@@ -640,8 +639,8 @@
 	.left_menu_point {
 	width: 57vw;
 	border-bottom: solid 2px white;
-	border-top: solid 1vh rgb(18,18,18);
-	color: white;
+	border-top: solid 1vh white;
+	color: black;
 	height: 6vh;
     font-size: 3.75vw;
 	display: flex;
@@ -754,11 +753,11 @@
 	QR_text {
 	    font-size: 4vw;
     font-weight: 600;
-	color: white;
+	color: black;
 	}
 	
 	.scan_QR_border {
-	outline: solid 0.5vw white;
+	outline: solid 0.5vw black;
     width: 70vw;
     height: 70vw;
 	}
@@ -785,14 +784,14 @@
 	.num_QR_ts {
 		text-align: center;
 		font-family: roboto;
-		background-color: rgb(34,34,34);
+		background-color: white;
 		Width: 80vw;
 		height: 12vh;
 		border-radius: 2vw;
 		position: relative;
 		margin: 0.8854vh auto 0.8854vh auto;
 		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
-		background-color: rgb(34,34,34);
+		background-color: white;
 		display: flex;
     align-content: center;
     align-items: center;
@@ -805,7 +804,7 @@
 
 		
 		numQR {
-		color: white;
+		color: black;
 		font-size: calc(1.5vw + 1vh);
 		}
 		
@@ -1027,7 +1026,7 @@
     width: 75vw;
     margin: 0.8854vh auto 0 auto;
     border-radius: 2vw;
-    background-color: rgb(34,34,34);
+    background-color: white;
     box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
     display: flex;
     flex-direction: row;
@@ -1054,13 +1053,13 @@
 	}
 	
 	.greenbus_box_num {
-	    color: white;
+	    color: black;
     font-weight: 600;
     font-size: 3.5vw;
 	}
 	
 	.random_date {
-	color: white;
+	color: black;
     font-weight: 600;
     font-size: 3vw;
 	}
