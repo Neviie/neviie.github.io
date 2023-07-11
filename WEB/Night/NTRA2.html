@@ -235,7 +235,7 @@ function updateTimer() {
 fetchStartDate();
 
 		  }
-  </script>	
+  </script>
 <div class="shap">
 </div>
 <div class="shap_x">
@@ -481,7 +481,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	<kim>Стоимость: 35 руб</kim>
 	</div>
 </div>
-<div class="null_cont3"></div>
+<div class="null_cont3""></div>
 <div class="bottom">
 
 </div>
@@ -510,16 +510,16 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 <div class="shadow" id="shadow"></div>
 
 <div class="left_menu" id="left_menu">
-<div><img src="https://neviie.github.io/Assets/Exit.png" id="left_menu_exit" class="left_menu_exit">
-<div class="left menu_object">
-<div class="left_menu_point" id="scan_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQR.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
-<div class="left_menu_point" id="num_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQR.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
-<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(19,32,47); color: rgb(39,122,243)"><img id="https://neviie.github.io/Assets/Active_menunow.png" src="https://neviie.github.io/Assets/Active_menunow.png" class="img_left_menu">Текущий заказ</div>
-<div class="left_menu_point" id="history_left"><img src="https://neviie.github.io/Assets/Noactive_menuhistory.png" class="img_left_menu" id="history_img">История заказов</div>
-<div id="menucard" class="left_menu_point"><img src="https://neviie.github.io/Assets/Noactive_menucard.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
-<div class="left_menu_point" id="poriadok_oplati"><img src="https://neviie.github.io/Assets/Noactive_menuoplata.png" class="img_left_menu">Порядок оплаты</div>
-</div>
-</div>
+	<div><img src="https://neviie.github.io/Assets/Exit.png" id="left_menu_exit" class="left_menu_exit">
+		<div class="left menu_object">
+			<div class="left_menu_point" id="scan_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQR.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
+			<div class="left_menu_point" id="num_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQR.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
+			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(19,32,47); color: rgb(39,122,243)"><img id="https://neviie.github.io/Assets/Active_menunow.png" src="https://neviie.github.io/Assets/Active_menunow.png" class="img_left_menu">Текущий заказ</div>
+			<div class="left_menu_point" id="history_left"><img src="https://neviie.github.io/Assets/Noactive_menuhistory.png" class="img_left_menu" id="history_img">История заказов</div>
+			<div id="menucard" class="left_menu_point"><img src="https://neviie.github.io/Assets/Noactive_menucard.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
+			<div class="left_menu_point" id="poriadok_oplati"><img src="https://neviie.github.io/Assets/Noactive_menuoplata.png" class="img_left_menu">Порядок оплаты</div>
+		</div>
+	</div>
 </div>
 
 <div class="poriadok_oplati_text" id="poriadok_oplati_text">
@@ -601,8 +601,6 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 </div>
 </div>
 </div>
-
-
 
   <script> <!--Кабинет-->
     function handleClick() {
@@ -770,9 +768,6 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	 var zoElement = document.querySelector('.shap_cen');
       zoElement.style.marginLeft = 'calc(12vw + 10vh)';
 	  
-	  var zopElement = document.querySelector('zo');
-	  zopElement.textContent = 'Заказ оплачен';
-	  
 	  var opElement = document.querySelector('op');
 	  opElement.textContent = 'Оплата проезда';
 	  
@@ -794,10 +789,6 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	  
       });
     }
-	
-	   
-    
-
 	
 	 function showNewControl() {
       var buttonElement = document.getElementById('button');
@@ -887,6 +878,17 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	all_hide.forEach((element) => {
 				  element.style.display = 'none';
 				});
+				var videoElement = document.getElementById('videoElement');
+  if (videoElement) {
+    var stream = videoElement.srcObject;
+    var tracks = stream.getTracks();
+    tracks.forEach(function(track) {
+      track.stop();
+    });
+
+    videoElement.parentNode.removeChild(videoElement);
+  }
+  
 	}
 				
 	bottom_button.forEach((bottombutton) => {
@@ -897,7 +899,8 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		
 	<!--Порядок оплаты-->
 	  
-      poriadok_oplati.addEventListener('click', () => {
+ poriadok_oplati.addEventListener('click', () => {
+	  hideall();
 	  poriadok_oplati_text.style.display = 'block';
 	  poriadok_oplati_text2.style.display = 'block';
 	  leftMenu.style.left = '-100%';
@@ -931,9 +934,14 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	});
 	
 		arrow_img.addEventListener('click', () => {
-		oppElement.textContent = 'Оплата проезда';
-		zooElement.style.display = 'block';
-		shap_cenElement.style.marginLeft = 'calc(12vw + 10vh)';
+		noactive();
+  hideall();
+
+  menunow_left.style.color = 'rgb(39,122,243)';
+  menunow_left.style.fontWeight = '600';
+  menunow_left.style.backgroundColor = 'rgb(19,32,47)';
+  now_img.src = 'https://neviie.github.io/Assets/Active_menunow.png';
+	handleClick4()
 				
 	});
 	<!--Сканировать QR-->
