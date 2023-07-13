@@ -8,12 +8,123 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<script src="https://puzzlebot.top/webapp.js"></script>
-		<link rel="stylesheet" href="https://neviie.github.io/StyleN.css">
+		<link rel="stylesheet" href="https://neviie.github.io/StyleWEBL.css">
 	</head>
 <body>
 <script>
-	let tg = window.Telegram.WebApp; 
-	const userId = tg.initDataUnsafe.user.id;
+	    // Обновляем число при загрузке страницы
+   // Массив с путями к картинкам
+    var images = [
+      "control_banana_1.png",
+      "contol_cat_2.png",
+      "control_cherry_3.png",
+      "control_duck_4.png",
+      "control_flower_5.png",
+      "control_house_6.png",
+      "control_plane_7.png",
+      "control_rocket_8.png",
+      "control_tea_9.png",
+      "conrol_tram_10.png",
+      // Добавьте пути к другим картинкам
+    ];
+    // Переменные для хранения текущих индексов картинок
+    var leftImageIndex;
+    var rightImageIndex;
+    var userId;
+
+
+function getRandomNumber() {
+      var numbers = [0, 35, 70];
+      var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+      return randomNumber;
+    }
+    
+    // Функция для обновления числа
+    function update1Number() {
+      var numberElement = document.getElementById('number');
+	  var numberElement2 = document.getElementById('number2');
+	 var numberElement3 = getRandomNumber();
+      numberElement.textContent = numberElement3;
+	  numberElement2.textContent = numberElement3;
+    }
+	
+    window.onload = function() {
+		 update1Number();
+	
+      var leftImageElement = document.getElementById('left-image');
+      var rightImageElement = document.getElementById('right-image');
+		
+      // Генерируем случайные начальные значения для индексов
+      leftImageIndex = Math.floor(Math.random() * images.length);
+      rightImageIndex = leftImageIndex;
+      while (rightImageIndex === leftImageIndex) {
+        rightImageIndex = Math.floor(Math.random() * images.length);
+      }
+
+      // Устанавливаем начальные значения индексов и отображаем картинки
+      leftImageElement.src = images[leftImageIndex];
+      rightImageElement.src = images[rightImageIndex];
+
+      // Вызываем функцию displayValue()
+      displayValue();
+    };
+
+    // Функция для обновления числа при нажатии
+    function update2Number() {
+      var numberElement = document.getElementById('number');
+	  var numberElement2 = document.getElementById('number2');
+      var currentNumber = parseInt(numberElement.textContent);
+      var numbers = [0, 35, 70];
+
+      // Находим следующее число в порядке возрастания
+      var nextNumberIndex = numbers.indexOf(currentNumber) + 1;
+      if (nextNumberIndex >= numbers.length) {
+        nextNumberIndex = 0;
+      }
+
+      // Обновляем текст на странице
+      numberElement.textContent = numbers[nextNumberIndex];
+	  numberElement2.textContent = numbers[nextNumberIndex];
+    }
+
+    // Функция для обновления левой картинки при нажатии
+    function updateLeftImage() {
+      var leftImageElement = document.getElementById('left-image');
+
+      // Обновляем индекс левой картинки
+      leftImageIndex++;
+      if (leftImageIndex >= images.length) {
+        leftImageIndex = 0;
+      }
+
+      // Обновляем отображаемую картинку
+      leftImageElement.src = images[leftImageIndex];
+    }
+
+    // Функция для обновления правой картинки при нажатии
+    function updateRightImage() {
+      var rightImageElement = document.getElementById('right-image');
+
+      // Обновляем индекс правой картинки
+      rightImageIndex++;
+      if (rightImageIndex >= images.length) {
+        rightImageIndex = 0;
+      }
+
+      // Обновляем отображаемую картинку
+      rightImageElement.src = images[rightImageIndex];
+    }
+
+    // Функция для получения значения из localStorage
+    function displayValue() {
+      var value = localStorage.getItem("myValue");
+      userId = value; // Присваиваем значение переменной userId
+      console.log(userId); // Выводим значение в консоль (для демонстрации)
+      // Дальше можно использовать значение переменной userId по вашему усмотрению
+	  
+	  
+    
+	
     const url = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_JHCW5J5N0KX6CBUG&user_id=';
     const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
 	const fullUrl = (url + userId);
@@ -39,7 +150,6 @@
 		document.getElementById('result2').innerHTML = data.data;
       })
       .catch(error => console.error(error));
-
 	  
 	  fetch(`${proxyUrl}${encodeURIComponent(fullUstUrl)}&fake_param=${fakeParam}`)
       .then(response => response.json())
@@ -78,7 +188,7 @@
 		  .catch(error => console.error(error));
 		  
 		
-			fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
+		fetch(`${proxyUrl}${encodeURIComponent(timefullUrl)}&fake_param=${fakeParam}`)
 		  .then(response => response.json())
 		  .then(data => {
 			// Получаем текущую дату
@@ -91,7 +201,55 @@
 			// Обновляем содержимое элемента с идентификатором "current_date_time_block"
 			document.getElementById('x').innerHTML = `${formattedDate} ${data.data}`;
 		  })
+		  
 		  .catch(error => console.error(error));
+		  
+		  var timerElement = document.getElementById("timer");
+var startDate;
+
+// Получаем дату из API при загрузке страницы
+function fetchStartDate() {
+ 
+  const timerurl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_4BR7NHAOB92588S5&user_id=';
+  const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
+  const fulltimerUrl = (timerurl + userId);
+  const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
+
+  fetch(`${proxyUrl}${encodeURIComponent(fulltimerUrl)}&fake_param=${fakeParam}`)
+    .then(response => response.json())
+    .then(data => {
+      // Создаем объект Date из полученного значения
+      startDate = new Date(data.data * 1000);
+      
+      // Обновляем таймер сразу после получения даты
+      updateTimer();
+      
+      // Обновляем таймер каждую секунду после получения даты
+      setInterval(updateTimer, 1000);
+    })
+    .catch(error => console.log(error));
+}
+
+// Функция для обновления секундомера
+function updateTimer() {
+  // Вычисляем разницу между текущей датой и начальной датой
+  var diff = new Date() - startDate;
+  
+  // Преобразуем разницу в формат "чч:мм:сс"
+  var hours = Math.floor(diff / 3600000);
+  var minutes = Math.floor((diff - hours * 3600000) / 60000);
+  var seconds = Math.floor((diff - hours * 3600000 - minutes * 60000) / 1000);
+  var formattedTime = 
+    minutes.toString().padStart(2, '0') + ':' +
+    seconds.toString().padStart(2, '0');
+  
+  // Отображаем секундомер на странице
+  timerElement.innerText = formattedTime;
+}
+
+fetchStartDate();
+
+		  }
   </script>
 <div class="shap">
 </div>
@@ -128,13 +286,13 @@
 <div class="schedule_block">
 	<div class="schedule_block_outline"><div class="time_schedule"id="schedule_block_outline"></div></div>
 		
-	<img class="img_schedule_menu" src="Schedule_6_N.png">
+	<img class="img_schedule_menu" src="Schedule_6.png">
 </div>
-<div class="schedule_block"><profile_menu>Тип транспорта</profile_menu><img class="img_schedule_menu" src="Schedule_1_N.png"></div>
-<div class="schedule_block_N"><profile_menu>Маршрут</profile_menu><img class="img_schedule_menu" src="Schedule_2_N.png"></div>
-<div class="schedule_block_N"><profile_menu>Направление</profile_menu><img class="img_schedule_menu" src="Schedule_3_N.png"></div>
-<div class="schedule_block_N"><profile_menu>Остановка</profile_menu><img class="img_schedule_menu" src="Schedule_4_N.png"></div>
-<img class="schedule_star" src="Schedule_5_N.png" >
+<div class="schedule_block"><profile_menu>Тип транспорта</profile_menu><img class="img_schedule_menu" src="Schedule_1.png"></div>
+<div class="schedule_block_N"><profile_menu>Маршрут</profile_menu><img class="img_schedule_menu" src="Schedule_2.png"></div>
+<div class="schedule_block_N"><profile_menu>Направление</profile_menu><img class="img_schedule_menu" src="Schedule_3.png"></div>
+<div class="schedule_block_N"><profile_menu>Остановка</profile_menu><img class="img_schedule_menu" src="Schedule_4.png"></div>
+<img class="schedule_star" src="Schedule_5.png" >
 </div>
 
 <div class="proezdnoy_new">
@@ -154,7 +312,7 @@
 <img class="add_card_img" src="proezdnoy_whiteplus.png">
 <add_text>Добавить</add_text>
 </div>
-<img class="schedule_star" src="proezdnoy_3_N.png" >
+<img class="schedule_star" src="proezdnoy_3.png" >
 </div>
 
 <div class="num_QR_box" id="num_QR_box">
@@ -209,7 +367,7 @@
 
 </div>
 <img src="https://neviie.github.io/Assets/Reload.png" class="right_up_img">
-<img src="https://neviie.github.io/Assets/copyN.png" class="copy_img">
+<img src="https://neviie.github.io/Assets/copyL.png" class="copy_img">
 
 <div class="history_box">
 	<div class="history_line">
@@ -224,13 +382,13 @@
 </div>
 <div class="marshrut">
 	<div class="text_t_p">
-		<mar>Маршрут №<kal><span id="marshrutt">53</span></kal></mar>
+		<mar>Маршрут №<kal><span id="marshrutt"><span id="marshrutt">37</span></span></kal></mar>
 		<div class="null_marsh"></div>
 <mar>Автобус <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
 		<div class="null_marsh"></div>
-		<mar>Оплачено <kal>35 руб</span></kal></mar>
+		<mar>Оплачено <kal>35 руб</span></span></kal></mar>
 		<div class="null_marsh"></div>
-		<mar>пассажиров <kal>1</kal> багажа <kal>0</span></kal></mar>
+		<mar>пассажиров <kal>1</kal> багажа <kal>0</span></span></kal></mar>
 		<div class="null_marsh"></div>
 		<ust>Устройство</ust> 			<!--нужно подсосать устройство если возможно-->
 		<div class="null_marsh"></div>
@@ -282,56 +440,7 @@
 	<div class="text_t_p">
 		<t>Время в пути</t>
 		<div class="null_pos"></div>
-		<timere><div class="clock" id="timer">00:00</div><timere>
-	<script>
-			var timerElement = document.getElementById("timer");
-var startDate;
-
-// Получаем дату из API при загрузке страницы
-function fetchStartDate() {
-  let tg = window.Telegram.WebApp;
-  const userId = tg.initDataUnsafe.user.id;
-  const url = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_4BR7NHAOB92588S5&user_id=';
-  const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
-  const fullUrl = (url + userId);
-  const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
-
-  fetch(`${proxyUrl}${encodeURIComponent(fullUrl)}&fake_param=${fakeParam}`)
-    .then(response => response.json())
-    .then(data => {
-      // Создаем объект Date из полученного значения
-      startDate = new Date(data.data * 1000);
-      
-      // Обновляем таймер сразу после получения даты
-      updateTimer();
-      
-      // Обновляем таймер каждую секунду после получения даты
-      setInterval(updateTimer, 1000);
-    })
-    .catch(error => console.log(error));
-}
-
-// Функция для обновления секундомера
-function updateTimer() {
-  // Вычисляем разницу между текущей датой и начальной датой
-  var diff = new Date() - startDate;
-  
-  // Преобразуем разницу в формат "чч:мм:сс"
-  var hours = Math.floor(diff / 3600000);
-  var minutes = Math.floor((diff - hours * 3600000) / 60000);
-  var seconds = Math.floor((diff - hours * 3600000 - minutes * 60000) / 1000);
-  var formattedTime = 
-    minutes.toString().padStart(2, '0') + ':' +
-    seconds.toString().padStart(2, '0');
-  
-  // Отображаем секундомер на странице
-  timerElement.innerText = formattedTime;
-}
-
-fetchStartDate();
-
-   </script> 
-  
+		<timere><div id="timer">00:00</div><timere>
 	</div>
 </div>
 <div class="qr">
@@ -374,9 +483,9 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		<div class="line">
 		</div>
 	<div class="null_cont3"></div>
-	<n>ИП Стерлягов А.М.</n>
+	<n>ИП Миронов Д.В.</n>
 	<div class="null_cont"></div>
-	<n>ИНН 590299603613</n>	
+	<n>ИНН 590301952678</n>	
 	<div class="null_cont"></div>
 	<n>по заказу МКУ "Гортранс"</n>	
 	<div class="null_cont"></div>
@@ -384,9 +493,8 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		</div>
 	<div class="null_cont3"></div>
 	
-	<div class="marshrut_dviz"><marshrutfont>53, Центральный рынок - 10-й</marshrutfont></div>			<!--сделать в две строки-->
-	<div class="marshrut_dviz"><marshrutfont>микрорайон</marshrutfont></div>
-    
+	<div class="marshrut_dviz"><marshrutfont>37, Ул. Ушинского - м/н Висим</marshrutfont></div>			<!--сделать в две строки-->
+	
 	<div class="null_cont3"></div>
 	<n>Автобус </n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
 		<div class="null_cont"></div>
@@ -402,19 +510,19 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 <div class="bottom_x">
 <div class="bottom_m">
 	<figure class="fig_1" onclick="handleClick4()">
-	<img src="bilet_acrive_N.png" img class="img_fig_1">
+	<img src="bilet_acrive.png" img class="img_fig_1">
 	<figcaption class="font_fig_1">Билеты</figcaption>
 	</figure>
 	<figure class="fig_2" onclick="handleClick3()">
-	<img src="proezdnoy_noactive_N.png" class="img_fig_2">
+	<img src="proezdnoy_noactive.png" class="img_fig_2">
 	<figcaption class="font_fig_2">Проездной</figcaption>
 	</figure>
 	<figure class="fig_4" onclick="handleClick2()">
-	<img src="schedule_noactive_N.png" img class="img_fig_4">
+	<img src="schedule_noactive.png" img class="img_fig_4">
 	<figcaption class="font_fig_4">Расписание</figcaption>
 	</figure>
 	<figure class="fig_3" onclick="handleClick()">
-	<img src="cabinet_noactive_N.png" class="img_fig_3">
+	<img src="cabinet_noactive.png" class="img_fig_3">
 	<figcaption class="font_fig_3">Кабинет</figcaption>
 	</figure>
 </div class="bottom_m">
@@ -424,14 +532,14 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 <div class="shadow" id="shadow"></div>
 
 <div class="left_menu" id="left_menu">
-	<div><img src="https://neviie.github.io/Assets/Exit.png" id="left_menu_exit" class="left_menu_exit">
+	<div><img src="https://neviie.github.io/Assets/ExitL.png" id="left_menu_exit" class="left_menu_exit">
 		<div class="left menu_object">
-			<div class="left_menu_point" id="scan_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQR.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
-			<div class="left_menu_point" id="num_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQR.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
-			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(19,32,47); color: rgb(39,122,243)"><img id="https://neviie.github.io/Assets/Active_menunow.png" src="https://neviie.github.io/Assets/Active_menunow.png" class="img_left_menu">Текущий заказ</div>
-			<div class="left_menu_point" id="history_left"><img src="https://neviie.github.io/Assets/Noactive_menuhistory.png" class="img_left_menu" id="history_img">История заказов</div>
-			<div id="menucard" class="left_menu_point"><img src="https://neviie.github.io/Assets/Noactive_menucard.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
-			<div class="left_menu_point" id="poriadok_oplati"><img src="https://neviie.github.io/Assets/Noactive_menuoplata.png" class="img_left_menu">Порядок оплаты</div>
+			<div class="left_menu_point" id="scan_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQRL.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
+			<div class="left_menu_point" id="num_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQRL.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
+			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(226,239,255); color: rgb(42,127,228)"><img id="https://neviie.github.io/Assets/Active_menunowL.png" src="https://neviie.github.io/Assets/Active_menunowL.png" class="img_left_menu">Текущий заказ</div>
+			<div class="left_menu_point" id="history_left"><img src="https://neviie.github.io/Assets/Noactive_menuhistoryL.png" class="img_left_menu" id="history_img">История заказов</div>
+			<div id="menucard" class="left_menu_point"><img src="https://neviie.github.io/Assets/Noactive_menucardL.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
+			<div class="left_menu_point" id="poriadok_oplati"><img src="https://neviie.github.io/Assets/Noactive_menuoplataL.png" class="img_left_menu">Порядок оплаты</div>
 		</div>
 	</div>
 </div>
@@ -529,10 +637,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
         element.style.display = 'none';
 		
 	var imgElement = document.querySelector('.img_fig_3');
-      imgElement.src = 'cabinet_active_N.png';
+      imgElement.src = 'cabinet_active.png';
       
       var fontElement = document.querySelector('.font_fig_3');
-      fontElement.style.color = 'rgb(38,99,175)';
+      fontElement.style.color = 'rgb(17,121,145)';
 	  
 	 var zoElement = document.querySelector('.shap_cen');
       zoElement.style.marginLeft = '12vw';
@@ -541,14 +649,14 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	  opElement.textContent = 'Кабинет';
 	  
 	  var backbusimgElement = document.querySelector('.img_fig_4');
-     backbusimgElement.src = 'schedule_noactive_N.png';
+     backbusimgElement.src = 'schedule_noactive.png';
 	  
       
       var backbusfontElement = document.querySelector('.font_fig_4');
       backbusfontElement.style.color = 'rgb(110, 110, 110)';
 	  
 	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
-     backproezdnoyimgElement.src = 'proezdnoy_noactive_N.png';
+     backproezdnoyimgElement.src = 'proezdnoy_noactive.png';
 	  
       
       var backproezdnoyfontElement = document.querySelector('.font_fig_2');
@@ -558,7 +666,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
       backticketfontElement.style.color = 'rgb(110, 110, 110)';
 	  
 	  var backticketimgElement = document.querySelector('.img_fig_1');
-     backticketimgElement.src = 'bilet_noacrive_N.png';
+     backticketimgElement.src = 'bilet_noacrive.png';
       });
     }
 	<!--Расписание-->
@@ -571,13 +679,13 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
         element.style.display = 'none';
 		
 	var imgElement = document.querySelector('.img_fig_4');
-      imgElement.src = 'schedule_active_N.png';
+      imgElement.src = 'schedule_active.png';
 	  
 	  var backprofileimgElement = document.querySelector('.img_fig_3');
-      backprofileimgElement.src = 'cabinet_noactive_N.png';
+      backprofileimgElement.src = 'cabinet_noactive.png';
       
       var fontElement = document.querySelector('.font_fig_4');
-      fontElement.style.color = 'rgb(38,99,175)';
+      fontElement.style.color = 'rgb(17,121,145)';
 	  
 	  var backprofilefontElement = document.querySelector('.font_fig_3');
       backprofilefontElement.style.color = 'rgb(110, 110, 110)';
@@ -589,7 +697,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	  opElement.textContent = 'Расписание';
 	  
 	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
-     backproezdnoyimgElement.src = 'proezdnoy_noactive_N.png';
+     backproezdnoyimgElement.src = 'proezdnoy_noactive.png';
 	  
       
       var backproezdnoyfontElement = document.querySelector('.font_fig_2');
@@ -599,7 +707,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
       backticketfontElement.style.color = 'rgb(110, 110, 110)';
 	  
 	  var backticketimgElement = document.querySelector('.img_fig_1');
-     backticketimgElement.src = 'bilet_noacrive_N.png';
+     backticketimgElement.src = 'bilet_noacrive.png';
       });
     }
 	<!--Проездной-->
@@ -612,13 +720,13 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
         element.style.display = 'none';
 		
 	var imgElement = document.querySelector('.img_fig_2');
-      imgElement.src = 'proezdnoy_active_N.png';
+      imgElement.src = 'proezdnoy_active.png';
 	  
 	  var backprofileimgElement = document.querySelector('.img_fig_3');
-      backprofileimgElement.src = 'cabinet_noactive_N.png';
+      backprofileimgElement.src = 'cabinet_noactive.png';
       
       var fontElement = document.querySelector('.font_fig_2');
-      fontElement.style.color = 'rgb(38,99,175)';
+      fontElement.style.color = 'rgb(17,121,145)';
 	  
 	  var backprofilefontElement = document.querySelector('.font_fig_3');
       backprofilefontElement.style.color = 'rgb(110, 110, 110)';
@@ -630,7 +738,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	  opElement.textContent = 'Добавить карту';
 	  
 	  var backbusimgElement = document.querySelector('.img_fig_4');
-     backbusimgElement.src = 'schedule_noactive_N.png';
+     backbusimgElement.src = 'schedule_noactive.png';
       
       var backbusfontElement = document.querySelector('.font_fig_4');
       backbusfontElement.style.color = 'rgb(110, 110, 110)';
@@ -639,7 +747,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
       backticketfontElement.style.color = 'rgb(110, 110, 110)';
 	  
 	  var backticketimgElement = document.querySelector('.img_fig_1');
-     backticketimgElement.src = 'bilet_noacrive_N.png';
+     backticketimgElement.src = 'bilet_noacrive.png';
       });
     }
 	<!--Билеты-->
@@ -670,13 +778,13 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
       imgElement.src = 'proezdnoy_noactive_N.jpg';
 	  
 	  var backprofileimgElement = document.querySelector('.img_fig_3');
-      backprofileimgElement.src = 'cabinet_noactive_N.png';
+      backprofileimgElement.src = 'cabinet_noactive.png';
       
 	  	var imgElement = document.querySelector('.img_fig_1');
-      imgElement.src = 'bilet_acrive_N.png';
+      imgElement.src = 'bilet_acrive.png';
 	  
       var fontElement = document.querySelector('.font_fig_1');
-      fontElement.style.color = 'rgb(38,99,175)';
+      fontElement.style.color = 'rgb(17,121,145)';
 	  
 	  var backprofilefontElement = document.querySelector('.font_fig_3');
       backprofilefontElement.style.color = 'rgb(110, 110, 110)';
@@ -688,14 +796,14 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	  opElement.textContent = 'Оплата проезда';
 	  
 	  var backbusimgElement = document.querySelector('.img_fig_4');
-     backbusimgElement.src = 'schedule_noactive_N.png';
+     backbusimgElement.src = 'schedule_noactive.png';
 	  
       
       var backbusfontElement = document.querySelector('.font_fig_4');
       backbusfontElement.style.color = 'rgb(110, 110, 110)';
 	  
 	  var backproezdnoyimgElement = document.querySelector('.img_fig_2');
-     backproezdnoyimgElement.src = 'proezdnoy_noactive_N.png';
+     backproezdnoyimgElement.src = 'proezdnoy_noactive.png';
 	  
       
       var backproezdnoyfontElement = document.querySelector('.font_fig_2');
@@ -705,103 +813,6 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	  
       });
     }
-	
-	   function getRandomNumber() {
-      var numbers = [0, 35, 70];
-      var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
-      return randomNumber;
-    }
-    
-    // Функция для обновления числа
-    function update1Number() {
-      var numberElement = document.getElementById('number');
-      numberElement.textContent = getRandomNumber();
-    }
-    
-    // Обновляем число при загрузке страницы
-    window.onload = function() {
-      update1Number();
-    };
-    
-    // Функция для обновления числа при нажатии
-    function update2Number() {
-      var numberElement = document.getElementById('number');
-      var currentNumber = parseInt(numberElement.textContent);
-      var numbers = [0, 35, 70];
-      
-      // Находим следующее число в порядке возрастания
-      var nextNumberIndex = numbers.indexOf(currentNumber) + 1;
-      if (nextNumberIndex >= numbers.length) {
-        nextNumberIndex = 0;
-      }
-      
-      // Обновляем текст на странице
-      numberElement.textContent = numbers[nextNumberIndex];
-    }
-	
-	// Массив с путями к картинкам
-    var images = [
-		"control_banana_1.png",
-		"contol_cat_2.png",
-		"control_cherry_3.png",
-		"control_duck_4.png",
-		"control_flower_5.png",
-		"control_house_6.png",
-		"control_plane_7.png",
-		"control_rocket_8.png",
-		"control_tea_9.png",
-		"conrol_tram_10.png",
-      // Добавьте пути к другим картинкам
-    ];
-    
-    // Переменные для хранения текущих индексов картинок
-    var leftImageIndex;
-    var rightImageIndex;
-    
-    // Функция для обновления левой картинки при нажатии
-    function updateLeftImage() {
-      var leftImageElement = document.getElementById('left-image');
-      
-      // Обновляем индекс левой картинки
-      leftImageIndex++;
-      if (leftImageIndex >= images.length) {
-        leftImageIndex = 0;
-      }
-      
-      // Обновляем отображаемую картинку
-      leftImageElement.src = images[leftImageIndex];
-    }
-    
-    // Функция для обновления правой картинки при нажатии
-    function updateRightImage() {
-      var rightImageElement = document.getElementById('right-image');
-      
-      // Обновляем индекс правой картинки
-      rightImageIndex++;
-      if (rightImageIndex >= images.length) {
-        rightImageIndex = 0;
-      }
-      
-      // Обновляем отображаемую картинку
-      rightImageElement.src = images[rightImageIndex];
-    }
-	
-	// Обновляем картинки при загрузке страницы
-    window.onload = function() {
-      var leftImageElement = document.getElementById('left-image');
-      var rightImageElement = document.getElementById('right-image');
-      
-      // Генерируем случайные начальные значения для индексов
-      leftImageIndex = Math.floor(Math.random() * images.length);
-      rightImageIndex = leftImageIndex;
-      while (rightImageIndex === leftImageIndex) {
-        rightImageIndex = Math.floor(Math.random() * images.length);
-      }
-      
-      // Устанавливаем начальные значения индексов и отображаем картинки
-      leftImageElement.src = images[leftImageIndex];
-      rightImageElement.src = images[rightImageIndex];
-    };
 	
 	 function showNewControl() {
       var buttonElement = document.getElementById('button');
@@ -854,7 +865,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		var scan_QR = document.getElementById('scan_QR');
 		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box');
 		var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control');
-		var Active_menunow_img = document.getElementById('https://neviie.github.io/Assets/Active_menunow.png');
+		var Active_menunow_img = document.getElementById('https://neviie.github.io/Assets/Active_menunowL.png');
 		var Menu_now = document.getElementById('menunow_left');
 		var scan_QR_img = document.getElementById('scan_QR_img')
 		var bottom_button =  document.querySelectorAll('.fig_2, .fig_3, .fig_4')
@@ -866,21 +877,21 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		var all_leftmenu_buttons = document.querySelectorAll('.left_menu_point');
 		var scanQR_img = document.getElementById('scan_QR_img');
 		var numQR_img = document.getElementById('num_QR_img');
-		var now_img = document.getElementById('https://neviie.github.io/Assets/Active_menunow.png');
+		var now_img = document.getElementById('https://neviie.github.io/Assets/Active_menunowL.png');
 		var history_img = document.getElementById('history_img');
 		var card_img = document.getElementById('menu_card_img');
 		
 		all_leftmenu_buttons.forEach((button) => {
 
 			
-			button.style.color = 'white';
+			button.style.color = 'black';
 			button.style.fontWeight = 'normal';
-			button.style.backgroundColor = 'rgb(18,18,18)';
-			scanQR_img.src = 'https://neviie.github.io/Assets/Noactive_menuQR.png';
-			numQR_img.src = 'https://neviie.github.io/Assets/Noactive_menuQR.png';
-			history_img.src = 'https://neviie.github.io/Assets/Noactive_menuhistory.png';
-			card_img.src = 'https://neviie.github.io/Assets/Noactive_menucard.png';
-			now_img.src = 'https://neviie.github.io/Assets/Noactive_menunow.png';
+			button.style.backgroundColor = 'white';
+			scanQR_img.src = 'https://neviie.github.io/Assets/Noactive_menuQRL.png';
+			numQR_img.src = 'https://neviie.github.io/Assets/Noactive_menuQRL.png';
+			history_img.src = 'https://neviie.github.io/Assets/Noactive_menuhistoryL.png';
+			card_img.src = 'https://neviie.github.io/Assets/Noactive_menucardL.png';
+			now_img.src = 'https://neviie.github.io/Assets/Noactive_menunowL.png';
 		});	
 	
 	}
@@ -950,10 +961,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		noactive();
   hideall();
 
-  menunow_left.style.color = 'rgb(39,122,243)';
+  menunow_left.style.color = 'rgb(42,127,228)';
   menunow_left.style.fontWeight = '600';
-  menunow_left.style.backgroundColor = 'rgb(19,32,47)';
-  now_img.src = 'https://neviie.github.io/Assets/Active_menunow.png';
+  menunow_left.style.backgroundColor = 'rgb(226,239,255)';
+  now_img.src = 'https://neviie.github.io/Assets/Active_menunowL.png';
 	handleClick4()
 				
 	});
@@ -964,10 +975,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	noactive();
 	hideall();
 	
-	scan_QR.style.color = 'rgb(39,122,243)';
+	scan_QR.style.color = 'rgb(42,127,228)';
 	scan_QR.style.fontWeight = '600';
-	scan_QR.style.backgroundColor = 'rgb(19,32,47)';
-	scan_QR_img.src = 'https://neviie.github.io/Assets/Active_menuQR.png';
+	scan_QR.style.backgroundColor = 'rgb(226,239,255)';
+	scan_QR_img.src = 'https://neviie.github.io/Assets/Active_menuQRL.png';
 	
 	  leftMenu.style.left = '-100%';
 	  shadow.classList.toggle('transparent');
@@ -1003,10 +1014,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
   noactive();
   hideall();
 	oppElement.textContent = 'Оплата проезда';
-  num_QR.style.color = 'rgb(39,122,243)';
+  num_QR.style.color = 'rgb(42,127,228)';
   num_QR.style.fontWeight = '600';
-  num_QR.style.backgroundColor = 'rgb(19,32,47)';
-  num_QR_img.src = 'https://neviie.github.io/Assets/Active_menuQR.png';
+  num_QR.style.backgroundColor = 'rgb(226,239,255)';
+  num_QR_img.src = 'https://neviie.github.io/Assets/Active_menuQRL.png';
 
   leftMenu.style.left = '-100%';
   shadow.classList.toggle('transparent');
@@ -1019,7 +1030,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	<!--Текуший заказ-->
 	
 	var menunow_left = document.getElementById('menunow_left');
-	var now_img = document.getElementById('https://neviie.github.io/Assets/Active_menunow.png');
+	var now_img = document.getElementById('https://neviie.github.io/Assets/Active_menunowL.png');
 	var bills = document.querySelector('.fig_1');
 	
 	
@@ -1031,10 +1042,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
   noactive();
   hideall();
 
-  menunow_left.style.color = 'rgb(39,122,243)';
+  menunow_left.style.color = 'rgb(42,127,228)';
   menunow_left.style.fontWeight = '600';
-  menunow_left.style.backgroundColor = 'rgb(19,32,47)';
-  now_img.src = 'https://neviie.github.io/Assets/Active_menunow.png';
+  menunow_left.style.backgroundColor = 'rgb(226,239,255)';
+  now_img.src = 'https://neviie.github.io/Assets/Active_menunowL.png';
 	handleClick4()
 };
 	
@@ -1055,10 +1066,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
   noactive();
   hideall();
 
-  menucard.style.color = 'rgb(39,122,243)';
+  menucard.style.color = 'rgb(42,127,228)';
   menucard.style.fontWeight = '600';
-  menucard.style.backgroundColor = 'rgb(19,32,47)';
-  menu_card_img.src = 'https://neviie.github.io/Assets/Active_menucard.png';
+  menucard.style.backgroundColor = 'rgb(226,239,255)';
+  menu_card_img.src = 'https://neviie.github.io/Assets/Active_menucardL.png';
 
   leftMenu.style.left = '-100%';
   shadow.classList.toggle('transparent');
@@ -1081,10 +1092,10 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 	noactive();
   hideall();
 
-  historyleft.style.color = 'rgb(39,122,243)';
+  historyleft.style.color = 'rgb(42,127,228)';
   historyleft.style.fontWeight = '600';
-  historyleft.style.backgroundColor = 'rgb(19,32,47)';
-  history_img.src = 'https://neviie.github.io/Assets/Active_menuhistory.png';
+  historyleft.style.backgroundColor = 'rgb(226,239,255)';
+  history_img.src = 'https://neviie.github.io/Assets/Active_menuhistoryL.png';
 
   leftMenu.style.left = '-100%';
   shadow.classList.toggle('transparent');

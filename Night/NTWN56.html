@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
@@ -59,6 +58,22 @@
 		  .then(data => {
 			// Обновляем содержимое элемента с идентификатором "result"
 			document.getElementById('current_date_time_block').innerHTML = data.data;
+		  
+				  // Получаем строку времени в формате "21:22:22"
+			var timeString = data.data;
+			
+			// Разделяем строку времени на компоненты (часы, минуты и секунды)
+			var timeComponents = timeString.split(':');
+			
+			// Получаем часы и минуты
+			var hours = timeComponents[0];
+			var minutes = timeComponents[1];
+			
+			// Формируем новую строку времени без секунд
+			var formattedTime = hours + ':' + minutes;
+			
+			// Вставляем отформатированное время в элемент с идентификатором "date_time"
+			document.getElementById('date_time').textContent = formattedTime;
 		  })
 		  .catch(error => console.error(error));
 		  
@@ -197,18 +212,25 @@
 <img src="https://neviie.github.io/Assets/copyN.png" class="copy_img">
 
 <div class="history_box">
-
+	<div class="history_line">
+		<div class="greenbus_box">
+		<img class="green_box_bus" src="https://neviie.github.io/Assets/Green_Bus.png">
+		<span class="greenbus_box_num" id="duble_marsh">0</span>
+		</div>
+		<span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+		<greenn>35 руб</greenn>
 	</div>
+</div>
 </div>
 <div class="marshrut">
 	<div class="text_t_p">
-		<mar>Маршрут №<kal>56</kal></mar>
+		<mar>Маршрут №<kal><span id="marshrutt">56</span></kal></mar>
 		<div class="null_marsh"></div>
 <mar>Автобус <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
 		<div class="null_marsh"></div>
-		<mar>Оплачено <kal>35 руб</kal></mar>
+		<mar>Оплачено <kal>35 руб</span></kal></mar>
 		<div class="null_marsh"></div>
-		<mar>пассажиров <kal>1</kal> багажа <kal>0</kal></mar>
+		<mar>пассажиров <kal>1</kal> багажа <kal>0</span></kal></mar>
 		<div class="null_marsh"></div>
 		<ust>Устройство</ust> 			<!--нужно подсосать устройство если возможно-->
 		<div class="null_marsh"></div>
@@ -252,6 +274,7 @@
 
 		/* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
 		document.getElementById('current_date_time_blockk').innerHTML = date_time();
+		document.getElementById('date_date').innerHTML = date_time();
 		</script></y>
 	</div>
 </div>
@@ -620,7 +643,9 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
     }
 	<!--Билеты-->
 	function handleClick4() {
-		
+		var zooElement = document.querySelector('zo');
+		zooElement.textContent = 'Заказ оплачен';
+	  
 		var profileNewElement = document.querySelector('.new_control');
       profileNewElement.style.display = 'block';
 	  
@@ -1120,6 +1145,11 @@ for (var i = 0; i < numDivs; i++) {
 
   historyBox.appendChild(div);
 }
+
+var marshrut = document.getElementById('marshrutt');
+var marshrut_duble = document.getElementById('duble_marsh');
+
+marshrut_duble.textContent = marshrut.textContent;
 
   });
   </script>
