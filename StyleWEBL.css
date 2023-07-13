@@ -1016,7 +1016,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 	.copy_img {
 		display: none;
 	position: fixed;
-    right: 36%;
+    right: 20vw;
     top: 1%;
     z-index: 999996;
     width: calc(1.5vw + 1.5vh);
