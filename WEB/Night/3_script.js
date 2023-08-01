@@ -6,7 +6,7 @@
 	  var profileNewElement = document.querySelector('.profile_new2');
       profileNewElement.style.display = 'block';
       
-      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .schedule_new, .proezdnoy_new, .button, .new_control');
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control_box, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .schedule_new, .proezdnoy_new, .button, .new_control');
       elementsToHide.forEach(function(element) {
         element.style.display = 'none';
 		
@@ -48,7 +48,7 @@
       var profileNewElement = document.querySelector('.schedule_new');
       profileNewElement.style.display = 'block';
       
-      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .proezdnoy_new, .profile_new2, .button, .new_control');
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control_box, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .proezdnoy_new, .profile_new2, .button, .new_control');
       elementsToHide.forEach(function(element) {
         element.style.display = 'none';
 		
@@ -89,7 +89,7 @@
       var profileNewElement = document.querySelector('.proezdnoy_new');
       profileNewElement.style.display = 'block';
       
-      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .schedule_new, .profile_new2, .button, .new_control');
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control_box, .mini_line, .mini_line2, mini_line3, .null_shap, zo, .profile_new, .schedule_new, .profile_new2, .button, .new_control');
       elementsToHide.forEach(function(element) {
         element.style.display = 'none';
 		
@@ -144,7 +144,7 @@
 	  var profileNewElement = document.querySelector('.schedule_new');
       profileNewElement.style.display = 'none';
 	  
-      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control, .mini_line, .mini_line2, mini_line3, .null_shap, zo');
+      var elementsToHide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .ost, .control_box, .mini_line, .mini_line2, mini_line3, .null_shap, zo');
       elementsToHide.forEach(function(element) {
         element.style.display = 'block';
 		
@@ -237,8 +237,8 @@
 		var shap_cenElement = document.querySelector('.shap_cen');
 		var arrow_img = document.getElementById('arrow_img');
 		var scan_QR = document.getElementById('scan_QR');
-		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box');
-		var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control');
+		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box');
+		var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box');
 		var Active_menunow_img = document.getElementById('https://neviie.github.io/Assets/Active_menunow.png');
 		var Menu_now = document.getElementById('menunow_left');
 		var scan_QR_img = document.getElementById('scan_QR_img')
@@ -562,8 +562,9 @@ marshrut_duble.textContent = marshrut.textContent;
       var oplataElement = document.getElementById("oplata");
     var bagsValue = parseInt(document.getElementById("bags").innerText);
     var result = (passenValue + bagsValue) * 35;
+    var greenspan = document.getElementById("greenpass");
     oplataElement.textContent = result;
-
+    greenspan.textContent = result;
     }
   
     // Инициализация клонирования при загрузке страницы
