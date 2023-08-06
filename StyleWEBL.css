@@ -11,7 +11,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 	
 	
 	.shap {
-	;
+	
 		Width: 100vw;
 		height: 7.8125vh;
 		
@@ -86,12 +86,12 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 			}
 			mar {
 			font-family: roboto;	
-			font-size: calc(3.5vw + 2vh);
+			font-size: calc(3.5vw + 1.8vh);
 			}
 			kal {
 			font-family: roboto;
 			font-weight: 600;	
-			font-size: calc(3.5vw + 2vh);
+			font-size: calc(3.5vw + 1.8vh);
 			}
 			ust {
 				font-size: calc(2vw + 1.5vh);
@@ -218,7 +218,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 		Width: 87vw;
 		height: calc(11vh + 48vw);
 		position: relative;
-		margin: 1vh auto 1vh auto;
+		margin: 1.3vh auto 1.3vh auto;
 		outline: dotted 0.7vw rgb(105,105,105);
 		padding: 0.5vh 0 0.5vh 0;
 		}
@@ -303,7 +303,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 		margin: 0 0 0 3vw; 
 		width: 11.11vw; 
 		text-align: center; 
-		img-align: center
+
 		}
 			.img_fig_1 {
 			width:7.407vw; 
@@ -318,7 +318,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 		margin: 0 0 0 0;
 		width: 15.7407vw; 
 		text-align: center; 
-		img-align: center
+
 		}
 			.img_fig_2 {
 			width:7.407vw; 
@@ -333,7 +333,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 		margin: 0 4vw 0 0; 
 		width: 11.11vw; 
 		text-align: center; 
-		img-align: ceneter
+
 		}
 			.img_fig_3 {
 			width:7.407vw; 
@@ -349,7 +349,7 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png);
 		margin: 0 0 0 0; 
 		width: 16.666vw; 
 		text-align: center; 
-		img-align: ceneter
+
 		}
 			.img_fig_4 {
 			 width:7.407vw; 
