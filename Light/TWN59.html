@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<manifest="android:windowSoftInputMode="adjustPan">
+		<title>proezdnoy</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="https://telegram.org/js/telegram-web-app.js"></script>
+		<script src="https://puzzlebot.top/webapp.js"></script>
+		<link rel="stylesheet" href="/Style.css">
+	</head>
+<body>
+
+<div class="shap">
+</div>
+<div class="shap_x">
+<div class="mini_line_box" id="mini_line_box">	
+	<div class="mini_line"></div>
+	<div class="mini_line2"></div>
+	<div class="mini_line2"></div>
+</div>
+	<div class="shap_cen"><op>Оплата проезда</op> <div class="null_shap"></div> <zo>Заказ оплачен</zo></div>
+</div>
+
+<div class="profile_new">
+<div class="prof_cen">
+<img src="profileN.png" class="profile_new_img">
+<email><span id="emailid"></span>@mail.ru</email> 
+</div>
+</div>
+
+<div class="profile_new2">
+<div class="profile_menu"><profile_menu>Пункты выдачи и пополнения</profile_menu></div>
+<div class="profile_menu"><profile_menu>Тарифное меню</profile_menu></div>
+<div class="profile_menu"><profile_menu>Правила пересадки</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оформления ЛПД</profile_menu></div>
+<div class="profile_menu"><profile_menu>Новостная лента</profile_menu></div>
+<div class="profile_menu"><profile_menu>Профиль</profile_menu></div>
+<div class="profile_menu"><profile_menu>Уведомления</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оплаты по цифровой карте</profile_menu></div>
+<div class="profile_menu"><profile_menu>Написать в службу поддержки</profile_menu></div>
+<div class="profile_menu"><profile_menu>О приложении</profile_menu></div>
+</div>
+
+<div class="schedule_new">
+<div class="schedule_block">
+	<div class="schedule_block_outline"><div class="time_schedule"id="schedule_block_outline"></div></div>
+		
+	<img class="img_schedule_menu" src="Schedule_6.png">
+</div>
+<div class="schedule_block"><profile_menu>Тип транспорта</profile_menu><img class="img_schedule_menu" src="Schedule_1.png"></div>
+<div class="schedule_block_N"><profile_menu>Маршрут</profile_menu><img class="img_schedule_menu" src="Schedule_2.png"></div>
+<div class="schedule_block_N"><profile_menu>Направление</profile_menu><img class="img_schedule_menu" src="Schedule_3.png"></div>
+<div class="schedule_block_N"><profile_menu>Остановка</profile_menu><img class="img_schedule_menu" src="Schedule_4.png"></div>
+<img class="schedule_star" src="Schedule_5.png" >
+</div>
+
+<div class="proezdnoy_new">
+<img class="proezdnoy_greycard" src="proezdnoy_greycard.png">
+<div class="null_marsh"></div>
+<img class="proezdnoy_redplus" src="proezdnoy_redplus.png">
+<div class="proezdnoy_cardnumber">
+<numcard>Номер карты</numcard> 
+<div class="proezdnoy_flex">
+<proezdnoy_num>96431059033</proezdnoy_num>
+<div class="proezdnoy_block_outline">
+</div>
+</div>
+<numunder>Введите последние 8 цифр номера карты.</numunder>
+</div>
+<div class="add_card">
+<img class="add_card_img" src="proezdnoy_whiteplus.png">
+<add_text>Добавить</add_text>
+</div>
+<img class="schedule_star" src="proezdnoy_3.png" >
+</div>
+
+<div class="num_QR_box" id="num_QR_box">
+<div class="num_QR_ts">
+<numQR>Для оплаты проезда введите гос. номер ТС</numQR> 
+<div class="num_QR_ts_flex">
+
+<div class="num_QR_ts_outline">
+<input class="num_QR_inp">
+</div>
+</div>
+
+</div>
+<div class="continue">
+<add_text>Продолжить</add_text>
+</div>
+</div>
+
+<div class="card_box" id="card_box">
+
+		<img class="virtual_card" src="https://neviie.github.io/Assets/virtual_card.png">
+		<div class="balance">
+			<balance_text>Баланс:</balance_text>
+			<div class="balance_box">
+				<kam><span id="number2">0</span> руб</kam>
+			</div>
+		</div>
+		<div class="green_box">
+			<img class="wallet" src="https://neviie.github.io/Assets/Green_Wallet.png">
+			<add_text>Пополнить</add_text>
+		</div>
+		<div class="green_box">
+			<img class="wallet" src="https://neviie.github.io/Assets/Green_Bus.png">
+			<add_text>Купить проездной</add_text>
+		</div>
+		<div class="blue_box">
+			<img class="wallet" src="https://neviie.github.io/Assets/Blue_Watch.png">
+			<add_text>История пополнений</add_text>
+		</div>
+		<div class="orange_alert">
+		<div class="orange_alert_text">
+		<qropl>Оплачивайте проезд по QR-коду</qropl>
+		<qropl2>
+		Цифровой транспортной картой оплатить проезд можно путём сканирования специального QR-кода, размещённого в салоне автобуса/трамвая или путём ввода гос. номера ТС/номера вагона. Перед использованием цифровой транспортной карты ознакомьтесь с порядком оплаты проезда.
+		</qropl2>
+		<div class="more">
+		<img src="https://neviie.github.io/Assets/Orange_alert.png" class="wallet"> 
+		<more_text>Подробнее...</more_text>
+		</div>
+		</div>
+		</div>
+
+</div>
+<img src="https://neviie.github.io/Assets/Reload.png" class="right_up_img">
+<img src="https://neviie.github.io/Assets/copyL.png" class="copy_img">
+
+<div class="history_box">
+    <div class="history_line">
+        <div class="greenbus_box">
+        <img class="green_box_bus" src="https://neviie.github.io/Assets/Green_Bus.png">
+        <span class="greenbus_box_num" id="duble_marsh">0</span>
+        </div>
+        <span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+        <greenn><span id="greenpass">35</span> руб</greenn>
+    </div>
+</div>
+</div>
+</div>
+<div class="marshrut">
+	<div class="text_t_p">
+		<mar>Маршрут №<kal><span id="marshrutt">59</span></kal></mar>
+		<div class="null_marsh"></div>
+<mar>Автобус <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
+		<div class="null_marsh"></div>
+		<mar>Оплачено <kal><span id="oplata">35</span> руб</kal></mar>
+		<div class="null_marsh"></div>
+		<mar>пассажиров <kal><span id="passen">1</span></kal> багажа <kal><span id="bags">0</span></kal></mar>
+		<div class="null_marsh"></div>
+		<ust>Устройство</ust> 			<!--нужно подсосать устройство если возможно-->
+		<div class="null_marsh"></div>
+<pixel> <div class="inp_ust" id="ustr"style = "display:inline-block;"></div></pixel>
+	</div>
+</div>
+<div class="time_pos">
+<div class="text_t_p">
+		<t>Время посадки</t>
+		<div class="null_pos"></div>
+		<x><div id="current_date_time_block"></div></x>
+		
+		<div class="null_pos"></div>
+		<y><div id="current_date_time_blockk"></div></y>
+	</div>
+</div>
+<div class="timer">
+	<div class="text_t_p">
+		<t>Время в пути</t>
+		<div class="null_pos"></div>
+		<timere><div id="timer">00:00</div><timere>
+	</div>
+</div>
+<div class="qr">
+	<div class="text_t_p">
+	<img class="imqr" src="https://proezdnoy59.files.wordpress.com/2022/05/qr.jpg">
+	</div>
+</div>
+<div class="button" id="button" onclick="showNewControl()">
+    <t>Контроль</t>
+  </div>
+<div class="new_control">
+<div class="text_t_p">
+		<t>Контроль</t>
+		<div class="null_cont"></div>
+		<img class="control_img_left" id="left-image" src="" onclick="updateLeftImage()">
+		<img class="control_img_right" id="right-image" src="" onclick="updateRightImage()">
+</div>
+</div>
+
+<div class="ost">
+	<div onclick="update2Number()" class="text_t_p">
+	<ust>Остаток баланса  <span id="number">0</span> руб</ust>
+	</div>
+</div>
+<div class="control_box">
+<div id="control" class="control">
+	<div class="text_t_p">
+	<bilet>БИЛЕТ</bilet>
+	<div class="null_cont"></div>
+	<n>№<div style="display:inline-block;" id="e"></div>
+<script type="text/javascript">
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
+</script></n>							<!--генератор случайных 10 значных чисел-->
+	<div class="null_cont2"></div>
+<n><div id="x"></div></n>
+	<div class="null_cont2"></div>
+		<div class="line">
+		</div>
+	<div class="null_cont3"></div>
+	<n>ООО «Автомиг»</n>
+	<div class="null_cont"></div>
+	<n>ИНН 5036032485</n>	
+	<div class="null_cont"></div>
+	<n>по заказу МКУ "Гортранс"</n>	
+	<div class="null_cont"></div>
+		<div class="line">
+		</div>
+	<div class="null_cont3"></div>
+	
+	<div class="marshrut_dviz"><marshrutfont>59, М/р Юбилейный - а/э Бахаревка - ул.</marshrutfont></div>			<!--сделать в две строки-->
+	<div class="marshrut_dviz"><marshrutfont>Милиционера Власова</marshrutfont></div>
+	
+	<div class="null_cont3"></div>
+	<n>Автобус </n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
+		<div class="null_cont"></div>
+		<div class="line"></div>
+	<div class="null_cont3"></div>
+	<kim>Стоимость: 35 руб</kim>
+	</div>
+</div>
+</div>
+<div class="null_cont3"></div>
+<div class="bottom">
+
+</div>
+<div class="bottom_x">
+<div class="bottom_m">
+	<figure class="fig_1" onclick="handleClick4()">
+	<img src="bilet_acrive.png" img class="img_fig_1">
+	<figcaption class="font_fig_1">Билеты</figcaption>
+	</figure>
+	<figure class="fig_2" onclick="handleClick3()">
+	<img src="proezdnoy_noactive.png" class="img_fig_2">
+	<figcaption class="font_fig_2">Проездной</figcaption>
+	</figure>
+	<figure class="fig_4" onclick="handleClick2()">
+	<img src="schedule_noactive.png" img class="img_fig_4">
+	<figcaption class="font_fig_4">Расписание</figcaption>
+	</figure>
+	<figure class="fig_3" onclick="handleClick()">
+	<img src="cabinet_noactive.png" class="img_fig_3">
+	<figcaption class="font_fig_3">Кабинет</figcaption>
+	</figure>
+</div class="bottom_m">
+</div>
+</div>
+
+<div class="shadow" id="shadow"></div>
+
+<div class="left_menu" id="left_menu">
+	<div><img src="https://neviie.github.io/Assets/ExitL.png" id="left_menu_exit" class="left_menu_exit">
+		<div class="left menu_object">
+			<div class="left_menu_point" id="scan_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQRL.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
+			<div class="left_menu_point" id="num_QR"><img src="https://neviie.github.io/Assets/Noactive_menuQRL.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
+			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(226,239,255); color: rgb(42,127,228)"><img id="https://neviie.github.io/Assets/Active_menunowL.png" src="https://neviie.github.io/Assets/Active_menunowL.png" class="img_left_menu">Текущий заказ</div>
+			<div class="left_menu_point" id="history_left"><img src="https://neviie.github.io/Assets/Noactive_menuhistoryL.png" class="img_left_menu" id="history_img">История заказов</div>
+			<div id="menucard" class="left_menu_point"><img src="https://neviie.github.io/Assets/Noactive_menucardL.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
+			<div class="left_menu_point" id="poriadok_oplati"><img src="https://neviie.github.io/Assets/Noactive_menuoplataL.png" class="img_left_menu">Порядок оплаты</div>
+		</div>
+	</div>
+</div>
+
+<div class="poriadok_oplati_text" id="poriadok_oplati_text">
+
+</div>
+
+<div class="poriadok_oplati_text2" id="poriadok_oplati_text2">
+<p>Цифровая транспортная карт доступна в разделе Билеты приложения через боковое меню (вызывается нажатием на иконку в левом верхнем углу). Если при выборе пункта бокового меню "Сканировать QR" не открывается камера для сканирования, а перечислены 3 или 4 шага, которые нужно выполнить для возможности оплаты проезда, то это значит что один или несколько шагов не пройдены для возможности оплаты проезда по QR-коду. Для использования данного способа оплаты проезда по цифровой транспортной карте необходимо обновить версию приложения из магазина приложений Play Маркет или App Store (если не установлена последняя версия).</p>
+
+<p>Цифровая транспортная карта работает по гражданским тарифам. С информацией о тарифах можно ознакомится в разделе Кабинет -> Тарифное меню.</p>
+
+<p>Обращаем Ваше внимание, что QR-код для оплаты проезда по цифровой карте можно сканировать в приложении "Транспортная карта Пермь" (проездной 59) только со специальных стикеров, которые размещены в городском пассажирском транспорте.</p>
+
+<p>Данный способ оплаты доступен при наличии на мобильном устройстве доступа в Интернет. Также нужно установить актуальное время на смартфоне, для этого в настройках смартфона выбрать настройку "Дата и время" и установить флаг "Автонастройка", либо установить актуальную дату и время вручную.</p>
+
+<p>ВНИМАНИЕ! По пластиковой транспортной карте, которая добавлена в приложение в разделе Проездной, невозможно оплатить проезд в приложении по QR-коду или гос. номеру. Для совершения оплаты проезда по пластиковым транспортным картам используются валидаторы, которые могут считывать информацию с электронного чипа карты.</p>
+
+<p>Для совершения пересадки со скидкой по цифровой транспортной карте в режиме транспортных единиц необходимо в транспортном средстве, на которое совершена пересадка, сформировать новый заказ билетов, отсканировав QR-код в салоне транспортного средства или ввсети гос. номер транспортного средства. На одном рейсе можно сформировать только один заказ билетов, поэтому указывайте необходимое количество билетов в одном заказе.</p>
+
+<p>1. Для возможности оплаты проезда в приложении по QR-коду необходимо предварительно выполнить следующие действия:</p>
+
+<p>1.1. Зарегистрировать профиль и/или войти в него. При регистрации профиля обязательно указывайте действующий адрес электронной почты, поскольку дальнейшее управление профилем (подтверждение, восстановление/смена пароля, выпуск цифровой транспортной карты для профиля, её активация на мобильных устройствах) доступно через указанный при регистрации адрес электронной почты.</p>
+
+<p>1.2. Выпустить цифровую транспортную карту, либо если карта была выпущена на другом устройстве (или приложение удалялось с устройства), активировать её на устройстве. При выпуске цифровой транспортной карты и активации её на мобильном устройстве на указанный при регистрации адрес электронной почты или номер телефона будет отправлен код подтверждения, который нужно будет ввести в специальное поле в мобильном приложении. Цифровой транспортной картой, активированной на устройстве, можно оплатить проезд только в приложении, отсканировав QR-коду в салоне ТС или введя гос. номер, оплатить проезд через валидатор не получится. Цифровую транспортную карту профиля можно активировать на нескольких устройствах, в случае если на цифровой карте не подключен проездной. При покупке проездного активация на других устройствах прекращается до тех пор, пока срок действия проездного не закончится. Если на карте нет проездного, то оплачивать проезд одной картой можно на нескольких устройствах, при этом пересадочный билет со скидкой сформируется только если оплата проезда совершалась с того же устройства.</p>
+
+<p>1.3. Разрешить приложению использование камеры мобильного устройства для сканирования QR-кода в транспорте. Без данного разрешения будет невозможно отсканировать QR-код в салоне автобуса/трамвая, чтобы оплатить билеты.</p>
+
+<p>1.4. Использовать на устройстве версию приложения, которая поддерживает действующий порядок оплаты проезда по QR-коду. В дальнейшем версия приложения может повышаться и необходимо обновлять приложение для возможности оплаты проезда по QR-коду.</p>
+
+<p>2. Для оплаты проезда в приложении транспортными единицами на балансе цифровой транспортной карты по стоимости разовых поездок необходимо выполнить следующие действия:</p>
+
+<p>2.1. Пополнить баланс цифровой транспортной карты по кнопке "Пополнить", либо убедиться что её баланса достаточно для оплаты необходимого количества билетов. Если баланса транспортной карты будет недостаточно, то в процессе оплаты билетов появится соответствующее информационное сообщение.</p>
+
+<p>2.2. Отсканировать QR-код, находящийся в салоне автобуса или трамвая, либо ввести гос. номер транспорта, и указать необходимое количество билетов, после этого нажать на кнопку "Оплатить". Сформированный заказ билетов после сканирования QR-кода будет доступен в течение 1 минуты для оплаты. На одном рейсе возможно сформировать только один заказ билетов, поэтому требуется указать необходимое количество билетов в заказе (максимальное количество билетов 10 штук).</p>
+
+<p>2.3. Показать сформированные в приложении билеты на странице "Текущиий заказ" (либо открыть билеты через пункт меню "История заказов") по требованию кондуктора и/или контролера для прохождения контроля оплаты проезда.</p>
+
+<p>3. Для оплаты проезда в приложении по проездному, подключенному к цифровой транспортной карте, необходимо выполнить следующие действия:</p>
+
+<p>3.1. Купить проездной на цифровую транспортную карту по кнопке "Купить проездной", либо убедиться что срок его действия не закончился и лимит поездок/дней не истрачен (для лимитного проездного).</p>
+
+<p>3.2. Отсканировать QR-код, находящийся в салоне автобуса или трамвая, либо ввести гос. номер транспорта, и нажать на кнопку "Оплатить" в сформированном заказе. Сформированный заказ билетов после сканирования QR-кода или ввода гос. номера будет доступен в течение 1 минуты для оплаты. После оплаты в разделе "Текущий заказ" будет доступен сформированный электронный билет (также открыть оплаченный заказ билетов можно через пункт меню "История заказов"). Оплачивать проезд по проездному документу, подключенному к цифровой транспортной карте, может только один человек и с одного мобильного устройства.</p>
+
+<p>3.3. Показать сформированный в приложении билет на странице "Текущиий заказ" (либо открыть билеты через пункт меню "История заказов") по требованию кондуктора и/или контролера для прохождения контроля оплаты проезда.</p>
+
+<p>4. Для совершения пересадки со скидкой в приложении за счет транспортных единиц на балансе цифровой транспортной карты необходимо выполнить следующие действия:</p>
+
+<p>4.1. Если Вы пересаживаетесь на автобус/трамвай, в котором размещён QR-код, то нужно его отсканировать в приложении, либо ввести гос. номер транспортного средства, указать необходимое количество пассажиров и оформить пересадочный билет (если правила пересадки выполняются, приложение предложит совершить пересадку со скидкой).</p>
+
+<p>4.2. Показать кондуктору/контролеру электронный билет в приложении для контроля оплаты проезда.</p>
+
+<p>4.3. Пересадка со скидкой доступна только при оплате билета транспортными единицами на балансе цифровой транспортной карты и при оплате с одного мобильного устройства. Подробнее о правилах пересадки можно прочитать в разделе Кабинет -> Правила пересадки.</p>
+
+<p>5. Условия покупки билетов в мобильном приложении по цифровой карте:</p>
+
+<p>5.1. Перед подтверждением заказа на оплату билетов Пользователь самостоятельно должен проверить параметры заказа: государственный регистрационный номер транспортного средства (либо номер вагона трамвая), номер муниципального маршрута, количество билетов и сумму к оплате и при необходимости внести изменения в параметры заказа.</p>
+
+<p>5.2. При подтверждении заказа на оплату билетов по кнопке "Оплатить" пользователь даёт своё безоговорочное согласие на совершение оплаты проезда и/или провоза багажа по цифровой транспортной карте на транспортном средстве, маршруте и на сумму, указанную в заказе на оплату билетов, а также подтверждает факт проезда на указанном в заказе транспортном средстве и муниципальном маршруте.</p>
+
+<p>5.3. После подтверждения оплаты согласно пункта 5.2 Пользователь не может никаким образом запросить возврат оплаченных билетов.</p>
+
+<p>5.3. По цифровой карте в мобильном прилоежнии можно оплатить проезд только на муниципальном маршруте регулярных перевозок города Перми, на других маршрутах самостоятельная оплата проезда и/или провоза багажа Пользователем в мобильном приложении не допускается. Пользователь несёт сам все риски ошибочной оплаты проезда и/или провоза багажа в мобильном приложении.</p>
+</div>
+
+<img src="https://neviie.github.io/Assets/Arrow.png" class="arrow_img" id="arrow_img">
+
+<div class = "scan_QR_fon" id="scan_QR_elements">
+<div class="scan_QR_elements">
+<QR_text>Для оплаты проезда отсканируйте QR-код</QR_text>
+<div class="QR_border_img">
+<div class="scan_QR_border"></div>
+
+<div class="scan_QR_img">
+<img src = "https://neviie.github.io/Assets/Round_Flashlight.png" class="img_scan_QR">
+<img src = "https://neviie.github.io/Assets/Round_Plus.png" class="img_scan_QR">
+<img src = "https://neviie.github.io/Assets/Round_minus.png" class="img_scan_QR">
+<img src = "https://neviie.github.io/Assets/Round_bus.png" class="img_scan_QR">
+</div>
+</div>
+</div>
+</div>
+
+<script src="/Scripts/1NoWeb_script.js"></script>
+<script src="/Scripts/2_script.js"></script>
+<script src="/Scripts/3L_script.js"></script>
+
+</body>
+</html>
