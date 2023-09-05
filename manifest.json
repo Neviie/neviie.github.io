@@ -20,19 +20,8 @@
   {
     "src": "icon.png",
     "sizes": "192x192",
-    "type": "image/png"
-  },
-  {
-    "src": "icon-round.png",
-    "sizes": "192x192",
     "type": "image/png",
     "purpose": "any maskable"
-  },
-  {
-    "src": "icon-rounded.png",
-    "sizes": "192x192",
-    "type": "image/png",
-    "purpose": "maskable"
   }
 ]
 }
