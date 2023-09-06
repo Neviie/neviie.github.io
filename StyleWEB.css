@@ -146,12 +146,12 @@
     }
     
     .container.block {
-      opacity: 30%;
+      opacity: 100%;
       pointer-events: all;
     }
     
     .fon.block {
-      opacity: 100%;
+      opacity: 30%;
       pointer-events: all;
     }
 
