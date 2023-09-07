@@ -93,7 +93,6 @@
     position: fixed;
     top: 40%;
     right: 25%;
-    opacity: 1;
       transition: opacity 0.5s;
       
     }
