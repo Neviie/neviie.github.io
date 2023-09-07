@@ -95,8 +95,6 @@
     right: 25%;
     opacity: 1;
       transition: opacity 0.5s;
-      opacity: 0;
-      pointer-events: none;
       
     }
     .input-container {
@@ -139,9 +137,7 @@
     left:0%;
     width: 100vw;
     height: 100vh;	
-    transition: opacity 0.5s;
-    opacity: 0;
-    pointer-events: none;
+    transition: opacity 0.3s
     
     }
     
