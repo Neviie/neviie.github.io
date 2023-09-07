@@ -34,11 +34,10 @@ function reddirect() {
         .catch(error => console.error(error));
         
         function handleFetchResponse(data) {
-            let numericValue = parseInt(secondFetchValue.startsWith("TRA") || secondFetchValue.startsWith("TWN") ? secondFetchValue.substring(3) : secondFetchValue);
-
-            if (firstFetchValue == 0 && numericValue >= 1 && numericValue <= 100) {
+            
+            if (firstFetchValue == 0) {
                 window.location.href = `https://neviie.github.io/WEB/Light/${secondFetchValue}.html`;
-            } else if (firstFetchValue == 1 && numericValue >= 1 && numericValue <= 100) {
+            } else if (firstFetchValue == 1) {
                 window.location.href = `https://neviie.github.io/WEB/Night/N${secondFetchValue}.html`;
             } else {
                 ups.style.display = 'block';
