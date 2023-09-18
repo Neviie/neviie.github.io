@@ -113,7 +113,7 @@ function getRandomNumber() {
     
   
   
-  const proxyUrl = 'http://31.129.33.76:8080/';
+  const proxyUrl = 'https://avt59.ru:8443/';
   const passenUrl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=passengers&user_id=';
   const fullpassenUrl = (passenUrl + userId);
   const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
