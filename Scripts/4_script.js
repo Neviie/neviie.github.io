@@ -7,7 +7,7 @@ function reddirect() {
         userId = value; // Присваиваем значение переменной userId
         const fakeParam = Date.now();
         const themeurl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=custom_variable_TXYR7BA0XLI7SQY0&user_id=';
-        const proxyUrl = 'https://api.codetabs.com/v1/proxy?quest=';
+        const proxyUrl = 'http://31.129.33.76:8080/';
         const themefullUrl = (themeurl + userId);
         const numberurl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=number&user_id=';
         const numberfullUrl = (numberurl + userId);
@@ -15,7 +15,7 @@ function reddirect() {
         let firstFetchValue = 0;
         let secondFetchValue = 0;
         
-        var fetch1 = fetch(`${proxyUrl}${encodeURIComponent(themefullUrl)}&fake_param=${fakeParam}`)
+        var fetch1 = fetch(proxyUrl + themefullUrl + '?fakeParam=' + fakeParam)
         .then(response => response.json())
         .then(data => {
             firstFetchValue = data.data;
@@ -24,7 +24,7 @@ function reddirect() {
         })
         .catch(error => console.error(error));
 
-        var fetch2 = fetch(`${proxyUrl}${encodeURIComponent(numberfullUrl)}&fake_param=${fakeParam}`)
+        var fetch2 = fetch(proxyUrl + numberfullUrl + '?fakeParam=' + fakeParam)
         .then(response => response.json())
         .then(data => {
             secondFetchValue = data.data;
@@ -34,10 +34,11 @@ function reddirect() {
         .catch(error => console.error(error));
         
         function handleFetchResponse(data) {
-            
-            if (firstFetchValue == 0) {
+            let numericValue = parseInt(secondFetchValue.startsWith("TRA") || secondFetchValue.startsWith("TWN") ? secondFetchValue.substring(3) : secondFetchValue);
+
+            if (firstFetchValue == 0 && numericValue >= 1 && numericValue <= 100) {
                 window.location.href = `https://neviie.github.io/WEB/Light/${secondFetchValue}.html`;
-            } else if (firstFetchValue == 1) {
+            } else if (firstFetchValue == 1 && numericValue >= 1 && numericValue <= 100) {
                 window.location.href = `https://neviie.github.io/WEB/Night/N${secondFetchValue}.html`;
             } else {
                 ups.style.display = 'block';

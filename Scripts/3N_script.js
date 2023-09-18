@@ -556,6 +556,10 @@ marshrut_duble.textContent = marshrut.textContent;
           const clone = controlDiv.cloneNode(true);
           clone.classList.add("cloned-control");
           controlDiv.parentElement.insertBefore(clone, controlDiv.nextElementSibling);
+  
+          // Генерируем случайное число для каждого клона
+          const randomNumber = Math.floor(Math.random() * (9000000000 - 5000000000)) + 5000000000;
+          clone.querySelector('#e').innerText = randomNumber;
         }
       }
 

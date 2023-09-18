@@ -25,6 +25,7 @@
 		/* выводим текущую дату и время на сайт в блок с id "current_date_time_block" */
 		document.getElementById('current_date_time_blockk').innerHTML = date_time();
 		document.getElementById('date_date').innerHTML = date_time();
+		
 
 		// Убирает элемент ost и меняет его класс чтобы он не изменялся
 		var ost = document.querySelector('.ost');
