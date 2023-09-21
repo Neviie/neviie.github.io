@@ -538,44 +538,6 @@ var marshrut_duble = document.getElementById('duble_marsh');
 marshrut_duble.textContent = marshrut.textContent;
 
 });
-document.addEventListener("DOMContentLoaded", function () {
-  function cloneControlElements() {
-    var passenValue = parseInt(document.getElementById("passen").innerText);
-    var controlDiv = document.getElementById("control");
-
-    if (!isNaN(passenValue) && passenValue >= 2) {
-      // Удаляем уже существующие клонированные элементы
-      var existingClones = document.querySelectorAll(".cloned-control");
-      for (let i = 0; i < existingClones.length; i++) {
-        existingClones[i].remove();
-      }
-
-      // Клонируем и добавляем необходимое количество раз
-      for (let i = 1; i < passenValue; i++) {
-        const clone = controlDiv.cloneNode(true);
-        clone.classList.add("cloned-control");
-        controlDiv.parentElement.insertBefore(clone, controlDiv.nextElementSibling);
-
-        // Генерируем случайное число для каждого клона
-        const randomNumber = Math.floor(Math.random() * (9000000000 - 5000000000)) + 5000000000;
-        clone.querySelector('#e').innerText = randomNumber;
-      }
-    }
-
-      var oplataElement = document.getElementById("oplata");
-    var bagsValue = parseInt(document.getElementById("bags").innerText);
-    var result = (passenValue + bagsValue) * 35;
-    var greenspan = document.getElementById("greenpass");
-    oplataElement.textContent = result;
-    greenspan.textContent = result;
-    }
-  
-    // Инициализация клонирования при загрузке страницы
-    cloneControlElements();
-  
-    // Добавляем обработчик события на элемент "passen" для отслеживания изменений
-    document.getElementById("passen").addEventListener("DOMSubtreeModified", cloneControlElements);
-  });
 
   
 

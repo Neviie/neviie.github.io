@@ -53,6 +53,37 @@ function getRandomNumber() {
 
   };
 
+  function cloneControlElements() {
+    var passenValue = parseInt(document.getElementById("passen").innerText);
+    var controlDiv = document.getElementById("control");
+
+    if (!isNaN(passenValue) && passenValue >= 2) {
+      // Удаляем уже существующие клонированные элементы
+      var existingClones = document.querySelectorAll(".cloned-control");
+      for (let i = 0; i < existingClones.length; i++) {
+        existingClones[i].remove();
+      }
+
+      // Клонируем и добавляем необходимое количество раз
+      for (let i = 1; i < passenValue; i++) {
+        const clone = controlDiv.cloneNode(true);
+        clone.classList.add("cloned-control");
+        controlDiv.parentElement.insertBefore(clone, controlDiv.nextElementSibling);
+
+        // Генерируем случайное число для каждого клона
+        const randomNumber = Math.floor(Math.random() * (9000000000 - 5000000000)) + 5000000000;
+        clone.querySelector('#e').innerText = randomNumber;
+      }
+    }
+
+    var oplataElement = document.getElementById("oplata");
+    var bagsValue = parseInt(document.getElementById("bags").innerText);
+    var result = (passenValue + bagsValue) * 35;
+    var greenspan = document.getElementById("greenpass");
+    oplataElement.textContent = result;
+    greenspan.textContent = result;
+    }
+
   // Функция для обновления числа при нажатии
   function update2Number() {
     var numberElement = document.getElementById('number');
@@ -155,7 +186,9 @@ function getRandomNumber() {
       const formattedDate = `${formattedDay}.${formattedMonth}.${formattedYear} `;
       // Обновляем содержимое элемента с идентификатором "current_date_time_block"
       document.querySelector('#x').innerHTML = `${formattedDate} ${timerurl}`;
-
+      
+      // Инициализация клонирования при загрузке страницы
+      cloneControlElements()
 
 
       var timerElement = document.getElementById("timer");
