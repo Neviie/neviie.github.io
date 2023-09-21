@@ -3,12 +3,6 @@
 		:-moz-placeholder           {color:#FFFFFF; opacity:1;}/* Firefox 18- */
 		:-ms-input-placeholder      {color:#FFFFFF; opacity:1;}/* IE */
 
-@font-face {
-			font-family: "Roboto"; 
-			src: url(/Assets/Roboto-Regular.ttf) format("truetype"); 
-			font-style: normal; 
-			font-weight: normal; 
-		}	 
 
 			body {
 background-image: url(https://proezdnoy59.files.wordpress.com/2023/02/fonn.png);	
