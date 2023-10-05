@@ -11,7 +11,7 @@ var profileNewElement = document.querySelector('.profile_new2');
     element.style.display = 'none';
 
 var imgElement = document.querySelector('.img_fig_3');
-  imgElement.src = 'cabinet_active.png';
+  imgElement.src = '/Assets/cabinet_active.png';
   
   var fontElement = document.querySelector('.font_fig_3');
   fontElement.style.color = 'rgb(17,121,145)';
@@ -23,14 +23,14 @@ var opElement = document.querySelector('op');
 opElement.textContent = 'Кабинет';
 
 var backbusimgElement = document.querySelector('.img_fig_4');
- backbusimgElement.src = 'schedule_noactive.png';
+ backbusimgElement.src = '/Assets/schedule_noactive.png';
 
   
   var backbusfontElement = document.querySelector('.font_fig_4');
   backbusfontElement.style.color = 'rgb(110, 110, 110)';
 
 var backproezdnoyimgElement = document.querySelector('.img_fig_2');
- backproezdnoyimgElement.src = 'proezdnoy_noactive.png';
+ backproezdnoyimgElement.src = '/Assets/proezdnoy_noactive.png';
 
   
   var backproezdnoyfontElement = document.querySelector('.font_fig_2');
@@ -40,7 +40,7 @@ var backticketfontElement = document.querySelector('.font_fig_1');
   backticketfontElement.style.color = 'rgb(110, 110, 110)';
 
 var backticketimgElement = document.querySelector('.img_fig_1');
- backticketimgElement.src = 'bilet_noacrive.png';
+ backticketimgElement.src = '/Assets/bilet_noacrive.png';
   });
 }
 	// Расписание
@@ -53,10 +53,10 @@ function handleClick2() {
     element.style.display = 'none';
 
 var imgElement = document.querySelector('.img_fig_4');
-  imgElement.src = 'schedule_active.png';
+  imgElement.src = '/Assets/schedule_active.png';
 
 var backprofileimgElement = document.querySelector('.img_fig_3');
-  backprofileimgElement.src = 'cabinet_noactive.png';
+  backprofileimgElement.src = '/Assets/cabinet_noactive.png';
   
   var fontElement = document.querySelector('.font_fig_4');
   fontElement.style.color = 'rgb(17,121,145)';
@@ -71,7 +71,7 @@ var opElement = document.querySelector('op');
 opElement.textContent = 'Расписание';
 
 var backproezdnoyimgElement = document.querySelector('.img_fig_2');
- backproezdnoyimgElement.src = 'proezdnoy_noactive.png';
+ backproezdnoyimgElement.src = '/Assets/proezdnoy_noactive.png';
 
   
   var backproezdnoyfontElement = document.querySelector('.font_fig_2');
@@ -81,7 +81,7 @@ var backticketfontElement = document.querySelector('.font_fig_1');
   backticketfontElement.style.color = 'rgb(110, 110, 110)';
 
 var backticketimgElement = document.querySelector('.img_fig_1');
- backticketimgElement.src = 'bilet_noacrive.png';
+ backticketimgElement.src = '/Assets/bilet_noacrive.png';
   });
 }
 	// Проездной
@@ -94,10 +94,10 @@ function handleClick3() {
     element.style.display = 'none';
 
 var imgElement = document.querySelector('.img_fig_2');
-  imgElement.src = 'proezdnoy_active.png';
+  imgElement.src = '/Assets/proezdnoy_active.png';
 
 var backprofileimgElement = document.querySelector('.img_fig_3');
-  backprofileimgElement.src = 'cabinet_noactive.png';
+  backprofileimgElement.src = '/Assets/cabinet_noactive.png';
   
   var fontElement = document.querySelector('.font_fig_2');
   fontElement.style.color = 'rgb(17,121,145)';
@@ -112,7 +112,7 @@ var opElement = document.querySelector('op');
 opElement.textContent = 'Добавить карту';
 
 var backbusimgElement = document.querySelector('.img_fig_4');
- backbusimgElement.src = 'schedule_noactive.png';
+ backbusimgElement.src = '/Assets/schedule_noactive.png';
   
   var backbusfontElement = document.querySelector('.font_fig_4');
   backbusfontElement.style.color = 'rgb(110, 110, 110)';
@@ -121,7 +121,7 @@ var backticketfontElement = document.querySelector('.font_fig_1');
   backticketfontElement.style.color = 'rgb(110, 110, 110)';
 
 var backticketimgElement = document.querySelector('.img_fig_1');
- backticketimgElement.src = 'bilet_noacrive.png';
+ backticketimgElement.src = '/Assets/bilet_noacrive.png';
   });
 }
 	// Билеты
@@ -149,13 +149,13 @@ var profileNewElement = document.querySelector('.schedule_new');
     element.style.display = 'block';
 
 var imgElement = document.querySelector('.img_fig_2');
-  imgElement.src = 'proezdnoy_noactive_N.jpg';
+  imgElement.src = '/Assets/proezdnoy_noactive_N.jpg';
 
 var backprofileimgElement = document.querySelector('.img_fig_3');
-  backprofileimgElement.src = 'cabinet_noactive.png';
+  backprofileimgElement.src = '/Assets/cabinet_noactive.png';
   
   var imgElement = document.querySelector('.img_fig_1');
-  imgElement.src = 'bilet_acrive.png';
+  imgElement.src = '/Assets/bilet_acrive.png';
 
   var fontElement = document.querySelector('.font_fig_1');
   fontElement.style.color = 'rgb(17,121,145)';
@@ -170,14 +170,14 @@ var opElement = document.querySelector('op');
 opElement.textContent = 'Оплата проезда';
 
 var backbusimgElement = document.querySelector('.img_fig_4');
- backbusimgElement.src = 'schedule_noactive.png';
+ backbusimgElement.src = '/Assets/schedule_noactive.png';
 
   
   var backbusfontElement = document.querySelector('.font_fig_4');
   backbusfontElement.style.color = 'rgb(110, 110, 110)';
 
 var backproezdnoyimgElement = document.querySelector('.img_fig_2');
- backproezdnoyimgElement.src = 'proezdnoy_noactive.png';
+ backproezdnoyimgElement.src = '/Assets/proezdnoy_noactive.png';
 
   
   var backproezdnoyfontElement = document.querySelector('.font_fig_2');
@@ -239,7 +239,7 @@ var arrow_img = document.getElementById('arrow_img');
 var scan_QR = document.getElementById('scan_QR');
 var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box');
 var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box');
-var Active_menunow_img = document.getElementById('https://neviie.github.io/Assets/Active_menunowL.png');
+var Active_menunow_img = document.getElementById('/Assets/Active_menunowL.png');
 var Menu_now = document.getElementById('menunow_left');
 var scan_QR_img = document.getElementById('scan_QR_img')
 var bottom_button =  document.querySelectorAll('.fig_2, .fig_3, .fig_4')
@@ -251,7 +251,7 @@ function noactive() {
 var all_leftmenu_buttons = document.querySelectorAll('.left_menu_point');
 var scanQR_img = document.getElementById('scan_QR_img');
 var numQR_img = document.getElementById('num_QR_img');
-var now_img = document.getElementById('https://neviie.github.io/Assets/Active_menunowL.png');
+var now_img = document.getElementById('/Assets/Active_menunowL.png');
 var history_img = document.getElementById('history_img');
 var card_img = document.getElementById('menu_card_img');
 
@@ -261,11 +261,11 @@ all_leftmenu_buttons.forEach((button) => {
   button.style.color = 'black';
   button.style.fontWeight = 'normal';
   button.style.backgroundColor = 'white';
-  scanQR_img.src = 'https://neviie.github.io/Assets/Noactive_menuQRL.png';
-  numQR_img.src = 'https://neviie.github.io/Assets/Noactive_menuQRL.png';
-  history_img.src = 'https://neviie.github.io/Assets/Noactive_menuhistoryL.png';
-  card_img.src = 'https://neviie.github.io/Assets/Noactive_menucardL.png';
-  now_img.src = 'https://neviie.github.io/Assets/Noactive_menunowL.png';
+  scanQR_img.src = '/Assets/Noactive_menuQRL.png';
+  numQR_img.src = '/Assets/Noactive_menuQRL.png';
+  history_img.src = '/Assets/Noactive_menuhistoryL.png';
+  card_img.src = '/Assets/Noactive_menucardL.png';
+  now_img.src = '/Assets/Noactive_menunowL.png';
 });	
 
 }
@@ -338,7 +338,7 @@ hideall();
 menunow_left.style.color = 'rgb(42,127,228)';
 menunow_left.style.fontWeight = '600';
 menunow_left.style.backgroundColor = 'rgb(226,239,255)';
-now_img.src = 'https://neviie.github.io/Assets/Active_menunowL.png';
+now_img.src = '/Assets/Active_menunowL.png';
 handleClick4()
     
 });
@@ -352,7 +352,7 @@ hideall();
 scan_QR.style.color = 'rgb(42,127,228)';
 scan_QR.style.fontWeight = '600';
 scan_QR.style.backgroundColor = 'rgb(226,239,255)';
-scan_QR_img.src = 'https://neviie.github.io/Assets/Active_menuQRL.png';
+scan_QR_img.src = '/Assets/Active_menuQRL.png';
 
 leftMenu.style.left = '-100%';
 shadow.classList.toggle('transparent');
@@ -391,7 +391,7 @@ oppElement.textContent = 'Оплата проезда';
 num_QR.style.color = 'rgb(42,127,228)';
 num_QR.style.fontWeight = '600';
 num_QR.style.backgroundColor = 'rgb(226,239,255)';
-num_QR_img.src = 'https://neviie.github.io/Assets/Active_menuQRL.png';
+num_QR_img.src = '/Assets/Active_menuQRL.png';
 
 leftMenu.style.left = '-100%';
 shadow.classList.toggle('transparent');
@@ -404,7 +404,7 @@ shap_cenElement.style.marginLeft = 'calc(15vw + 10vh)';
 	// Текуший заказ
 
 var menunow_left = document.getElementById('menunow_left');
-var now_img = document.getElementById('https://neviie.github.io/Assets/Active_menunowL.png');
+var now_img = document.getElementById('/Assets/Active_menunowL.png');
 var bills = document.querySelector('.fig_1');
 
 
@@ -419,7 +419,7 @@ hideall();
 menunow_left.style.color = 'rgb(42,127,228)';
 menunow_left.style.fontWeight = '600';
 menunow_left.style.backgroundColor = 'rgb(226,239,255)';
-now_img.src = 'https://neviie.github.io/Assets/Active_menunowL.png';
+now_img.src = '/Assets/Active_menunowL.png';
 handleClick4()
 };
 
@@ -443,7 +443,7 @@ hideall();
 menucard.style.color = 'rgb(42,127,228)';
 menucard.style.fontWeight = '600';
 menucard.style.backgroundColor = 'rgb(226,239,255)';
-menu_card_img.src = 'https://neviie.github.io/Assets/Active_menucardL.png';
+menu_card_img.src = '/Assets/Active_menucardL.png';
 
 leftMenu.style.left = '-100%';
 shadow.classList.toggle('transparent');
@@ -469,7 +469,7 @@ hideall();
 historyleft.style.color = 'rgb(42,127,228)';
 historyleft.style.fontWeight = '600';
 historyleft.style.backgroundColor = 'rgb(226,239,255)';
-history_img.src = 'https://neviie.github.io/Assets/Active_menuhistoryL.png';
+history_img.src = '/Assets/Active_menuhistoryL.png';
 
 leftMenu.style.left = '-100%';
 shadow.classList.toggle('transparent');
@@ -509,7 +509,7 @@ greenbusBox.className = 'greenbus_box';
 
 var greenBoxBus = document.createElement('img');
 greenBoxBus.className = 'green_box_bus';
-greenBoxBus.src = 'https://neviie.github.io/Assets/Green_Bus.png';
+greenBoxBus.src = '/Assets/Green_Bus.png';
 
 var greenbusBoxNum = document.createElement('span');
 greenbusBoxNum.className = 'greenbus_box_num';

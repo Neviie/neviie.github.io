@@ -1,16 +1,16 @@
 	    // Обновляем число при загрузке страницы
    // Массив с путями к картинкам
    var images = [
-    "control_banana_1.png",
-    "contol_cat_2.png",
-    "control_cherry_3.png",
-    "control_duck_4.png",
-    "control_flower_5.png",
-    "control_house_6.png",
-    "control_plane_7.png",
-    "control_rocket_8.png",
-    "control_tea_9.png",
-    "conrol_tram_10.png",
+    "/Assets/control_banana_1.png",
+    "/Assets/contol_cat_2.png",
+    "/Assets/control_cherry_3.png",
+    "/Assets/control_duck_4.png",
+    "/Assets/control_flower_5.png",
+    "/Assets/control_house_6.png",
+    "/Assets/control_plane_7.png",
+    "/Assets/control_rocket_8.png",
+    "/Assets/control_tea_9.png",
+    "/Assets/conrol_tram_10.png",
     // Добавьте пути к другим картинкам
   ];
   // Переменные для хранения текущих индексов картинок
