@@ -104,30 +104,30 @@ function getRandomNumber() {
 
   // Функция для обновления левой картинки при нажатии
   function updateLeftImage() {
-    var leftImageElement = document.getElementById('left-image');
+   // var leftImageElement = document.getElementById('left-image');
 
-    // Обновляем индекс левой картинки
-    leftImageIndex++;
-    if (leftImageIndex >= images.length) {
-      leftImageIndex = 0;
-    }
+   //  // Обновляем индекс левой картинки
+   //  leftImageIndex++;
+   //  if (leftImageIndex >= images.length) {
+   //    leftImageIndex = 0;
+   //  }
 
-    // Обновляем отображаемую картинку
-    leftImageElement.src = images[leftImageIndex];
+   //  // Обновляем отображаемую картинку
+   //  leftImageElement.src = images[leftImageIndex];
   }
 
   // Функция для обновления правой картинки при нажатии
   function updateRightImage() {
-    var rightImageElement = document.getElementById('right-image');
+    // var rightImageElement = document.getElementById('right-image');
 
-    // Обновляем индекс правой картинки
-    rightImageIndex++;
-    if (rightImageIndex >= images.length) {
-      rightImageIndex = 0;
-    }
+    // // Обновляем индекс правой картинки
+    // rightImageIndex++;
+    // if (rightImageIndex >= images.length) {
+    //   rightImageIndex = 0;
+    // }
 
-    // Обновляем отображаемую картинку
-    rightImageElement.src = images[rightImageIndex];
+    // // Обновляем отображаемую картинку
+    // rightImageElement.src = images[rightImageIndex];
   }
 
 
