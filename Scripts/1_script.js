@@ -139,10 +139,21 @@ function getRandomNumber() {
 
   // Функция для получения значения из localStorage
   function displayValue() {
-    var value = localStorage.getItem("myValue");
-    userId = value; // Присваиваем значение переменной userId
+    let tg = window.Telegram.WebApp;
+    let userId;
+
+    try {
+        userId = tg.initDataUnsafe.user.id;
+    } catch (error) {
+        console.error(error); // Выводим информацию об ошибке
+    }
+
+    if (!userId) {
+        let value = localStorage.getItem("myValue");
+        userId = 487518336; // Присваиваем значение переменной userId
+    }
+
     console.log(userId); // Выводим значение в консоль (для демонстрации)
-    // Дальше можно использовать значение переменной userId по вашему усмотрению
     
     
   
@@ -164,11 +175,12 @@ function getRandomNumber() {
     const timerurl = variables[3];
     const passenUrl = variables[4];
     let unixurl = variables[5];
+    let theme = variables[6];
 
     document.getElementById('emailid').innerHTML = emailurl;
-    document.getElementById('result').innerHTML = url;
-    document.getElementById('result2').innerHTML = url;
-    document.getElementById('ustr').innerHTML = UstUrl;
+    document.getElementById('result').textContent = url;
+    document.getElementById('result2').textContent = url;
+    document.getElementById('ustr').textContent = UstUrl;
     document.getElementById('passen').innerHTML = passenUrl;
 
      // Обновляем содержимое элемента с идентификатором "result"
@@ -232,8 +244,33 @@ function getRandomNumber() {
         // Отображаем секундомер на странице
         timerElement.innerText = formattedTime;
         }
-  
+        
+        let cssLink, scriptSrc;
 
-  })}
+      if (theme == 1) {
+          cssLink = "/StyleWEBN.css";
+          scriptSrc = "/Scripts/3N_script.js";
+      } else if (theme == 0) {
+          cssLink = "/StyleWEBL.css";
+          scriptSrc = "/Scripts/3L_script.js";
+      }
+
+      // Сохраняем выбранную тему и скрипт в localStorage
+      localStorage.setItem("theme", cssLink);
+      localStorage.setItem("script", scriptSrc);
+
+      // Применяем выбранную тему
+      let linkElement = document.createElement("link");
+      linkElement.setAttribute("rel", "stylesheet");
+      linkElement.setAttribute("type", "text/css");
+      linkElement.setAttribute("href", cssLink);
+      document.getElementsByTagName("head")[0].appendChild(linkElement);
+
+      // Загружаем соответствующий скрипт
+      let scriptElement = document.createElement("script");
+      scriptElement.setAttribute("src", scriptSrc);
+      document.body.appendChild(scriptElement);
+
+  })} 
         
       

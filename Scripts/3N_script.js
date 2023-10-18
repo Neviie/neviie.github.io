@@ -237,9 +237,9 @@
 		var shap_cenElement = document.querySelector('.shap_cen');
 		var arrow_img = document.getElementById('arrow_img');
 		var scan_QR = document.getElementById('scan_QR');
-		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box');
+		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box,  .history_paid_box');
 		var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box');
-		var Active_menunow_img = document.getElementById('/Assets/Active_menunow.png');
+		var Active_menunow_img = document.getElementById('Active_menunow');
 		var Menu_now = document.getElementById('menunow_left');
 		var scan_QR_img = document.getElementById('scan_QR_img')
 		var bottom_button =  document.querySelectorAll('.fig_2, .fig_3, .fig_4')
@@ -251,7 +251,7 @@
 		var all_leftmenu_buttons = document.querySelectorAll('.left_menu_point');
 		var scanQR_img = document.getElementById('scan_QR_img');
 		var numQR_img = document.getElementById('num_QR_img');
-		var now_img = document.getElementById('/Assets/Active_menunow.png');
+		var now_img = document.getElementById('Active_menunow');
 		var history_img = document.getElementById('history_img');
 		var card_img = document.getElementById('menu_card_img');
 		
@@ -404,7 +404,7 @@
 	// Текуший заказ
 	
 	var menunow_left = document.getElementById('menunow_left');
-	var now_img = document.getElementById('/Assets/Active_menunow.png');
+	var now_img = document.getElementById('Active_menunow');
 	var bills = document.querySelector('.fig_1');
 	
 	
@@ -454,97 +454,121 @@
  right_up_img.style.display='block';
  copy_img.style.display='block';
 });
-	// История заказов
 	
-	var historyleft = document.getElementById('history_left');
-	var history_img = document.getElementById('history_img');
-	var history_box = document.querySelector('.history_box');
-	
-	
-	historyleft.addEventListener('click', () => {
-	
-	noactive();
-  hideall();
-
-  historyleft.style.color = 'rgb(39,122,243)';
-  historyleft.style.fontWeight = '600';
-  historyleft.style.backgroundColor = 'rgb(19,32,47)';
-  history_img.src = '/Assets/Active_menuhistory.png';
-
-  leftMenu.style.left = '-100%';
-  shadow.classList.toggle('transparent');
-  oppElement.textContent = 'История заказов';
-  zooElement.textContent = ' ';
-  shap_cenElement.style.marginLeft = 'calc(10vw + 12vh)';
-  history_box.style.display = 'block';
-  
-  function getRandomNumber(min, max, excludedNumbers) {
-  var randomNumber;
-  do {
-    randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-  } while (excludedNumbers.includes(randomNumber));
-  return randomNumber;
-}
-
-function getRandomDate() {
-  var startDate = new Date('2023-07-01T00:00:00');
-  var endDate = new Date('2023-07-10T23:59:59');
-  var randomTimestamp = Math.floor(Math.random() * (endDate.getTime() - startDate.getTime() + 1)) + startDate.getTime();
-  var randomDate = new Date(randomTimestamp);
-  var formattedDate = randomDate.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
-  var formattedTime = randomDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
-  return formattedDate + ' ' + formattedTime;
-}
-
-var historyBox = document.querySelector('.history_box');
-
+  // История заказов
+var historyleft = document.getElementById('history_left');
+var history_img = document.getElementById('history_img');
+var history_box = document.querySelector('.history_box');
 var numDivs = Math.floor(Math.random() * 15) + 1;
 
-for (var i = 0; i < numDivs; i++) {
-  var div = document.createElement('div');
-  div.className = 'history_line';
+historyleft.addEventListener('click', () => {
+noactive();
+hideall();
+historyleft.style.color = 'rgb(39,122,243)';
+historyleft.style.fontWeight = '600';
+historyleft.style.backgroundColor = 'rgb(19,32,47)';
+history_img.src = '/Assets/Active_menuhistory.png';
+leftMenu.style.left = '-100%';
+shadow.classList.toggle('transparent');
+oppElement.textContent = 'История заказов';
+zooElement.textContent = ' ';
+shap_cenElement.style.marginLeft = 'calc(10vw + 12vh)';
+history_box.style.display = 'block';
 
-  var greenbusBox = document.createElement('div');
-  greenbusBox.className = 'greenbus_box';
-
-  var greenBoxBus = document.createElement('img');
-  greenBoxBus.className = 'green_box_bus';
-  greenBoxBus.src = '/Assets/Green_Bus.png';
-
-  var greenbusBoxNum = document.createElement('span');
-  greenbusBoxNum.className = 'greenbus_box_num';
-  greenbusBoxNum.textContent = getRandomNumber(1, 80, [2, 31, 42, 43, 66, 72, 76, 78, 79]);
-
-  greenbusBox.appendChild(greenBoxBus);
-  greenbusBox.appendChild(greenbusBoxNum);
-
-  var randomDate = document.createElement('span');
-  randomDate.className = 'random_date';
-  randomDate.textContent = getRandomDate();
-
-  var greenn = document.createElement('greenn');
-  greenn.textContent = '35 руб';
-
-  div.appendChild(greenbusBox);
-  div.appendChild(randomDate);
-  div.appendChild(greenn);
-
-  historyBox.appendChild(div);
+function getRandomNumber(min, max, excludedNumbers) {
+var randomNumber;
+do {
+randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+} while (excludedNumbers.includes(randomNumber));
+return randomNumber;
 }
+function getRandomDate() {
+var startDate = new Date('2023-07-01T00:00:00');
+var endDate = new Date('2023-07-10T23:59:59');
+var randomTimestamp = Math.floor(Math.random() * (endDate.getTime() - startDate.getTime() + 1)) + startDate.getTime();
+var randomDate = new Date(randomTimestamp);
+var formattedDate = randomDate.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+var formattedTime = randomDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+return formattedDate + ' ' + formattedTime;
+}
+var historyBox = document.querySelector('.history_box');
 
+for (var i = 0; i < numDivs; i++) {
+var div = document.createElement('div');
+div.className = 'history_line';
+var greenbusBox = document.createElement('div');
+greenbusBox.className = 'greenbus_box';
+var greenBoxBus = document.createElement('img');
+greenBoxBus.className = 'green_box_bus';
+greenBoxBus.src = '/Assets/Green_Bus.png';
+var greenbusBoxNum = document.createElement('span');
+greenbusBoxNum.className = 'greenbus_box_num';
+greenbusBoxNum.textContent = getRandomNumber(1, 80, [2, 31, 42, 43, 66, 72, 76, 78, 79]);
+greenbusBox.appendChild(greenBoxBus);
+greenbusBox.appendChild(greenbusBoxNum);
+var randomDate = document.createElement('span');
+randomDate.className = 'random_date';
+randomDate.textContent = getRandomDate();
+var greenn = document.createElement('greenn');
+greenn.textContent = '35 руб';
+div.appendChild(greenbusBox);
+div.appendChild(randomDate);
+div.appendChild(greenn);
+historyBox.appendChild(div);
+}
 var marshrut = document.getElementById('marshrutt');
 var marshrut_duble = document.getElementById('duble_marsh');
-
 marshrut_duble.textContent = marshrut.textContent;
-
-  });
-
+});
+// История пополнений
   
+var blue_box = document.querySelector('.blue_box');
+var history_paid_box = document.querySelector('.history_paid_box');
 
+blue_box.addEventListener('click', () => {
+    
+  hideall();
+
+  oppElement.textContent = 'Цифровая карта';
+  zooElement.textContent = 'История пополнений';
+  shap_cenElement.style.marginLeft = 'calc(10vw + 12vh)';
+  history_paid_box.style.display = 'block';
+  function getRandomNumber(min, max, excludedNumbers) {
+    var randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (excludedNumbers.includes(randomNumber));
+    return randomNumber;
+  }
+  function getRandomDate() {
+    var startDate = new Date('2023-07-01T00:00:00');
+    var endDate = new Date('2023-07-10T23:59:59');
+    var randomTimestamp = Math.floor(Math.random() * (endDate.getTime() - startDate.getTime() + 1)) + startDate.getTime();
+    var randomDate = new Date(randomTimestamp);
+    var formattedDate = randomDate.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    var formattedTime = randomDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    return formattedDate + ' ' + formattedTime;
+  }
+  var historyBox = document.querySelector('.history_paid_box');
   
-
-
-
-
-
-
+  for (var i = 0; i < numDivs; i++) {
+    var div = document.createElement('div');
+    div.className = 'history_paid_line';
+    var greenPaidBox = document.createElement('div');
+    greenPaidBox.className = 'green_paid_box';
+    var greenPaidNum = document.createElement('span');
+    greenPaidNum.className = 'green_paid_num';
+    greenPaidNum.textContent = 'Пополнение';
+    
+    greenPaidBox.appendChild(greenPaidNum);
+    var randomDate = document.createElement('span');
+    randomDate.className = 'random_date';
+    randomDate.textContent = getRandomDate();
+    var greenn = document.createElement('greenn');
+    greenn.textContent = '+35 руб';
+    div.appendChild(greenPaidBox);
+    div.appendChild(randomDate);
+    div.appendChild(greenn);
+    historyBox.appendChild(div);
+  }
+});

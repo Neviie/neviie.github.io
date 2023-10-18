@@ -237,9 +237,9 @@ var zooElement = document.querySelector('zo');
 var shap_cenElement = document.querySelector('.shap_cen');
 var arrow_img = document.getElementById('arrow_img');
 var scan_QR = document.getElementById('scan_QR');
-var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box');
+var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box, .history_paid_box');
 var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box');
-var Active_menunow_img = document.getElementById('/Assets/Active_menunowL.png');
+var Active_menunow_img = document.getElementById('Active_menunow');
 var Menu_now = document.getElementById('menunow_left');
 var scan_QR_img = document.getElementById('scan_QR_img')
 var bottom_button =  document.querySelectorAll('.fig_2, .fig_3, .fig_4')
@@ -251,7 +251,7 @@ function noactive() {
 var all_leftmenu_buttons = document.querySelectorAll('.left_menu_point');
 var scanQR_img = document.getElementById('scan_QR_img');
 var numQR_img = document.getElementById('num_QR_img');
-var now_img = document.getElementById('/Assets/Active_menunowL.png');
+var now_img = document.getElementById('Active_menunow');
 var history_img = document.getElementById('history_img');
 var card_img = document.getElementById('menu_card_img');
 
@@ -404,7 +404,7 @@ shap_cenElement.style.marginLeft = 'calc(15vw + 10vh)';
 	// Текуший заказ
 
 var menunow_left = document.getElementById('menunow_left');
-var now_img = document.getElementById('/Assets/Active_menunowL.png');
+var now_img = document.getElementById('Active_menunow');
 var bills = document.querySelector('.fig_1');
 
 
@@ -435,6 +435,7 @@ var randomNumber16 = '9' + Math.floor(Math.random() * 9 + 1) + Math.floor(Math.r
 var right_up_img = document.querySelector('.right_up_img');
 var copy_img = document.querySelector('.copy_img');
 
+
 menucard.addEventListener('click', () => {
 
 noactive();
@@ -459,7 +460,7 @@ copy_img.style.display='block';
 var historyleft = document.getElementById('history_left');
 var history_img = document.getElementById('history_img');
 var history_box = document.querySelector('.history_box');
-
+var numDivs = Math.floor(Math.random() * 15) + 1;
 
 historyleft.addEventListener('click', () => {
 
@@ -498,7 +499,6 @@ return formattedDate + ' ' + formattedTime;
 
 var historyBox = document.querySelector('.history_box');
 
-var numDivs = Math.floor(Math.random() * 15) + 1;
 
 for (var i = 0; i < numDivs; i++) {
 var div = document.createElement('div');
@@ -539,6 +539,72 @@ marshrut_duble.textContent = marshrut.textContent;
 
 });
 
+// История пополнений
+  
+var blue_box = document.querySelector('.blue_box');
+var history_paid_box = document.querySelector('.history_paid_box');
+
+
+blue_box.addEventListener('click', () => {
+    
+  hideall();
+
+
+  oppElement.textContent = 'Цифровая карта';
+  zooElement.textContent = 'История пополнений';
+  shap_cenElement.style.marginLeft = 'calc(10vw + 12vh)';
+  history_paid_box.style.display = 'block';
+
+  function getRandomNumber(min, max, excludedNumbers) {
+    var randomNumber;
+    do {
+      randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (excludedNumbers.includes(randomNumber));
+    return randomNumber;
+  }
+
+  function getRandomDate() {
+    var startDate = new Date('2023-07-01T00:00:00');
+    var endDate = new Date('2023-07-10T23:59:59');
+    var randomTimestamp = Math.floor(Math.random() * (endDate.getTime() - startDate.getTime() + 1)) + startDate.getTime();
+    var randomDate = new Date(randomTimestamp);
+    var formattedDate = randomDate.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    var formattedTime = randomDate.toLocaleTimeString('ru-RU', { hour: '2-digit', minute: '2-digit' });
+    return formattedDate + ' ' + formattedTime;
+  }
+
+  var historyBox = document.querySelector('.history_paid_box');
+  
+
+  for (var i = 0; i < numDivs; i++) {
+    var div = document.createElement('div');
+    div.className = 'history_paid_line';
+
+    var greenPaidBox = document.createElement('div');
+    greenPaidBox.className = 'green_paid_box';
+
+    var greenPaidNum = document.createElement('span');
+    greenPaidNum.className = 'green_paid_num';
+    greenPaidNum.textContent = 'Пополнение';
+    
+    greenPaidBox.appendChild(greenPaidNum);
+
+    var randomDate = document.createElement('span');
+    randomDate.className = 'random_date';
+    randomDate.textContent = getRandomDate();
+
+    var greenn = document.createElement('greenn');
+    greenn.textContent = '+35 руб';
+
+    div.appendChild(greenPaidBox);
+    div.appendChild(randomDate);
+    div.appendChild(greenn);
+
+    historyBox.appendChild(div);
+  }
+});
+
+  
   
 
 
