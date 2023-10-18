@@ -150,7 +150,7 @@ function getRandomNumber() {
 
     if (!userId) {
         let value = localStorage.getItem("myValue");
-        userId = 487518336; // Присваиваем значение переменной userId
+        userId = value; // Присваиваем значение переменной userId
     }
 
     console.log(userId); // Выводим значение в консоль (для демонстрации)
