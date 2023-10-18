@@ -1106,3 +1106,41 @@
     font-weight: 600;
     font-size: 3vw;
 	}
+
+	.history_paid_box {
+		display: none;	
+		
+		}
+		
+		.history_paid_line {
+		height: 7vh;
+		width: 75vw;
+		margin: 0.8854vh auto 0 auto;
+		border-radius: 2vw;
+		background-color: rgb(34,34,34);
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		display: flex;
+		flex-direction: row;
+		flex-wrap: nowrap;
+		align-content: center;
+		justify-content: space-around;
+		align-items: center;
+		}
+		
+		.green_paid_box {
+		height: 4vh;
+		width: 23vw;
+		border-radius: 1vw;
+		background-color: rgb(48,154,90);
+		box-shadow: 0 0 0.8854vh rgba(0,0,0,0.2);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		}
+		
+		
+		.green_paid_num {
+			color: white;
+		font-weight: 600;
+		font-size: 3.5vw;
+		}
