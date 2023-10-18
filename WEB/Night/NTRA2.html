@@ -131,16 +131,26 @@
 <img src="/Assets/copyN.png" class="copy_img">
 
 <div class="history_box">
-	<div class="history_line">
-		<div class="greenbus_box">
-		<img class="green_box_bus" src="/Assets/Green_Bus.png">
-		<span class="greenbus_box_num" id="duble_marsh">0</span>
-		</div>
-		<span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
-		<greenn><span id="greenpass">35</span> руб</greenn>
-	</div>
+    <div class="history_line">
+        <div class="greenbus_box">
+        <img class="green_box_bus" src="/Assets/Green_Bus.png">
+        <span class="greenbus_box_num" id="duble_marsh">0</span>
+        </div>
+        <span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+        <greenn><span id="greenpass">35</span> руб</greenn>
+    </div>
 </div>
+
+<div class="history_paid_box">
+    <div class="history_paid_line">
+        <div class="green_paid_box">
+        <span class="green_paid_num" id="green_paid">Пополнение</span>
+        </div>
+        <span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+        <greenn><span id="greenpid">+35</span> руб</greenn>
+    </div>
 </div>
+
 <div class="marshrut">
 	<div class="text_t_p">
 		<mar>Маршрут №<kal><span id="marshrutt">2</span></kal></mar>
@@ -198,7 +208,7 @@
 <div class="control_box">
 <div id="control" class="control">
 	<div class="text_t_p">
-	<bilet id="bills">БИЛЕТ</bilet>
+	<bilet>БИЛЕТ</bilet>
 	<div class="null_cont"></div>
 	<n>№<div style="display:inline-block;" id="e"></div>
 <script type="text/javascript">
@@ -208,34 +218,36 @@ function getRandomInt(min, max) {
 
 document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 </script></n>							<!--генератор случайных 10 значных чисел-->
-	<div class="null_cont2"></div>
+	
+<div class="null_cont2"></div>
 <n><div id="x"></div></n>
-	<div class="null_cont2"></div>
-		<div class="line">
-		</div>
-	<div class="null_cont3"></div>
-	<n>МУП «Пермгорэлектротранс»</n>
-	<div class="null_cont"></div>
-	<n>ИНН 5906006610</n>	
-	<div class="null_cont"></div>
-	<n>по заказу МКУ "Гортранс"</n>	
-	<div class="null_cont"></div>
-		<div class="line">
-		</div>
-	<div class="null_cont3"></div>
-	
-	<div class="marshrut_dviz"><marshrutfont>2, Станция Осенцы - Стахановское</marshrutfont></div>			<!--сделать в две строки-->
-	<div class="marshrut_dviz"><marshrutfont>кольцо</marshrutfont></div>
-	
-	<div class="null_cont3"></div>
-	<n>Трамвай </n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
-		<div class="null_cont"></div>
-		<div class="line"></div>
-	<div class="null_cont3"></div>
-	<kim>Стоимость: 35 руб</kim>
-	</div>
+    <div class="null_cont2"></div>
+        <div class="line">
+        </div>
+    <div class="null_cont3"></div>
+    <n>МУП «Пермгорэлектротранс»</n>
+    <div class="null_cont"></div>
+    <n>ИНН 5906006610</n>   
+    <div class="null_cont"></div>
+    <n>по заказу МКУ "Гортранс"</n> 
+    <div class="null_cont"></div>
+        <div class="line">
+        </div>
+    <div class="null_cont3"></div>
+    
+    <div class="marshrut_dviz"><marshrutfont>2, Станция Осенцы - Стахановское</marshrutfont></div>          <!--сделать в две строки-->
+    <div class="marshrut_dviz"><marshrutfont>кольцо</marshrutfont></div>
+    
+    <div class="null_cont3"></div>
+    <n>Трамвай </n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
+        <div class="null_cont"></div>
+        <div class="line"></div>
+    <div class="null_cont3"></div>
+    <kim>Стоимость: 35 руб</kim>
+    </div>
 </div>
 </div>
+
 <div class="null_cont3"></div>
 <div class="bottom">
 
@@ -269,7 +281,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		<div class="left menu_object">
 			<div class="left_menu_point" id="scan_QR"><img src="/Assets/Noactive_menuQR.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
 			<div class="left_menu_point" id="num_QR"><img src="/Assets/Noactive_menuQR.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
-			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(19,32,47); color: rgb(39,122,243)"><img id="/Assets/Active_menunow.png" src="/Assets/Active_menunow.png" class="img_left_menu">Текущий заказ</div>
+			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(19,32,47); color: rgb(39,122,243)"><img id="Active_menunow" src="/Assets/Active_menunow.png" class="img_left_menu">Текущий заказ</div>
 			<div class="left_menu_point" id="history_left"><img src="/Assets/Noactive_menuhistory.png" class="img_left_menu" id="history_img">История заказов</div>
 			<div id="menucard" class="left_menu_point"><img src="/Assets/Noactive_menucard.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
 			<div class="left_menu_point" id="poriadok_oplati"><img src="/Assets/Noactive_menuoplata.png" class="img_left_menu">Порядок оплаты</div>
