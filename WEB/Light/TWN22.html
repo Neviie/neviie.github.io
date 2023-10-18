@@ -8,7 +8,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<script src="https://telegram.org/js/telegram-web-app.js"></script>
 		<script src="https://puzzlebot.top/webapp.js"></script>
-		<link rel="stylesheet" href="https://neviie.github.io/StyleWEBL.css">
+		<link rel="stylesheet" href="/StyleWEBL.css">
 	</head>
 <body>
 
@@ -140,7 +140,15 @@
         <greenn><span id="greenpass">35</span> руб</greenn>
     </div>
 </div>
-</div>
+
+<div class="history_paid_box">
+    <div class="history_paid_line">
+        <div class="green_paid_box">
+        <span class="green_paid_num" id="green_paid">Пополнение</span>
+        </div>
+        <span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+        <greenn><span id="greenpid">+35</span> руб</greenn>
+    </div>
 </div>
 <div class="marshrut">
 	<div class="text_t_p">
@@ -270,7 +278,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		<div class="left menu_object">
 			<div class="left_menu_point" id="scan_QR"><img src="/Assets/Noactive_menuQRL.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
 			<div class="left_menu_point" id="num_QR"><img src="/Assets/Noactive_menuQRL.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
-			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(226,239,255); color: rgb(42,127,228)"><img id="/Assets/Active_menunowL.png" src="/Assets/Active_menunowL.png" class="img_left_menu">Текущий заказ</div>
+			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(226,239,255); color: rgb(42,127,228)"><img id="Active_menunow" src="/Assets/Active_menunowL.png" class="img_left_menu">Текущий заказ</div>
 			<div class="left_menu_point" id="history_left"><img src="/Assets/Noactive_menuhistoryL.png" class="img_left_menu" id="history_img">История заказов</div>
 			<div id="menucard" class="left_menu_point"><img src="/Assets/Noactive_menucardL.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
 			<div class="left_menu_point" id="poriadok_oplati"><img src="/Assets/Noactive_menuoplataL.png" class="img_left_menu">Порядок оплаты</div>
