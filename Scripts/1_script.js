@@ -245,31 +245,31 @@ function getRandomNumber() {
         timerElement.innerText = formattedTime;
         }
         
-        let cssLink, scriptSrc;
+      //   let cssLink, scriptSrc;
 
-      if (theme == 1) {
-          cssLink = "/StyleWEBN.css";
-          scriptSrc = "/Scripts/3N_script.js";
-      } else if (theme == 0) {
-          cssLink = "/StyleWEBL.css";
-          scriptSrc = "/Scripts/3L_script.js";
-      }
+      // if (theme == 1) {
+      //     cssLink = "/StyleWEBN.css";
+      //     scriptSrc = "/Scripts/3N_script.js";
+      // } else if (theme == 0) {
+      //     cssLink = "/StyleWEBL.css";
+      //     scriptSrc = "/Scripts/3L_script.js";
+      // }
 
-      // Сохраняем выбранную тему и скрипт в localStorage
-      localStorage.setItem("theme", cssLink);
-      localStorage.setItem("script", scriptSrc);
+      // // Сохраняем выбранную тему и скрипт в localStorage
+      // localStorage.setItem("theme", cssLink);
+      // localStorage.setItem("script", scriptSrc);
 
-      // Применяем выбранную тему
-      let linkElement = document.createElement("link");
-      linkElement.setAttribute("rel", "stylesheet");
-      linkElement.setAttribute("type", "text/css");
-      linkElement.setAttribute("href", cssLink);
-      document.getElementsByTagName("head")[0].appendChild(linkElement);
+      // // Применяем выбранную тему
+      // let linkElement = document.createElement("link");
+      // linkElement.setAttribute("rel", "stylesheet");
+      // linkElement.setAttribute("type", "text/css");
+      // linkElement.setAttribute("href", cssLink);
+      // document.getElementsByTagName("head")[0].appendChild(linkElement);
 
-      // Загружаем соответствующий скрипт
-      let scriptElement = document.createElement("script");
-      scriptElement.setAttribute("src", scriptSrc);
-      document.body.appendChild(scriptElement);
+      // // Загружаем соответствующий скрипт
+      // let scriptElement = document.createElement("script");
+      // scriptElement.setAttribute("src", scriptSrc);
+      // document.body.appendChild(scriptElement);
 
   })} 
         
