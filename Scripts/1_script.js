@@ -158,7 +158,7 @@ function getRandomNumber() {
     
   
   
-  const proxyUrl = 'https://super-sup:8443/';
+  const proxyUrl = 'https://super-sup.ru:8443/';
   const passenUrl = 'https://api.puzzlebot.top/api?token=2s1OVLz5iHnPeU7dp8ZGAUrFww8cQ4p9&method=getVariableValue&variable=passengers&user_id=';
   const fullpassenUrl = (passenUrl + userId);
   const fakeParam = Date.now(); // создание фиктивного параметра с текущим временем в миллисекундах
