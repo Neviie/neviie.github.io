@@ -1145,3 +1145,12 @@ background-image: url(https://proezdnoy59.files.wordpress.com/2023/02/fonn.png);
 		font-weight: 600;
 		font-size: 3.5vw;
 		}
+
+		.TS_map_box {
+			display: none;
+			margin: -1.7708vh;
+		}
+
+		.map {
+			height: 100vh;
+		}

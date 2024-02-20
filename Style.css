@@ -1102,3 +1102,17 @@
 		font-weight: 600;
 		font-size: 3.5vw;
 		}
+
+		.TS_map_box {
+			display: none;
+			margin: -1.7708vh;
+		}
+
+		.map {
+			height: 100vh;
+		}
+
+		add_text {
+			color: white;
+			font-size: 4vw;
+		}

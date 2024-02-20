@@ -237,7 +237,7 @@
 		var shap_cenElement = document.querySelector('.shap_cen');
 		var arrow_img = document.getElementById('arrow_img');
 		var scan_QR = document.getElementById('scan_QR');
-		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box,  .history_paid_box');
+		var all_hide = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box, .button, .scan_QR_fon, .num_QR_box, .card_box, .copy_img, .right_up_img, .history_box,  .history_paid_box, .TS_map_box');
 		var now_order = document.querySelectorAll('.marshrut, .time_pos, .timer, .qr, .new_control, .ost, .control_box');
 		var Active_menunow_img = document.getElementById('Active_menunow');
 		var Menu_now = document.getElementById('menunow_left');
@@ -254,6 +254,7 @@
 		var now_img = document.getElementById('Active_menunow');
 		var history_img = document.getElementById('history_img');
 		var card_img = document.getElementById('menu_card_img');
+    var TS_map_img = document.getElementById('TS_map_img');
 		
 		all_leftmenu_buttons.forEach((button) => {
 
@@ -266,6 +267,7 @@
 			history_img.src = '/Assets/Noactive_menuhistory.png';
 			card_img.src = '/Assets/Noactive_menucard.png';
 			now_img.src = '/Assets/Noactive_menunow.png';
+      TS_map_img.src = '/Assets/Noactive_TS_mapN.png';
 		});	
 	
 	}
@@ -401,6 +403,30 @@
   shap_cenElement.style.marginLeft = 'calc(15vw + 10vh)';
 });
 
+// Выбрать ТС на карте
+	
+var TS_map = document.getElementById('TS_map');
+var TS_map_box = document.getElementById('TS_map_box');
+TS_map.addEventListener('click', () => {
+
+noactive();
+hideall();
+oppElement.textContent = 'Оплата проезда';
+TS_map.style.color = 'rgb(39,122,243)';
+TS_map.style.fontWeight = '600';
+TS_map.style.backgroundColor = 'rgb(19,32,47)';
+TS_map_img.src = '/Assets/Active_TS_mapN.png';
+
+leftMenu.style.left = '-100%';
+shadow.classList.toggle('transparent');
+zooElement.textContent = 'Выбрать ТС на карте';
+
+TS_map_box.style.display = 'block';
+shap_cenElement.style.marginLeft = 'calc(15vw + 10vh)';
+right_up_img.style.display='block';
+right_up_img.src='/Assets/flag.png';
+});
+
 	// Текуший заказ
 	
 	var menunow_left = document.getElementById('menunow_left');
@@ -452,6 +478,7 @@
 	card_box.style.display = 'block';
   shap_cenElement.style.marginLeft = 'calc(15vw + 12vh)';
  right_up_img.style.display='block';
+ right_up_img.src='/Assets/Reload.png'
  copy_img.style.display='block';
 });
 	

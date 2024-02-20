@@ -47,3 +47,11 @@
 			
 			parent.removeChild(temp);
 		
+
+			// очистка данных и переадресация на главную страницу
+			document.getElementById("data_reload").addEventListener("click", function() {
+				localStorage.clear();
+				alert("Local storage has been cleared.");
+				window.location.href = "../../index.html";
+			  });
+			  
