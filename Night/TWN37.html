@@ -34,7 +34,7 @@
 
 
 function getRandomNumber() {
-      var numbers = [0, 35, 70];
+      var numbers = [0, 37, 70];
       var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
       return randomNumber;
     }
@@ -74,7 +74,7 @@ function getRandomNumber() {
       var numberElement = document.getElementById('number');
 	  var numberElement2 = document.getElementById('number2');
       var currentNumber = parseInt(numberElement.textContent);
-      var numbers = [0, 35, 70];
+      var numbers = [0, 37, 70];
 
       // Находим следующее число в порядке возрастания
       var nextNumberIndex = numbers.indexOf(currentNumber) + 1;
@@ -381,7 +381,7 @@ fetchStartDate();
 		<span class="greenbus_box_num" id="duble_marsh">0</span>
 		</div>
 		<span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
-		<greenn>35 руб</greenn>
+		<greenn>37 руб</greenn>
 	</div>
 </div>
 </div>
@@ -391,7 +391,7 @@ fetchStartDate();
 		<div class="null_marsh"></div>
 <mar>Автобус <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
 		<div class="null_marsh"></div>
-		<mar>Оплачено <kal>35 руб</span></span></kal></mar>
+		<mar>Оплачено <kal>37 руб</span></span></kal></mar>
 		<div class="null_marsh"></div>
 		<mar>пассажиров <kal>1</kal> багажа <kal>0</span></span></kal></mar>
 		<div class="null_marsh"></div>
@@ -505,7 +505,7 @@ document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
 		<div class="null_cont"></div>
 		<div class="line"></div>
 	<div class="null_cont3"></div>
-	<kim>Стоимость: 35 руб</kim>
+	<kim>Стоимость: 37 руб</kim>
 	</div>
 </div>
 <div class="null_cont3""></div>
@@ -1155,7 +1155,7 @@ for (var i = 0; i < numDivs; i++) {
   randomDate.textContent = getRandomDate();
 
   var greenn = document.createElement('greenn');
-  greenn.textContent = '35 руб';
+  greenn.textContent = '37 руб';
 
   div.appendChild(greenbusBox);
   div.appendChild(randomDate);
