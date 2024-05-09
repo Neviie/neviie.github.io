@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<manifest="android:windowSoftInputMode="adjustPan">
+		<title>proezdnoy</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<script src="https://telegram.org/js/telegram-web-app.js"></script>
+		<script src="https://puzzlebot.top/webapp.js"></script>
+		<link rel="stylesheet" href="/StyleWEBN.css">
+	</head>
+<body>
+
+<div class="shap">
+</div>
+<div class="shap_x">
+<div class="mini_line_box" id="mini_line_box">	
+	<div class="mini_line"></div>
+	<div class="mini_line2"></div>
+	<div class="mini_line2"></div>
+</div>
+	<div class="shap_cen"><op>Оплата проезда</op> <div class="null_shap"></div> <zo>Заказ оплачен</zo></div>
+</div>
+
+<div class="profile_new">
+<div class="prof_cen">
+<img src="/Assets/profileN.png" class="profile_new_img">
+<email><span id="emailid"></span>@mail.ru</email> 
+</div>
+</div>
+
+<div class="profile_new2">
+<div class="profile_menu"><profile_menu>Пункты выдачи и пополнения</profile_menu></div>
+<div class="profile_menu"><profile_menu>Тарифное меню</profile_menu></div>
+<div class="profile_menu"><profile_menu>Правила пересадки</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оформления ЛПД</profile_menu></div>
+<div class="profile_menu"><profile_menu>Новостная лента</profile_menu></div>
+<div class="profile_menu"><profile_menu>Профиль</profile_menu></div>
+<div class="profile_menu"><profile_menu>Уведомления</profile_menu></div>
+<div class="profile_menu"><profile_menu>Порядок оплаты по цифровой карте</profile_menu></div>
+<div class="profile_menu"><profile_menu>Написать в службу поддержки</profile_menu></div>
+<div class="profile_menu" id="data_reload"><profile_menu>О приложении</profile_menu></div>
+</div>
+
+<div class="schedule_new">
+<div class="schedule_block">
+	<div class="schedule_block_outline"><div class="time_schedule"id="schedule_block_outline"></div></div>
+		
+	<img class="img_schedule_menu" src="/Assets/Schedule_6_N.png">
+</div>
+<div class="schedule_block"><profile_menu>Тип транспорта</profile_menu><img class="img_schedule_menu" src="/Assets/Schedule_1_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Маршрут</profile_menu><img class="img_schedule_menu" src="/Assets/Schedule_2_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Направление</profile_menu><img class="img_schedule_menu" src="/Assets/Schedule_3_N.png"></div>
+<div class="schedule_block_N"><profile_menu>Остановка</profile_menu><img class="img_schedule_menu" src="/Assets/Schedule_4_N.png"></div>
+<img class="schedule_star" src="/Assets/Schedule_5_N.png" >
+</div>
+
+<div class="proezdnoy_new">
+<img class="proezdnoy_greycard" src="/Assets/proezdnoy_greycard.png">
+<div class="null_marsh"></div>
+<img class="proezdnoy_redplus" src="/Assets/proezdnoy_redplus.png">
+<div class="proezdnoy_cardnumber">
+<numcard>Номер карты</numcard> 
+<div class="proezdnoy_flex">
+<proezdnoy_num>96431059033</proezdnoy_num>
+<div class="proezdnoy_block_outline">
+</div>
+</div>
+<numunder>Введите последние 8 цифр номера карты.</numunder>
+</div>
+<div class="add_card">
+<img class="add_card_img" src="/Assets/proezdnoy_whiteplus.png">
+<add_text>Добавить</add_text>
+</div>
+<img class="schedule_star" src="/Assets/proezdnoy_3_N.png" >
+</div>
+
+<div class="num_QR_box" id="num_QR_box">
+<div class="num_QR_ts">
+<numQR>Для оплаты проезда введите гос. номер ТС</numQR> 
+<div class="num_QR_ts_flex">
+
+<div class="num_QR_ts_outline">
+<input class="num_QR_inp">
+</div>
+</div>
+
+</div>
+<div class="continue">
+<add_text>Продолжить</add_text>
+</div>
+</div>
+
+<!-- Выбрать ТС на карте -->
+<div class="TS_map_box" id="TS_map_box">
+	<iframe class="map"id="map_781299067" frameborder="0" width="100%" height="600px" sandbox="allow-modals allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation"></iframe><script type="text/javascript">(function(e,t){var r=document.getElementById(e);r.contentWindow.document.open(),r.contentWindow.document.write(atob(t)),r.contentWindow.document.close()})("map_781299067", "PGJvZHk+PHN0eWxlPgogICAgICAgIGh0bWwsIGJvZHkgewogICAgICAgICAgICBtYXJnaW46IDA7CiAgICAgICAgICAgIHBhZGRpbmc6IDA7CiAgICAgICAgfQogICAgICAgIGh0bWwsIGJvZHksICNtYXAgewogICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOwogICAgICAgIH0KICAgICAgICAuYnVsbGV0LW1hcmtlciB7CiAgICAgICAgICAgIHdpZHRoOiAyMHB4OwogICAgICAgICAgICBoZWlnaHQ6IDIwcHg7CiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7CiAgICAgICAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmZmY7CiAgICAgICAgICAgIGJveC1zaGFkb3c6IDAgMXB4IDNweCAwIHJnYmEoMCwgMCwgMCwgMC4yKTsKICAgICAgICAgICAgYm9yZGVyOiA0cHggc29saWQgIzAyODFmMjsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogNTAlOwogICAgICAgIH0KICAgICAgICAucGVybWFuZW50LXRvb2x0aXAgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiBub25lOwogICAgICAgICAgICBib3gtc2hhZG93OiBub25lOwogICAgICAgICAgICBib3JkZXI6IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDZweCAxMnB4OwogICAgICAgICAgICBjb2xvcjogIzI2MjYyNjsKICAgICAgICB9CiAgICAgICAgLnBlcm1hbmVudC10b29sdGlwOmJlZm9yZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgfQogICAgICAgIC5kZy1wb3B1cF9oaWRkZW5fdHJ1ZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KICAgICAgICAubGVhZmxldC1jb250YWluZXIgLmxlYWZsZXQtcG9wdXAgLmxlYWZsZXQtcG9wdXAtY2xvc2UtYnV0dG9uIHsKICAgICAgICAgICAgdG9wOiAwOwogICAgICAgICAgICByaWdodDogMDsKICAgICAgICAgICAgd2lkdGg6IDIwcHg7CiAgICAgICAgICAgIGhlaWdodDogMjBweDsKICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4OwogICAgICAgICAgICBsaW5lLWhlaWdodDogMTsKICAgICAgICB9CiAgICA8L3N0eWxlPjxkaXYgaWQ9Im1hcCI+PC9kaXY+PHNjcmlwdCB0eXBlPSJ0ZXh0L2phdmFzY3JpcHQiIHNyYz0iaHR0cHM6Ly9tYXBzLmFwaS4yZ2lzLnJ1LzIuMC9sb2FkZXIuanM/cGtnPWZ1bGwmYW1wO3NraW49bGlnaHQiPjwvc2NyaXB0PjxzY3JpcHQ+KGZ1bmN0aW9uKGUpe3ZhciB0PUpTT04ucGFyc2UoZSkscj10Lm9yZGVyZWRHZW9tZXRyaWVzLG49dC5tYXBQb3NpdGlvbixhPXQuaXNXaGVlbFpvb21FbmFibGVkO2Z1bmN0aW9uIG8oZSl7cmV0dXJuIGRlY29kZVVSSUNvbXBvbmVudChhdG9iKGUpLnNwbGl0KCIiKS5tYXAoZnVuY3Rpb24oZSl7cmV0dXJuIiUiKygiMDAiK2UuY2hhckNvZGVBdCgwKS50b1N0cmluZygxNikpLnNsaWNlKC0yKX0pLmpvaW4oIiIpKX1ERy50aGVuKGZ1bmN0aW9uKCl7dmFyIGU9REcubWFwKCJtYXAiLHtjZW50ZXI6W24ubGF0LG4ubG9uXSx6b29tOm4uem9vbSxzY3JvbGxXaGVlbFpvb206YSx6b29tQ29udHJvbDohYX0pO0RHLmdlb0pTT04ocix7c3R5bGU6ZnVuY3Rpb24oZSl7dmFyIHQscixuLGEsbztyZXR1cm57ZmlsbENvbG9yOm51bGw9PT0odD1lKXx8dm9pZCAwPT09dD92b2lkIDA6dC5wcm9wZXJ0aWVzLmZpbGxDb2xvcixmaWxsT3BhY2l0eTpudWxsPT09KHI9ZSl8fHZvaWQgMD09PXI/dm9pZCAwOnIucHJvcGVydGllcy5maWxsT3BhY2l0eSxjb2xvcjpudWxsPT09KG49ZSl8fHZvaWQgMD09PW4/dm9pZCAwOm4ucHJvcGVydGllcy5zdHJva2VDb2xvcix3ZWlnaHQ6bnVsbD09PShhPWUpfHx2b2lkIDA9PT1hP3ZvaWQgMDphLnByb3BlcnRpZXMuc3Ryb2tlV2lkdGgsb3BhY2l0eTpudWxsPT09KG89ZSl8fHZvaWQgMD09PW8/dm9pZCAwOm8ucHJvcGVydGllcy5zdHJva2VPcGFjaXR5fX0scG9pbnRUb0xheWVyOmZ1bmN0aW9uKGUsdCl7cmV0dXJuInJhZGl1cyJpbiBlLnByb3BlcnRpZXM/REcuY2lyY2xlKHQsZS5wcm9wZXJ0aWVzLnJhZGl1cyk6REcubWFya2VyKHQse2ljb246ZnVuY3Rpb24oZSl7cmV0dXJuIERHLmRpdkljb24oe2h0bWw6IjxkaXYgY2xhc3M9J2J1bGxldC1tYXJrZXInIHN0eWxlPSdib3JkZXItY29sb3I6ICIrZSsiOyc+PC9kaXY+IixjbGFzc05hbWU6Im92ZXJyaWRlLWRlZmF1bHQiLGljb25TaXplOlsyMCwyMF0saWNvbkFuY2hvcjpbMTAsMTBdfSl9KGUucHJvcGVydGllcy5jb2xvcil9KX0sb25FYWNoRmVhdHVyZTpmdW5jdGlvbihlLHQpe2UucHJvcGVydGllcy5kZXNjcmlwdGlvbiYmdC5iaW5kUG9wdXAobyhlLnByb3BlcnRpZXMuZGVzY3JpcHRpb24pLHtjbG9zZUJ1dHRvbjohMCxjbG9zZU9uRXNjYXBlS2V5OiEwfSksZS5wcm9wZXJ0aWVzLnRpdGxlJiZ0LmJpbmRUb29sdGlwKG8oZS5wcm9wZXJ0aWVzLnRpdGxlKSx7cGVybWFuZW50OiEwLG9wYWNpdHk6MSxjbGFzc05hbWU6InBlcm1hbmVudC10b29sdGlwIn0pfX0pLmFkZFRvKGUpfSl9KSgneyJvcmRlcmVkR2VvbWV0cmllcyI6W3sidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7ImRlc2NyaXB0aW9uIjoiUEhBK016d3ZjRDQ9Iiwic3Ryb2tlQ29sb3IiOiIjNGRiNzI1Iiwic3Ryb2tlV2lkdGgiOjIsInN0cm9rZU9wYWNpdHkiOjEsImZpbGxDb2xvciI6IiM0YWIyMjQiLCJmaWxsT3BhY2l0eSI6MC41LCJyYWRpdXMiOjExLjMwNzk3NTY4ODcwNzcxNywiekluZGV4IjoxfSwiZ2VvbWV0cnkiOnsidHlwZSI6IlBvaW50IiwiY29vcmRpbmF0ZXMiOls1Ni4yMjk5MTYsNTguMDAxODExXX0sImlkIjo5NTB9XSwibWFwUG9zaXRpb24iOnsibGF0Ijo1OC4wMDMxNTIyNTc1MjA2OCwibG9uIjo1Ni4yMzM3MzUwODQ1MzM2OSwiem9vbSI6MTZ9LCJpc1doZWVsWm9vbUVuYWJsZWQiOnRydWV9Jyk8L3NjcmlwdD48c2NyaXB0IGFzeW5jPSIiIHR5cGU9InRleHQvamF2YXNjcmlwdCIgc3JjPSJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbS9ndGFnL2pzP2lkPVVBLTE1ODg2NjE2OC0xIj48L3NjcmlwdD48c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+KGZ1bmN0aW9uKGUpe2Z1bmN0aW9uIHQoKXtkYXRhTGF5ZXIucHVzaChhcmd1bWVudHMpfXdpbmRvdy5kYXRhTGF5ZXI9d2luZG93LmRhdGFMYXllcnx8W10sdCgianMiLG5ldyBEYXRlKSx0KCJjb25maWciLGUpLHdpbmRvdy5ndGFnPXR9KSgnVUEtMTU4ODY2MTY4LTEnKTwvc2NyaXB0PjwvYm9keT4=")</script>
+</div>
+
+<div class="card_box" id="card_box">
+
+		<img class="virtual_card" src="/Assets/virtual_card.png">
+		<div class="balance">
+			<balance_text>Баланс:</balance_text>
+			<div class="balance_box">
+				<kam><span id="number2">0</span> руб</kam>
+			</div>
+		</div>
+		<div class="green_box">
+			<img class="wallet" src="/Assets/Green_Wallet.png">
+			<add_text>Пополнить</add_text>
+		</div>
+		<div class="green_box">
+			<img class="wallet" src="/Assets/Green_Bus.png">
+			<add_text>Купить проездной</add_text>
+		</div>
+		<div class="blue_box">
+			<img class="wallet" src="/Assets/Blue_Watch.png">
+			<add_text>История пополнений</add_text>
+		</div>
+		<div class="orange_alert">
+		<div class="orange_alert_text">
+		<qropl>Оплачивайте проезд по QR-коду</qropl>
+		<qropl2>
+		Цифровой транспортной картой оплатить проезд можно путём сканирования специального QR-кода, размещённого в салоне автобуса/трамвая или путём ввода гос. номера ТС/номера вагона. Перед использованием цифровой транспортной карты ознакомьтесь с порядком оплаты проезда.
+		</qropl2>
+		<div class="more">
+		<img src="/Assets/Orange_alert.png" class="wallet"> 
+		<more_text>Подробнее...</more_text>
+		</div>
+		</div>
+		</div>
+
+</div>
+<img src="/Assets/Reload.png" class="right_up_img">
+<img src="/Assets/copyN.png" class="copy_img">
+
+<div class="history_box">
+    <div class="history_line">
+        <div class="greenbus_box">
+        <img class="green_box_bus" src="/Assets/Green_Bus.png">
+        <span class="greenbus_box_num" id="duble_marsh">0</span>
+        </div>
+        <span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+        <greenn><span id="greenpass">37</span> руб</greenn>
+    </div>
+</div>
+
+<div class="history_paid_box">
+    <div class="history_paid_line">
+        <div class="green_paid_box">
+        <span class="green_paid_num" id="green_paid">Пополнение</span>
+        </div>
+        <span class="random_date"><span id="date_date">01.07.2023</span> <span id="date_time">11:27</span></span>
+        <greenn><span id="greenpid">+37</span> руб</greenn>
+    </div>
+</div>
+<div class="marshrut">
+	<div class="text_t_p">
+		<mar>Маршрут №<kal><span id="marshrutt">72</span></kal></mar>
+		<div class="null_marsh"></div>
+<mar>Автобус <div class="inp_avt" style = "display:inline-block;" id = "result"></div></mar>
+		<div class="null_marsh"></div>
+		<mar>Оплачено <kal><span id="oplata">37</span> руб</kal></mar>
+		<div class="null_marsh"></div>
+		<mar>пассажиров <kal><span id="passen">1</span></kal> багажа <kal><span id="bags">0</span></kal></mar>
+		<div class="null_marsh"></div>
+		<ust>Устройство</ust> 			<!--нужно подсосать устройство если возможно-->
+		<div class="null_marsh"></div>
+<pixel> <div class="inp_ust" id="ustr"style = "display:inline-block;"></div></pixel>
+	</div>
+</div>
+<div class="time_pos">
+<div class="text_t_p">
+		<t>Время посадки</t>
+		<div class="null_pos"></div>
+		<x><div id="current_date_time_block"></div></x>
+		
+		<div class="null_pos"></div>
+		<y><div id="current_date_time_blockk"></div></y>
+	</div>
+</div>
+<div class="timer">
+	<div class="text_t_p">
+		<t>Время в пути</t>
+		<div class="null_pos"></div>
+		<timere><div id="timer" style="color: white">00:00</div><timere>
+	</div>
+</div>
+<div class="qr">
+	<div class="text_t_p">
+	<img class="imqr" src="/Assets/qr.jpg">
+	</div>
+</div>
+<div class="button" id="button" onclick="showNewControl()">
+    <t>Контроль</t>
+  </div>
+<div class="new_control">
+<div class="text_t_p">
+		<t>Контроль</t>
+		<div class="null_cont"></div>
+		<img class="control_img_left" id="left-image" src="" onclick="updateLeftImage()">
+		<img class="control_img_right" id="right-image" src="" onclick="updateRightImage()">
+</div>
+</div>
+
+<div class="ost">
+	<div onclick="update2Number()" class="text_t_p">
+	<ust>Остаток баланса  <span id="number">0</span> руб</ust>
+	</div>
+</div>
+<div class="control_box">
+<div id="control" class="control">
+	<div class="text_t_p">
+	<bilet>БИЛЕТ</bilet>
+	<div class="null_cont"></div>
+	<n>№<div style="display:inline-block;" id="e"></div>
+<script type="text/javascript">
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+document.getElementById('e').innerHTML = getRandomInt(5000000000, 9000000000)
+</script></n>							<!--генератор случайных 10 значных чисел-->
+	<div class="null_cont2"></div>
+<n><div id="x"></div></n>
+	<div class="null_cont2"></div>
+		<div class="line">
+		</div>
+	<div class="null_cont3"></div>
+	<n>ООО «СитиБас»</n>
+	<div class="null_cont"></div>
+	<n>ИНН 5948041350</n>	
+	<div class="null_cont"></div>
+	<n>по заказу МКУ "Гортранс"</n>	
+	<div class="null_cont"></div>
+		<div class="line">
+		</div>
+	<div class="null_cont3"></div>
+	
+	<div class="marshrut_dviz"><marshrutfont>72, Планета - ЦУМ</marshrutfont></div>			<!--сделать в две строки-->
+	
+	<div class="null_cont3"></div>
+	<n>Автобус </n><div style="display:inline-block;" id="result2" class="inp_avt2"></div>
+		<div class="null_cont"></div>
+		<div class="line"></div>
+	<div class="null_cont3"></div>
+	<kim>Стоимость: 37 руб</kim>
+	</div>
+</div>
+</div>
+<div class="null_cont3"></div>
+<div class="bottom">
+
+</div>
+<div class="bottom_x">
+<div class="bottom_m">
+	<figure class="fig_1" onclick="handleClick4()">
+	<img src="/Assets/bilet_acrive_N.png" img class="img_fig_1">
+	<figcaption class="font_fig_1">Билеты</figcaption>
+	</figure>
+	<figure class="fig_2" onclick="handleClick3()">
+	<img src="/Assets/proezdnoy_noactive_N.png" class="img_fig_2">
+	<figcaption class="font_fig_2">Проездной</figcaption>
+	</figure>
+	<figure class="fig_4" onclick="handleClick2()">
+	<img src="/Assets/schedule_noactive_N.png" img class="img_fig_4">
+	<figcaption class="font_fig_4">Расписание</figcaption>
+	</figure>
+	<figure class="fig_3" onclick="handleClick()">
+	<img src="/Assets/cabinet_noactive_N.png" class="img_fig_3">
+	<figcaption class="font_fig_3">Кабинет</figcaption>
+	</figure>
+</div class="bottom_m">
+</div>
+</div>
+
+<div class="shadow" id="shadow"></div>
+
+<div class="left_menu" id="left_menu">
+	<div><img src="/Assets/Exit.png" id="left_menu_exit" class="left_menu_exit">
+		<div class="left menu_object">
+			<div class="left_menu_point" id="scan_QR"><img src="/Assets/Noactive_menuQR.png" class="img_left_menu" id="scan_QR_img">Сканировать QR</div>
+			<div class="left_menu_point" id="num_QR"><img src="/Assets/Noactive_menuQR.png" class="img_left_menu" id="num_QR_img">Ввести гос. номер ТС</div>
+			<div class="left_menu_point" id="TS_map"><img src="/Assets/Noactive_TS_mapN.png" class="img_left_menu" id="TS_map_img">Выбрать ТС на карте</div>
+			<div id="menunow_left" class="left_menu_point" style="font-weight: 600; background-color: rgb(19,32,47); color: rgb(39,122,243)"><img id="Active_menunow" src="/Assets/Active_menunow.png" class="img_left_menu">Текущий заказ</div>
+			<div class="left_menu_point" id="history_left"><img src="/Assets/Noactive_menuhistory.png" class="img_left_menu" id="history_img">История заказов</div>
+			<div id="menucard" class="left_menu_point"><img src="/Assets/Noactive_menucard.png" class="img_left_menu" id="menu_card_img">Цифровая карта</div>
+			<div class="left_menu_point" id="poriadok_oplati"><img src="/Assets/Noactive_menuoplata.png" class="img_left_menu">Порядок оплаты</div>
+		</div>
+	</div>
+</div>
+
+<div class="poriadok_oplati_text" id="poriadok_oplati_text">
+
+</div>
+
+<div class="poriadok_oplati_text2" id="poriadok_oplati_text2">
+<p>Цифровая транспортная карт доступна в разделе Билеты приложения через боковое меню (вызывается нажатием на иконку в левом верхнем углу). Если при выборе пункта бокового меню "Сканировать QR" не открывается камера для сканирования, а перечислены 3 или 4 шага, которые нужно выполнить для возможности оплаты проезда, то это значит что один или несколько шагов не пройдены для возможности оплаты проезда по QR-коду. Для использования данного способа оплаты проезда по цифровой транспортной карте необходимо обновить версию приложения из магазина приложений Play Маркет или App Store (если не установлена последняя версия).</p>
+
+<p>Цифровая транспортная карта работает по гражданским тарифам. С информацией о тарифах можно ознакомится в разделе Кабинет -> Тарифное меню.</p>
+
+<p>Обращаем Ваше внимание, что QR-код для оплаты проезда по цифровой карте можно сканировать в приложении "Транспортная карта Пермь" (проездной 59) только со специальных стикеров, которые размещены в городском пассажирском транспорте.</p>
+
+<p>Данный способ оплаты доступен при наличии на мобильном устройстве доступа в Интернет. Также нужно установить актуальное время на смартфоне, для этого в настройках смартфона выбрать настройку "Дата и время" и установить флаг "Автонастройка", либо установить актуальную дату и время вручную.</p>
+
+<p>ВНИМАНИЕ! По пластиковой транспортной карте, которая добавлена в приложение в разделе Проездной, невозможно оплатить проезд в приложении по QR-коду или гос. номеру. Для совершения оплаты проезда по пластиковым транспортным картам используются валидаторы, которые могут считывать информацию с электронного чипа карты.</p>
+
+<p>Для совершения пересадки со скидкой по цифровой транспортной карте в режиме транспортных единиц необходимо в транспортном средстве, на которое совершена пересадка, сформировать новый заказ билетов, отсканировав QR-код в салоне транспортного средства или ввсети гос. номер транспортного средства. На одном рейсе можно сформировать только один заказ билетов, поэтому указывайте необходимое количество билетов в одном заказе.</p>
+
+<p>1. Для возможности оплаты проезда в приложении по QR-коду необходимо предварительно выполнить следующие действия:</p>
+
+<p>1.1. Зарегистрировать профиль и/или войти в него. При регистрации профиля обязательно указывайте действующий адрес электронной почты, поскольку дальнейшее управление профилем (подтверждение, восстановление/смена пароля, выпуск цифровой транспортной карты для профиля, её активация на мобильных устройствах) доступно через указанный при регистрации адрес электронной почты.</p>
+
+<p>1.2. Выпустить цифровую транспортную карту, либо если карта была выпущена на другом устройстве (или приложение удалялось с устройства), активировать её на устройстве. При выпуске цифровой транспортной карты и активации её на мобильном устройстве на указанный при регистрации адрес электронной почты или номер телефона будет отправлен код подтверждения, который нужно будет ввести в специальное поле в мобильном приложении. Цифровой транспортной картой, активированной на устройстве, можно оплатить проезд только в приложении, отсканировав QR-коду в салоне ТС или введя гос. номер, оплатить проезд через валидатор не получится. Цифровую транспортную карту профиля можно активировать на нескольких устройствах, в случае если на цифровой карте не подключен проездной. При покупке проездного активация на других устройствах прекращается до тех пор, пока срок действия проездного не закончится. Если на карте нет проездного, то оплачивать проезд одной картой можно на нескольких устройствах, при этом пересадочный билет со скидкой сформируется только если оплата проезда совершалась с того же устройства.</p>
+
+<p>1.3. Разрешить приложению использование камеры мобильного устройства для сканирования QR-кода в транспорте. Без данного разрешения будет невозможно отсканировать QR-код в салоне автобуса/трамвая, чтобы оплатить билеты.</p>
+
+<p>1.4. Использовать на устройстве версию приложения, которая поддерживает действующий порядок оплаты проезда по QR-коду. В дальнейшем версия приложения может повышаться и необходимо обновлять приложение для возможности оплаты проезда по QR-коду.</p>
+
+<p>2. Для оплаты проезда в приложении транспортными единицами на балансе цифровой транспортной карты по стоимости разовых поездок необходимо выполнить следующие действия:</p>
+
+<p>2.1. Пополнить баланс цифровой транспортной карты по кнопке "Пополнить", либо убедиться что её баланса достаточно для оплаты необходимого количества билетов. Если баланса транспортной карты будет недостаточно, то в процессе оплаты билетов появится соответствующее информационное сообщение.</p>
+
+<p>2.2. Отсканировать QR-код, находящийся в салоне автобуса или трамвая, либо ввести гос. номер транспорта, и указать необходимое количество билетов, после этого нажать на кнопку "Оплатить". Сформированный заказ билетов после сканирования QR-кода будет доступен в течение 1 минуты для оплаты. На одном рейсе возможно сформировать только один заказ билетов, поэтому требуется указать необходимое количество билетов в заказе (максимальное количество билетов 10 штук).</p>
+
+<p>2.3. Показать сформированные в приложении билеты на странице "Текущиий заказ" (либо открыть билеты через пункт меню "История заказов") по требованию кондуктора и/или контролера для прохождения контроля оплаты проезда.</p>
+
+<p>3. Для оплаты проезда в приложении по проездному, подключенному к цифровой транспортной карте, необходимо выполнить следующие действия:</p>
+
+<p>3.1. Купить проездной на цифровую транспортную карту по кнопке "Купить проездной", либо убедиться что срок его действия не закончился и лимит поездок/дней не истрачен (для лимитного проездного).</p>
+
+<p>3.2. Отсканировать QR-код, находящийся в салоне автобуса или трамвая, либо ввести гос. номер транспорта, и нажать на кнопку "Оплатить" в сформированном заказе. Сформированный заказ билетов после сканирования QR-кода или ввода гос. номера будет доступен в течение 1 минуты для оплаты. После оплаты в разделе "Текущий заказ" будет доступен сформированный электронный билет (также открыть оплаченный заказ билетов можно через пункт меню "История заказов"). Оплачивать проезд по проездному документу, подключенному к цифровой транспортной карте, может только один человек и с одного мобильного устройства.</p>
+
+<p>3.3. Показать сформированный в приложении билет на странице "Текущиий заказ" (либо открыть билеты через пункт меню "История заказов") по требованию кондуктора и/или контролера для прохождения контроля оплаты проезда.</p>
+
+<p>4. Для совершения пересадки со скидкой в приложении за счет транспортных единиц на балансе цифровой транспортной карты необходимо выполнить следующие действия:</p>
+
+<p>4.1. Если Вы пересаживаетесь на автобус/трамвай, в котором размещён QR-код, то нужно его отсканировать в приложении, либо ввести гос. номер транспортного средства, указать необходимое количество пассажиров и оформить пересадочный билет (если правила пересадки выполняются, приложение предложит совершить пересадку со скидкой).</p>
+
+<p>4.2. Показать кондуктору/контролеру электронный билет в приложении для контроля оплаты проезда.</p>
+
+<p>4.3. Пересадка со скидкой доступна только при оплате билета транспортными единицами на балансе цифровой транспортной карты и при оплате с одного мобильного устройства. Подробнее о правилах пересадки можно прочитать в разделе Кабинет -> Правила пересадки.</p>
+
+<p>5. Условия покупки билетов в мобильном приложении по цифровой карте:</p>
+
+<p>5.1. Перед подтверждением заказа на оплату билетов Пользователь самостоятельно должен проверить параметры заказа: государственный регистрационный номер транспортного средства (либо номер вагона трамвая), номер муниципального маршрута, количество билетов и сумму к оплате и при необходимости внести изменения в параметры заказа.</p>
+
+<p>5.2. При подтверждении заказа на оплату билетов по кнопке "Оплатить" пользователь даёт своё безоговорочное согласие на совершение оплаты проезда и/или провоза багажа по цифровой транспортной карте на транспортном средстве, маршруте и на сумму, указанную в заказе на оплату билетов, а также подтверждает факт проезда на указанном в заказе транспортном средстве и муниципальном маршруте.</p>
+
+<p>5.3. После подтверждения оплаты согласно пункта 5.2 Пользователь не может никаким образом запросить возврат оплаченных билетов.</p>
+
+<p>5.3. По цифровой карте в мобильном прилоежнии можно оплатить проезд только на муниципальном маршруте регулярных перевозок города Перми, на других маршрутах самостоятельная оплата проезда и/или провоза багажа Пользователем в мобильном приложении не допускается. Пользователь несёт сам все риски ошибочной оплаты проезда и/или провоза багажа в мобильном приложении.</p>
+</div>
+
+<img src="/Assets/Arrow.png" class="arrow_img" id="arrow_img">
+
+<div class = "scan_QR_fon" id="scan_QR_elements">
+<div class="scan_QR_elements">
+<QR_text>Для оплаты проезда отсканируйте QR-код</QR_text>
+<div class="QR_border_img">
+<div class="scan_QR_border"></div>
+
+<div class="scan_QR_img">
+<img src = "/Assets/Round_Flashlight.png" class="img_scan_QR">
+<img src = "/Assets/Round_Plus.png" class="img_scan_QR">
+<img src = "/Assets/Round_minus.png" class="img_scan_QR">
+<img src = "/Assets/Round_bus.png" class="img_scan_QR">
+</div>
+</div>
+</div>
+</div>
+
+<script src="/Scripts/1_script.js"></script>
+<script src="/Scripts/2_script.js"></script>
+<script src="/Scripts/3N_script.js"></script>
+
+</body>
+</html>
