@@ -12,7 +12,7 @@
       }
     ],
   
-    "start_url": "/index_man.html",
+    "start_url": "/index.html",
     "display": "fullscreen",
     "background_color": "#ffffff",
     "theme_color": "#000000",
