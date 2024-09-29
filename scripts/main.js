@@ -95,17 +95,40 @@ document.addEventListener('DOMContentLoaded', function () {
     const imgQr = document.getElementById('img_qr');
     const hoverCircle = document.getElementById('hover-circle');
 
+    function updateHoverCircle(x, y) {
+        hoverCircle.style.left = `${x - hoverCircle.offsetWidth / 2}px`;
+        hoverCircle.style.top = `${y - hoverCircle.offsetHeight / 2}px`;
+        hoverCircle.style.display = 'block';
+    }
+
     imgQr.addEventListener('mousemove', function (e) {
         const rect = imgQr.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
-        hoverCircle.style.left = `${x - hoverCircle.offsetWidth / 2}px`;
-        hoverCircle.style.top = `${y - hoverCircle.offsetHeight / 2}px`;
-        hoverCircle.style.display = 'block';
+        updateHoverCircle(x, y);
     });
 
     imgQr.addEventListener('mouseleave', function () {
+        hoverCircle.style.display = 'none';
+    });
+
+    imgQr.addEventListener('touchstart', function (e) {
+        const rect = imgQr.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        updateHoverCircle(x, y);
+    });
+
+    imgQr.addEventListener('touchmove', function (e) {
+        const rect = imgQr.getBoundingClientRect();
+        const touch = e.touches[0];
+        const x = touch.clientX - rect.left;
+        const y = touch.clientY - rect.top;
+        updateHoverCircle(x, y);
+    });
+
+    imgQr.addEventListener('touchend', function () {
         hoverCircle.style.display = 'none';
     });
 });
