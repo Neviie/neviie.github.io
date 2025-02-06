@@ -7,6 +7,7 @@
 	background-image: url(https://proezdnoy59.files.wordpress.com/2022/05/fon.png?resize=438%2C438);	
 	background-attachment: fixed;
 	font-family: roboto;
+	overflow-x:hidden;
 	}
 	
 	
@@ -280,8 +281,7 @@
 	
 	.bottom_m {
 	  display: flex;
-    justify-content: space-between;
-	
+	  justify-content: space-around;
   }
   
 	.bottom_x{
@@ -298,60 +298,71 @@
 		padding-bottom: 1vh
 	}
 		.fig_1 {
-		float: left; 
-		margin: 0 0 0 3vw; 
-		width: 11.11vw; 
-		text-align: center; 
+			margin: 0.5vh 0 0 0; 
+			width: 15vw; 
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 6.3vh;
 		}
 			.img_fig_1 {
-			width:7.407vw; 
-			height:4.166vh
+				height: 4.166vh;
 			}
 			.font_fig_1 {
-			font-size: calc(1.5vw + 1vh); 
+			font-size: calc(1vw + 1vh); 
 			color: rgb(17,121,145)
 			}
 		.fig_2 {
-		float: left; 
-		margin: 0 0 0 0;
-		width: 15.7407vw; 
-		text-align: center; 
+			margin: 0.5vh 0 0 0; 
+			width: 15vw; 
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-direction: column; 
+			justify-content: space-between;
+			height: 6.3vh;
 		}
 			.img_fig_2 {
-			width:7.407vw; 
-			height:4.166vh; 
+				height: 4.166vh;
 			}
 			.font_fig_2 {
-			font-size: calc(1.5vw + 1vh);  
+			font-size: calc(1vw + 1vh);  
 			color: rgb(110, 110, 110)
 			}
 		.fig_3 {
-		float: right; 
-		margin: 0 4vw 0 0; 
-		width: 11.11vw; 
-		text-align: center; 
+			margin: 0.5vh 0 0 0; 
+			width: 15vw; 
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-direction: column; 
+			justify-content: space-between;
+			height: 6.3vh;
 		}
 			.img_fig_3 {
-			width:7.407vw; 
-			height:4.166vh; 
-			margin-left: 1.5vw;
+				height: 4.166vh;
 			}
 			.font_fig_3 {
-			font-size: calc(1.5vw + 1vh);
+			font-size: calc(1vw + 1vh);
 			color: rgb(110, 110, 110)
 			}
 		.fig_4 {
-		float: right; 
-		margin: 0 0 0 0; 
-		width: 16.666vw; 
-		text-align: center; 
+			margin: 0.5vh 0 0 0; 
+			width: 15vw; 
+			text-align: center;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 6.3vh;
 		}
 			.img_fig_4 {
-			 width:7.407vw; 
-			 height:4.166vh; 
+				height: 4.166vh; 
 			}
 			.font_fig_4 {
-			font-size: calc(1.5vw + 1vh); 
+			font-size: calc(1vw + 1vh); 
 			color: rgb(110, 110, 110)
 			}
 	.profile_new {
@@ -1115,4 +1126,44 @@
 		add_text {
 			color: white;
 			font-size: 4vw;
+		}
+
+		.blue_button {
+			background-color: rgb(0, 84, 190);
+			width: 87vw;
+			height: 5vh;
+			border-radius: 2vw;
+			margin: 0.8854vh auto;
+			box-shadow: 0 0 0.8854vh rgba(0, 0, 0, 0.2);
+			color: white;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			cursor: pointer;
+			transition: transform 0.2s;
+			font-size: calc(1vw + 1vh);
+			border: none;
+		}
+		
+		.blue_button:hover {
+			background-color: rgb(7, 61, 103);
+		  }
+		
+		.blue_button:active {
+			transform: scale(0.95);
+		  }
+		
+		@media (pointer: coarse) {
+			.blue_button:hover {
+				background-color: rgb(0, 84, 190);
+			}
+		  }
+		.bluetooth {
+			font-size: calc(1vw + 1.7vh);
+			margin-right: 2vw;
+		}
+
+		bilet {
+			font-size: calc(2vw + 1.5vh);
+			font-family: roboto;					
 		}

@@ -1,6 +1,6 @@
 {
-    "name": "Проездной 59",
-    "short_name": "Проездной 59",
+    "name": "Пермский транспорт",
+    "short_name": "Пермский транспорт",
     "description": "Мобильное приложение для использования транспортной карты в Перми",
     "prefer_related_applications": true,
     "related_applications": [
