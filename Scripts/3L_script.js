@@ -617,7 +617,7 @@ randomDate.className = 'random_date';
 randomDate.textContent = getRandomDate();
 
 var greenn = document.createElement('greenn');
-greenn.textContent = '37 руб';
+greenn.textContent = '40 руб';
 
 div.appendChild(greenbusBox);
 div.appendChild(randomDate);
@@ -688,7 +688,7 @@ blue_box.addEventListener('click', () => {
     randomDate.textContent = getRandomDate();
 
     var greenn = document.createElement('greenn');
-    greenn.textContent = '+37 руб';
+    greenn.textContent = '+40 руб';
 
     div.appendChild(greenPaidBox);
     div.appendChild(randomDate);

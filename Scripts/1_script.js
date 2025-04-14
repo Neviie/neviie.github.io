@@ -20,7 +20,7 @@
 
 
 function getRandomNumber() {
-    var numbers = [0, 37, 74];
+    var numbers = [0, 40, 80];
     var randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
     return randomNumber;
   }
@@ -85,7 +85,7 @@ function getRandomNumber() {
 
     var oplataElement = document.getElementById("oplata");
     var bagsValue = parseInt(document.getElementById("bags").innerText);
-    var result = (passenValue + bagsValue) * 37;
+    var result = (passenValue + bagsValue) * 40;
     var greenspan = document.getElementById("greenpass");
     oplataElement.textContent = result;
     greenspan.textContent = result;
@@ -96,7 +96,7 @@ function getRandomNumber() {
     var numberElement = document.getElementById('number');
     var numberElement2 = document.getElementById('number2');
     var currentNumber = parseInt(numberElement.textContent);
-    var numbers = [0, 37, 74];
+    var numbers = [0, 40, 80];
 
     // Находим следующее число в порядке возрастания
     var nextNumberIndex = numbers.indexOf(currentNumber) + 1;
