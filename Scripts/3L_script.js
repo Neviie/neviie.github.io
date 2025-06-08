@@ -658,8 +658,8 @@ blue_box.addEventListener('click', () => {
   }
 
   function getRandomDate() {
-    var startDate = new Date('2023-07-01T00:00:00');
-    var endDate = new Date('2023-07-10T23:59:59');
+    var startDate = new Date('2025-05-01T06:00:00');
+    var endDate = new Date('2025-06-01T23:59:59');
     var randomTimestamp = Math.floor(Math.random() * (endDate.getTime() - startDate.getTime() + 1)) + startDate.getTime();
     var randomDate = new Date(randomTimestamp);
     var formattedDate = randomDate.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
